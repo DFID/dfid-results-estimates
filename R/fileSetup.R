@@ -83,6 +83,17 @@ fileSetup <- function(directory, date=T){
   }
 
 
+
+  if (dir.exists(paste0(.libPaths()[1],"/SDPResults"))){
+
+	      file.copy(from=paste0(.libPaths()[1],"/SDPResults/data/^.*\\.csv$"),
+			            to=figs_dir)
+  } else {
+
+	        file.copy(from=paste0(.libPaths()[2],"/SDPResults/data/^.*\\.csv$"),
+			                to=figs_dir)
+  }
+
 }
 
 
