@@ -126,14 +126,7 @@ lookup <- read_csv(file = "../data/dept_lookup.csv")
 frag <- read_csv(file = "../data/OECD_fragile_contexts_2018.csv")
 
 # Load data
-dat <- read_csv("../data/master_depts_TEST.csv")
-dat <- dat %>%
-  mutate(Department=recode(Department, `Good Goverannce Fund`="Good Governance Fund")) %>% # clear up miss spelling
-  mutate(Department=sub("\\s+$", "", Department)) %>% # clear up weird Jordan trailing space issue
-  #filter(Department!="IFID") %>% # get rid of IFID
-  #filter(Department!="United Nations and Commonwealth Dept") %>%
-  mutate_at(c("Department","Indicator","Year","Department_Code"), factor) %>%
-  mutate(Department= recode_factor(Department, !!!getPubNames(lookup)))
+# dat <- read_csv("../data/master_depts_TEST.csv")
 
 @
 
