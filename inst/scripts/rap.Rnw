@@ -1,10 +1,10 @@
 \documentclass{article}
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
 
-\usepackage[noae]{Sweave}
-
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% \usepackage[noae]{Sweave}
 
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{tgheros}
@@ -15,8 +15,7 @@
 
 \usepackage[svgnames]{xcolor}
 
-\usepackage{caption}
-\captionsetup[table]{skip=10pt}
+\usepackage[skip=10pt]{caption}
 
 \usepackage[colorlinks]{hyperref}
 \hypersetup{
@@ -38,14 +37,61 @@
 \usepackage{tabularx}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Begin Document %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%% R setup
+
+\begin{document}
+% \SweaveOpts{concordance=TRUE} % required if not using knitr
+
+
+%%%%%%%%%% Title %%%%%%%%
+
+\vspace*{3cm}
+{\noindent\Huge\textbf{DFID Results Estimates:} \\
+Sector Report\par}
+
+\vspace{12cm}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../figs/logo_results.pdf}
+\end{figure}
+
+\thispagestyle{empty}
+
+\newpage
+
+%%%%%%%%%% ToC %%%%%%%%
+
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+
+\clearpage
+\setcounter{page}{1}
+
+
+
+%%%%%%%%%% R setup %%%%%%%%%%
 % chunk options
 <<echo=FALSE>>=
-knitr::opts_chunk$set(echo=F,
-               message=F,
-               warnings=F)
+library(knitr)
+knitr::opts_chunk$set(
+  echo=F,
+  message=F,
+  warning=F,
+  fig.path = "../figs/",
+  cache = FALSE,
+  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+  )
 @
+
 
 % load packages
 <<>>=
@@ -58,20 +104,29 @@ library(govstyle)
 library(stringdist)
 library(scales)
 library(janitor)
+library(SDPResults)
+
 conflict_prefer('filter','dplyr','stats')
+
+# fileSetup("/PATH/TO/PROJECT/DIR/NAME") # only needs to be run once - change NAME
+# setwd("/PATH/TO/PROJECT/DIR/NAME/report") # all paths relative to report dir
 @
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Data %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 % load and tidy data
+% all data need be moved to or made accesible from data dir
 <<>>=
+# Load lookup table
 lookup <- read_csv(file = "../data/dept_lookup.csv")
 
 # Load fragile states
 frag <- read_csv(file = "../data/OECD_fragile_contexts_2018.csv")
 
 # Load data
-dat <- read_csv("../data/master_depts.csv")
+dat <- read_csv("../data/master_depts_TEST.csv")
 dat <- dat %>%
   mutate(Department=recode(Department, `Good Goverannce Fund`="Good Governance Fund")) %>% # clear up miss spelling
   mutate(Department=sub("\\s+$", "", Department)) %>% # clear up weird Jordan trailing space issue
@@ -79,54 +134,16 @@ dat <- dat %>%
   #filter(Department!="United Nations and Commonwealth Dept") %>%
   mutate_at(c("Department","Indicator","Year","Department_Code"), factor) %>%
   mutate(Department= recode_factor(Department, !!!getPubNames(lookup)))
-names(dat)
-levels(dat$Year)
+
 @
 
-
-
-
-% Start Document
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{document}
-\SweaveOpts{concordance=TRUE}
-
-%%%%%%%%%% Title %%%%%%%%
-
-\vspace*{3cm}
-{\noindent\Huge\textbf{DFID Results Estimates:} \\
-Sector Report\par}
-
-\vspace{12cm}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../figs/logo_dfid_v2.pdf}
-\end{figure}
-
-\thispagestyle{empty}
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newpage
-
-\tableofcontents
-\thispagestyle{empty}
-
-\newpage
-
-\clearpage
-\setcounter{page}{1}
 
 % INTRODUCTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-
-
-% INTRODUCTION
+% Sector Results
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sector Results}
@@ -135,13 +152,6 @@ Sector Report\par}
 % Education
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Education}
-
-
-% Humanitarian
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Humanitarian}
 
 
 % Nutrition
@@ -154,8 +164,6 @@ Sector Report\par}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{WASH}
-
-
 
 
 
