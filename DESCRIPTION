@@ -1,0 +1,28 @@
+Package: SDPResults
+Title: Package for crunching SDP Results data
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Charles",
+           family = "Baillie",
+           role = c("aut", "cre"),
+           email = "c-baillie@dfid.gov.uk",
+           comment = c())
+Description: Functions for reading and tidying results data and producing a sweave report.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Import: 
+  tidyverse,
+  magrittr,
+  dplyr,
+  zoo,
+  stringr,
+  govstyle,
+  lubridate,
+  janitor,
+  conflicted
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

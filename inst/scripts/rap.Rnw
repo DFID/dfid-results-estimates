@@ -1,0 +1,162 @@
+\documentclass{article}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+
+\usepackage[noae]{Sweave}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tgheros}
+
+\usepackage{amssymb}
+
+\usepackage[ampersand]{easylist}
+
+\usepackage[svgnames]{xcolor}
+
+\usepackage{caption}
+\captionsetup[table]{skip=10pt}
+
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+    linkcolor=cyan,
+    filecolor=magenta,
+    urlcolor=magenta
+}
+
+\usepackage[many]{tcolorbox}
+
+\usepackage{fancyhdr, graphicx}
+
+\usepackage{changepage}
+
+\usepackage{array}
+
+\usepackage{booktabs}
+
+\usepackage{tabularx}
+
+
+
+%%% R setup
+% chunk options
+<<echo=FALSE>>=
+knitr::opts_chunk$set(echo=F,
+               message=F,
+               warnings=F)
+@
+
+% load packages
+<<>>=
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(conflicted)
+library(magrittr)
+library(govstyle)
+library(stringdist)
+library(scales)
+library(janitor)
+conflict_prefer('filter','dplyr','stats')
+@
+
+
+
+% load and tidy data
+<<>>=
+lookup <- read_csv(file = "../data/dept_lookup.csv")
+
+# Load fragile states
+frag <- read_csv(file = "../data/OECD_fragile_contexts_2018.csv")
+
+# Load data
+dat <- read_csv("../data/master_depts.csv")
+dat <- dat %>%
+  mutate(Department=recode(Department, `Good Goverannce Fund`="Good Governance Fund")) %>% # clear up miss spelling
+  mutate(Department=sub("\\s+$", "", Department)) %>% # clear up weird Jordan trailing space issue
+  #filter(Department!="IFID") %>% # get rid of IFID
+  #filter(Department!="United Nations and Commonwealth Dept") %>%
+  mutate_at(c("Department","Indicator","Year","Department_Code"), factor) %>%
+  mutate(Department= recode_factor(Department, !!!getPubNames(lookup)))
+names(dat)
+levels(dat$Year)
+@
+
+
+
+
+% Start Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+%%%%%%%%%% Title %%%%%%%%
+
+\vspace*{3cm}
+{\noindent\Huge\textbf{DFID Results Estimates:} \\
+Sector Report\par}
+
+\vspace{12cm}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../figs/logo_dfid_v2.pdf}
+\end{figure}
+
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+
+\clearpage
+\setcounter{page}{1}
+
+% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+
+
+% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sector Results}
+
+
+% Education
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Education}
+
+
+% Humanitarian
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Humanitarian}
+
+
+% Nutrition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nutrition}
+
+
+% WASH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{WASH}
+
+
+
+
+
+\end{document}
