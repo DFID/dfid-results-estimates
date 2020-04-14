@@ -60,3 +60,42 @@ darken <- function(colour, factor=1.4){
   col
 }
 
+#' knit chapters
+#' @param file File name.
+#' @keywords internal
+#' @examples darken("#2E358B", factor=1.4)
+#' @export
+doKnit <- function(file){
+  # create full names of files
+  rnw <- sprintf("%s.Rnw", file)
+  tex <- sprintf("%s.tex", file)
+
+  # if the rnw file doesn't exist, just exit and do nothing
+  if(!file.exists(rnw)){
+    return(NULL)
+  }
+
+  ## create the tex file if necessary
+  # if the tex file doesn't exist, or it is older than the rnw file you have to create it
+  if(!file.exists(tex) || file.info(tex)$mtime < file.info(rnw)$mtime){
+    knit(input=rnw, output=tex)
+  } else {
+    # just return NULL
+    NULL
+  }
+}
+
+
+#' knit chapters
+#' @param file File name.
+#' @keywords internal
+#' @examples darken("#2E358B", factor=1.4)
+#' @export
+knitAll <- function(files)
+{
+  ## loop through and knit each chapter file if the tex file is older
+  for(a in files)
+  {
+    doKnit(file=a)
+  }
+}
