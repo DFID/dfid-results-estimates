@@ -12,6 +12,20 @@ getPubNames <- function(lookup){
   return(y)
 }
 
+#' Generalisation of Method for lookup table.
+#' @param lookup a lookup table.
+#' @param column1 values we have. Character (must be quoted).
+#' @param column2 values we want. Character (must be quoted).
+#' @keywords internal
+#' @examples getPubNames(lookup)
+#' @export
+getVal <- function(lookup, column1, column2){
+  y <- unlist(lookup[column1])
+  names(y) <- unlist(lookup[column2])
+  return(y)
+}
+
+
 
 #' Method for lookup table.
 #' @param lookup a lookup table.
