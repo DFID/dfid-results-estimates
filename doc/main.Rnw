@@ -1,0 +1,169 @@
+\documentclass{report}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+% \usepackage[noae]{Sweave}
+\setmainfont{GDS Transport Website}
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{tgheros}
+
+\usepackage{amssymb}
+
+\usepackage[ampersand]{easylist}
+
+\usepackage[svgnames]{xcolor}
+
+\usepackage[skip=10pt]{caption}
+
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+    linkcolor=cyan,
+    filecolor=magenta,
+    urlcolor=magenta
+}
+
+\usepackage[many]{tcolorbox}
+
+\usepackage{graphicx}
+
+\usepackage{changepage}
+
+\usepackage{array}
+
+\usepackage{booktabs}
+
+\usepackage{tabularx}
+
+\usepackage[firstpage, angle=0]{draftwatermark}
+\SetWatermarkLightness{1}
+
+\usepackage{lipsum}
+
+
+\usepackage[pagestyles]{titlesec}
+\usepackage{fancyhdr}
+%\titleformat{\chapter}[display]
+%  {\normalfont\bfseries}{}{0pt}{\Large}
+%\newpagestyle{mystyle}{
+%  \sethead[\thepage][][\chaptertitle]{\thesection~\sectiontitle}{}{\thepage}
+%}
+%\pagestyle{mystyle}
+
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+
+%usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhf[roh,leh]{\thepage}
+%\fancyhf[reh]{\nouppercase{\leftmark}}
+%\fancyhf[loh]{\nouppercase{\rightmark}}
+
+%\renewcommand{\chaptername}{}
+%\renewcommand{\thechapter}{}
+%\renewcommand{\thesection}{}
+
+
+% Start Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% \SweaveOpts{concordance=TRUE}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% R setup
+% chunk options
+<<echo=FALSE>>=
+library(knitr)
+knitr::opts_chunk$set(
+  echo=F,
+  message=F,
+  warning=F,
+  fig.path = "../figs/",
+  cache = FALSE,
+  fig.process = function(x) {
+                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+                      if (file.rename(x, x2)) x2 else x
+                      }
+  )
+@
+
+
+% load packages
+<<>>=
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(conflicted)
+library(magrittr)
+library(govstyle)
+library(scales)
+library(janitor)
+library(SDPResults)
+
+source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
+
+conflict_prefer('filter','dplyr','stats')
+
+# fileSetup("~/commission/results)
+# setwd("~/commission/publication_2020/report/")
+
+@
+
+
+
+% data
+<<>>=
+# Load lookup table
+lookup <- read_csv(file = "../data/dept_lookup.csv")
+
+# Load fragile states
+frag <- read_csv(file = "../data/oecd_fragile_contexts.csv")
+
+# Load data
+dat <- read_csv("../data/master_depts_TEST.csv")
+dat <- dat %>%
+  mutate(Department=recode(Department, `Good Goverannce Fund`="Good Governance Fund")) %>% # clear up miss spelling
+  mutate(Department=sub("\\s+$", "", Department)) %>% # clear up weird Jordan trailing space issue
+  #filter(Department!="IFID") %>% # get rid of IFID
+  #filter(Department!="United Nations and Commonwealth Dept") %>%
+  mutate(Department= recode_factor(Department, !!!getPubNames(lookup))) %>%
+  mutate(Fragility = recode_factor(Department, !!!getFragStates(lookup))) %>%
+  mutate(Region = recode_factor(Department, !!!getRegion(lookup))) %>%
+  mutate(Fragility = fct_explicit_na(Fragility, na_level = "Not Applicable")) %>%
+  mutate(Region = fct_explicit_na(Region, na_level = "Not Applicable")) %>%
+  mutate_at(c("Department","Indicator","Year","Department_Code"), factor) %>%
+  rename_at(vars("WaSH_Intervention"),tolower) %>%
+  clean_names()
+
+# check names are good
+# colnames(dat)
+
+# Indicators object
+indicators <- levels(dat$indicator)
+@
+
+% knit
+<<knitting,include=FALSE>>=
+
+# vector of chapters to be knitted
+sections <- c("titlepage",
+              "frontmatter",
+              "education"
+)
+
+knitAll(files=sprintf("%s/%s", sections, sections))
+@
+
+
+\include{titlepage/titlepage}
+\include{frontmatter/frontmatter}
+\include{education/education}
+
+\end{document}

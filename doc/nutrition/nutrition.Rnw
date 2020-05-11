@@ -1,0 +1,113 @@
+\chapter{Nutrition}
+
+% make sure numbers and header don't appear
+\thispagestyle{empty}
+
+<<>>=
+nut_table_raw <- dat %>% filter(indicator==levels(dat$indicator)[3] &
+                                 nutrition_intensity=="All" &
+                                 year=="2015/21" &
+                                 forecast_achieved=="Achieved") %>%
+    mutate(fragility = fct_recode(fragility, `Not Identified`="Not Applicable")) %>% 
+    mutate(region = fct_recode(region, `CMP`="Policy")) %>%
+    group_by(department, gender, fragility, region) %>%
+    summarise(results = sum(results)) %>%
+    pivot_wider(.,names_from = gender, values_from = results) %>%
+    rename(`Not Identified`=Unknown) %>%
+    mutate_at(vars(-c(department, fragility, region)),function(x)ifelse(x<=1,0,x)) %>%
+    adorn_totals("row")
+@
+
+
+
+<<nut_fragility_plot, include=f>>=
+nut_table_raw  %>%
+  filter(department!="Total") %>%
+  group_by(fragility) %>%
+  summarise(results=sum(Total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  
+  #plot
+  ggplot(., aes(x = fragility, y = perc)) +
+  geom_bar(stat = "identity", fill=gov_cols[5], color=darken(gov_cols[5]), size=1) +
+  govstyle::theme_gov() +
+  xlab("\nFragility (OECD States of Fragility)") +
+  ylab("Results (%)\n") +
+  labs(
+    title="Nutrition",
+    subtitle="Percentage of Results by Fragility Level\n\n",
+    caption = "\n* 'Not Identified' are results which could not be disaggregated to country level")+
+  theme(
+    axis.title.x = element_text(vjust=-1),
+    axis.title.y = element_text(hjust=1),
+    panel.grid.major.y = element_line(colour = "grey80"),
+    panel.grid.major.x = element_blank(),
+    plot.subtitle = element_text(hjust = 1, vjust=-2)
+    ) +
+  scale_y_continuous(breaks=seq(0, 50, by = 10))
+@
+
+
+
+<<nut_region_plot, include=f>>=
+nut_table_raw %>%
+  filter(department!="Total") %>%
+  group_by(region) %>%
+  summarise(results=sum(Total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0) %>% 
+  
+  #plot
+  ggplot(., aes(x = region, y = perc)) +
+  geom_bar(stat = "identity", fill=gov_cols[5], color=darken(gov_cols[5]), size=1) +
+  govstyle::theme_gov() +
+  xlab("\nRegion") +
+  ylab("Results (%)\n") +
+  labs(
+    title="Nutrition",
+    subtitle="Percentage of Results by Region\n\n",
+    caption = "\n* 'CMP' are Centrally Managed Programmes, which might operate across regions")+
+  theme(
+    axis.title.x = element_text(vjust=-1),
+    axis.title.y = element_text(hjust=1),
+    panel.grid.major.y = element_line(colour = "grey80"),
+    panel.grid.major.x = element_blank(),
+    plot.subtitle = element_text(hjust = 1, vjust=-2)
+    ) +
+  scale_y_continuous(breaks=seq(0, 50, by = 10))
+@
+
+<<nut_intensity_plot, include=f>>=
+dat %>% # need to use original data to group by intensity
+  filter(
+    indicator==levels(dat$indicator)[3] &
+    year=="2015/21" &
+    forecast_achieved=="Achieved") %>%
+  group_by(nutrition_intensity) %>%
+  summarise(results = sum(results)) %>%
+  add_row(nutrition_intensity="Not Identified", results = .$results[1]-sum(.$results[2:4])) %>%
+  slice(-1) %>%
+  mutate(nutrition_intensity=fct_relevel(nutrition_intensity, "High","Medium","Low","Not Identified"))  %>% 
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0) %>% 
+  
+  
+  #plot
+  ggplot(., aes(x = nutrition_intensity, y = perc)) +
+  geom_bar(stat = "identity", fill=gov_cols[5], color=darken(gov_cols[5]), size=1) +
+  govstyle::theme_gov() +
+  xlab("\nIntensity") +
+  ylab("Results (%)\n") +
+  labs(
+    title="Nutrition",
+    subtitle="Percentage of Results by Intensity\n\n",
+    caption = "\n* 'Not Identified' are results for which intensity data were not available")+
+  theme(
+    axis.title.x = element_text(vjust=-1),
+    axis.title.y = element_text(hjust=1),
+    panel.grid.major.y = element_line(colour = "grey80"),
+    panel.grid.major.x = element_blank(),
+    plot.subtitle = element_text(hjust = 1, vjust=-2)
+    ) +
+  scale_y_continuous(breaks=seq(0, 50, by = 10))
+@

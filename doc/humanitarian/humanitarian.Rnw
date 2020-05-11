@@ -1,0 +1,76 @@
+\chapter{Humanitarian}
+
+% make sure numbers and header don't appear
+\thispagestyle{empty}
+
+<<>>=
+human_table_raw <- dat %>% filter(indicator==levels(dat$indicator)[5] &
+                                      year=="2015/21" &
+                                      forecast_achieved=="Achieved") %>%
+  mutate(fragility = fct_recode(fragility, `Not Identified`="Not Applicable")) %>% 
+  mutate(region = fct_recode(region, `CMP`="Policy")) %>% 
+  group_by(department, gender, region, fragility) %>%
+  summarise(results = sum(results)) %>%
+  pivot_wider(.,names_from = gender, values_from = results) %>%
+  rename(`Not Identified`=Unknown) %>%
+  mutate_at(vars(-c(department,region,fragility)),function(x)ifelse(x<=1,0,x)) %>%
+  adorn_totals("row")
+@
+
+
+<<human_fragility_plot, include=f>>=
+human_table_raw  %>%
+  filter(department!="Total") %>%
+  group_by(fragility) %>%
+  summarise(results=sum(Total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  
+  #plot
+  ggplot(., aes(x = fragility, y = perc)) +
+  geom_bar(stat = "identity", fill=gov_cols[4], color=darken(gov_cols[4]), size=1) +
+  govstyle::theme_gov() +
+  xlab("\nFragility (OECD States of Fragility)") +
+  ylab("Results (%)\n") +
+  labs(
+    title="Humanitarian",
+    subtitle="Percentage of Results by Fragility Level\n\n",
+    caption = "\n* 'Not Identified' are results which could not be disaggregated to country level")+
+  theme(
+    axis.title.x = element_text(vjust=-1),
+    axis.title.y = element_text(hjust=1),
+    panel.grid.major.y = element_line(colour = "grey80"),
+    panel.grid.major.x = element_blank(),
+    plot.subtitle = element_text(hjust = 1, vjust=-2)
+    ) +
+  scale_y_continuous(breaks=seq(0, 50, by = 10))
+@
+
+
+
+<<human_region_plot, include=f>>=
+human_table_raw %>%
+  filter(department!="Total") %>%
+  group_by(region) %>%
+  summarise(results=sum(Total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0) %>% 
+  
+  #plot
+  ggplot(., aes(x = region, y = perc)) +
+  geom_bar(stat = "identity", fill=gov_cols[4], color=darken(gov_cols[4]), size=1) +
+  govstyle::theme_gov() +
+  xlab("\nRegion") +
+  ylab("Results (%)\n") +
+  labs(
+    title="Humanitarian",
+    subtitle="Percentage of Results by Region\n\n",
+    caption = "\n* 'CMP' are Centrally Managed Programmes, which might operate across regions")+
+  theme(
+    axis.title.x = element_text(vjust=-1),
+    axis.title.y = element_text(hjust=1),
+    panel.grid.major.y = element_line(colour = "grey80"),
+    panel.grid.major.x = element_blank(),
+    plot.subtitle = element_text(hjust = 1, vjust=-2)
+    ) +
+  scale_y_continuous(breaks=seq(0, 50, by = 10))
+@
