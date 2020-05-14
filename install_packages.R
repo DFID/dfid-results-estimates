@@ -1,8 +1,8 @@
-install.packages("packrat", repos = "https://cran.rstudio.com/")
-packrat::init(
-  infer.dependencies = FALSE,
-  enter = TRUE,
-  restart = FALSE)
+#install.packages("packrat", repos = "https://cran.rstudio.com/")
+#packrat::init(
+#  infer.dependencies = FALSE,
+#  enter = TRUE,
+#  restart = FALSE)
 
 ### Setup repositories ###
 
@@ -29,8 +29,7 @@ cran_packages <- c(
   "dplyr",
   "zoo",
   "stringr",
-  "ggplot2",
-  "gt"
+  "ggplot2"
 )
 
 install.packages(cran_packages)
