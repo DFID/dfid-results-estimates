@@ -1,4 +1,4 @@
-\documentclass{report}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[10pt]{report}\usepackage[]{graphicx}\usepackage[]{color}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -49,36 +49,51 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
-\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+\usepackage[a4paper, margin=1in]{geometry}
 
-%\usepackage[utf8]{inputenc}
+%%%% FONTS %%%%
+% Use with pdflatex since system fonts not available:
 %\usepackage[T1]{fontenc}
-\usepackage{fontspec}
-% \usepackage[noae]{Sweave}
-\setmainfont{GDS Transport Website}
+%\usepackage[utf8]{inputenc}
+
+% For setting tgheros and sans as default:
+%\renewcommand{\encodingdefault}{T1}
+%\renewcommand{\rmdefault}{transport}
 %\renewcommand{\familydefault}{\sfdefault}
 %\usepackage{tgheros}
+
+% Can use system font with xelatex:
+\usepackage{fontspec}
+% GDS font doesn't have textit so can fake it like so:
+\setmainfont[SlantedFont=*,SlantedFeatures={FakeSlant=0.2}]{GDS Transport Website}
+		% this is not the latex way though....
+
+%%%%%%%%%%%%%%%%
 
 \usepackage{amssymb}
 
 \usepackage[ampersand]{easylist}
 
-\usepackage[svgnames]{xcolor}
+%\usepackage[many]{tcolorbox}
 
-\usepackage[skip=10pt]{caption}
+\usepackage[table, svgnames]{xcolor}
 
-\usepackage[colorlinks]{hyperref}
+\usepackage{caption}
+\captionsetup[table]{skip=10pt}
+
+\usepackage{hyperref}
 \hypersetup{
-    linkcolor=cyan,
+    colorlinks=true,
+    linkcolor=RoyalBlue,
     filecolor=magenta,
-    urlcolor=magenta
+    urlcolor=cyan
 }
-
-\usepackage[many]{tcolorbox}
 
 \usepackage{graphicx}
 
 \usepackage{changepage}
+
+\usepackage[hang,flushmargin]{footmisc}
 
 \usepackage{array}
 
@@ -86,37 +101,36 @@
 
 \usepackage{tabularx}
 
-\usepackage[firstpage, angle=0]{draftwatermark}
-\SetWatermarkLightness{1}
+\usepackage{longtable}
 
-\usepackage{lipsum} 
+\usepackage{multirow}
 
+\usepackage{subfig}
+
+%\usepackage{fancyhdr}
+%\fancyhead[L]{}
+%\fancyhead[R]{ \includegraphics[width=0.2\textwidth]{./figs/logo} }
+%\renewcommand{\headrulewidth}{0pt}
+
+%\title{\textbf{Results Commission 2020:} Guidance\vspace{-30em}}
+%\date{}
+%\author{}
 
 \usepackage[pagestyles]{titlesec}
-\usepackage{fancyhdr}
-%\titleformat{\chapter}[display]
-%  {\normalfont\bfseries}{}{0pt}{\Large}
-%\newpagestyle{mystyle}{
-%  \sethead[\thepage][][\chaptertitle]{\thesection~\sectiontitle}{}{\thepage}
-%}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+%\newpagestyle{mystyle}
+%{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
 %\pagestyle{mystyle}
 
-\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
-\newpagestyle{mystyle}
-{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
-\pagestyle{mystyle}
+\usepackage{draftwatermark} %comment out to remove watermark
 
-%usepackage{fancyhdr}
-%\pagestyle{fancy}
-%\fancyhf{}
-%\fancyhf[roh,leh]{\thepage}
-%\fancyhf[reh]{\nouppercase{\leftmark}}
-%\fancyhf[loh]{\nouppercase{\rightmark}}
+% paragraph set up
+%\usepackage{indentfirst} % for indenting first para
+\usepackage[parfill]{parskip} % for new line no indent
 
-%\renewcommand{\chaptername}{}
-%\renewcommand{\thechapter}{}
-%\renewcommand{\thesection}{}
+\counterwithout{footnote}{chapter} % for continuous footnotes
 
+\setcounter{tocdepth}{0}
 
 % Start Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,20 +146,40 @@
 
 
 
-% load packages
-
-
-
-
-% data
-
-
 % knit
 
 
 
 \include{titlepage/titlepage}
 \include{frontmatter/frontmatter}
+\include{intro/intro}
+\include{a2f/a2f}
+\include{cdc/cdc}
+\include{climate/climate}
+\include{devcap/devcap}
 \include{education/education}
+\include{energy/energy}
+\include{family/family}
+\include{fcas/fcas}
+\include{humanitarian/humanitarian}
+\include{immunisation/immunisation}
+\include{tax/tax}
+\include{multi/multi}
+\include{jobs/jobs}
+\include{malaria_spend/malaria_spend}
+\include{ntd_spend/ntd_spend}
+\include{ntd/ntd}
+\include{nutrition/nutrition}
+\include{oda/oda}
+\include{pqi/pqi}
+\include{private/private}
+\include{polio/polio}
+\include{pfm/pfm}
+\include{wash/wash}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
 
 \end{document}

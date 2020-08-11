@@ -1,0 +1,25 @@
+﻿tab,title,subtitle,type
+Table_1,Access to Finance,Number of people with access to financial services as a result of DFID support.,Type: output
+Table_2,CDC Development Impact Grid Score,A rolling weighted average (by investment £) of the Development Impact Grid scores across all of CDC’s investments that have reached financial close during the preceding three calendar years.,Type: input
+Table_3,Climate Finance,Spend on building the resilience of poor people to the impacts of climate change and investing in low carbon development to avoid or reduce harmful greenhouse gases.,Type: input
+Table_4,Development Capital Investment Levels,Levels of development capital investment—cumulative GBP from 2015-16 onwards.,Type: input
+Table_5,Education,Number of children supported to gain a decent education.,Type: output
+Table_6,Energy,Level of installed capacity (Megawatts) of clean energy generated as a resultof International Climate Finance (ICF) support.,Type: output
+Table_7,Family Planning: Total Users,Number of women and girls using modern methods of family planning through DFID support.,Type: output
+Table_8,Family Planning: Additional Users,Number of additional women using modern methods of family planning through DFID support.,Type: output
+Table_9,Fragile and Conflicted Affected States,Percentage of DFID’s budget spent on fragile states and conflicted affected states.,Type: input
+Table_10,Humanitarian,"Number of people reached with humanitarian assistance (food aid, cash and voucher transfers) through DFID support.",Type: output
+Table_11,Immunisations,Number of lives saved by immunising children against killer diseases.,Type: outcome
+Table_12,Improving Tax Systems,,Type: input
+Table_13,Investment in the Multilateral System,UK investment in the multilateral system (core multilateral ODA) compared with other Development Assistance Committee donors.,Type: input
+Table_14,Jobs and Income,Number of people supported to have raised incomes and better jobs or livelihoods.,Type: output
+Table_15,Malaria: Spend,UK Official Development Assistance (ODA) spent on activities that contribute to prevention or treatment of malaria.,Type: input
+Table_16,Neglected Tropical Diseases: Spend,UK Official Development Assistance (ODA) spent directly on Neglected Tropical Diseases (NTD) implementation programmes or through contributions to organisations with NTD implementation activities.,Type: input
+Table_17,Neglected Tropical Diseases,Number of people receiving treatment or care for one or more neglected tropical diseases.,Type: output
+Table_18,Nutrition,"Number of children under 5, women (of childbearing age) and adolescent girls reached by DFID through nutrition-related interventions.",Type: output
+Table_19,Official Development Assistance (ODA),An overview of official UK spend on international development and the UK target to spend 0.7% of gross national income per calendar year.,Type: input
+Table_20,Portfolio Quality Index,,Type: input
+Table_21,Private Sector Investment,,Type: input
+Table_22,Progress Towards Polio Eradication,Number of global wild poliovirus cases.,Type: output
+Table_23,Public Financial Management,Number of countries supported by DFID to manage their public finances (including natural resources and extractives) more transparently.,Type: output
+Table_24,"Water, Sanitation and Hygiene (WASH)",Number of people with sustainable access to clean water and/or sanitation through DFID support.,Type: output

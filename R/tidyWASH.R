@@ -93,5 +93,5 @@ formatWashDept <- function(template){
 
 }
 
-View(z)
+
 

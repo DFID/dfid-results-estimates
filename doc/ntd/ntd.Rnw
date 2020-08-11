@@ -1,0 +1,98 @@
+\chapter{Neglected Tropical Diseases}
+
+\section*{Number of people receiving treatment or care for one or more neglected tropical diseases.}
+
+\bigskip
+\bigskip
+
+% make sure numbers and header don't appear
+\thispagestyle{empty}
+
+
+\section{Results}
+
+From 2017-2019 DFID reached \textbf{166.1 million} people through our Neglected Tropical Diseases (NTD) programmes.  %
+
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Number of Reached by Intervention Type}\label{tab:ntd_result}
+	\begin{tabular}{lr}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Intervention Type}} & \multicolumn{1}{c}{\textbf{Number of People Reached}}\footnotemark \\ \hline
+
+		\rule{0pt}{10pt}Preventative chemotherapy\footnotemark & 159,700,000 \\
+
+		Other preventative measures\footnotemark & 7,500,000 \\
+
+		Morbidity management\footnotemark & 100,000 \\
+
+		Curative treatment\footnotemark & 10,000 \\		\bottomrule
+
+	\end{tabular}
+\end{table}
+
+\footnotetext[33]{The total figure has been adjusted to avoid double counting individuals who may have received more than one intervention type therefore the sum of the intervention types is greater than the total of the components.\label{ntd_note41}}
+\footnotetext[34]{Preventive chemotherapy is the treatment of entire populations at risk of infection (regardless of whether or not they are infected) to treat infection and prevent ongoing transmission.\label{ntd_note42}}
+\footnotetext[35]{Other preventive measures can be used to prevent the spread of NTDs, for example water filters are used to prevent infection by Guinea Worm due to drinking contaminated water.\label{ntd_note43}}
+\footnotetext[36]{Morbidity management is the provision of surgery and self-care training to address the disabling consequences of infection with lymphatic filariasis, or surgery to prevent blindness due to trachoma.\label{ntd_note44}}
+\footnotetext[37]{Curative treatment is where individuals receive a diagnosis and, if infected, treatment to cure the disease.\label{ntd_note45}}
+
+In 2017-2019 out of the total people reached by DFID's NTD interventions, 95.4\% received preventative chemotherapy\footref{ntd_note42}, 0.06\% morbidity management\footref{ntd_note44}, 0.01\%\footref{ntd_note45} curative treatment, and 4.5\% other types of preventative measure\footref{ntd_note43}. %
+
+
+\section{Context}
+
+Neglected Tropical Diseases (NTDs) are a group of infectious diseases that affect the world's poorest and most marginalised people. %
+NTDs can cause severe pain, long-term disability, chronic illness, irreversible blindness, disfiguration and death. %
+Globally over one billion people are affected by these diseases and they cost developing country economies billions of dollars every year\footnote{WHO, Global Burden of Disease (GBD), 2016.}. %
+Some NTDs can inhibit children from learning and developing to their full potential.  NTDs also prevent adults from working to support their families economically. %
+Reaching people with preventive or curative interventions for NTDs can avoid long-term health complications or the development of disabilities. %
+Large scale intervention can also reduce overall transmission of NTDs, which over time will enable their effective control or elimination\footnote{Control is the reduction of disease incidence, prevalence, morbidity, and/or mortality to a locally acceptable level. Elimination as a public health problem is defined by achievement of measurable targets set by WHO in relation to a specific disease. When reached, continued actions are required to maintain the target.}. \\%
+
+Sustainable Development Goal 3, "Ensure healthy lives and promote well-being for all at all ages", covers a range of health issues. %
+Of the 13 targets, one (target 3.3) covers NTDs specifically: "By 2030, end the epidemics of AIDS, TB, malaria and NTDs and combat hepatitis, water-borne diseases and other communicable diseases". %
+Progress on NTDs is tracked by the SDG indicator "Number of people requiring interventions against neglected tropical diseases". \\%
+
+
+In April 2017 the UK government committed to invest a total of \pounds 360 million (2017/18-2021/22) in implementation programmes to protect over 200m people from NTDs. %
+Aims of the investment include:
+\begin{itemize}
+\item Wiping out (eradicating\footnote{Eradication is the permanent reduction to zero of the worldwide incidence of infection. Intervention actions are no longer needed.}) Guinea worm, which is transmitted through dirty water
+\item Preventing tens of thousands of cases of disability caused by lymphatic filariasis, a mosquito-transmitted disease which can cause severe swelling of the lower limbs
+\item Preventing up to 400,000 cases of blindness caused by trachoma, the leading cause of infectious blindness in the world
+\end{itemize}
+
+DFID's NTD programmes focus on lymphatic filariasis, trachoma, schistosomiasis, visceral leishmaniasis, onchocerciasis and guinea worm. %
+The primary interventions used for these NTDs fall under the following categories :
+\begin{itemize}
+\item Preventive chemotherapy: Treatment of entire populations at risk with drugs to treat infection and prevent ongoing transmission.
+\item Morbidity management: Surgery and self-care training to address swelling of limbs and genitals (for lymphatic filariasis), or surgery to prevent blindness (trachoma).
+\item Curative treatments: Diagnosis and treatment of those found to be infected.
+\item Other preventive measures: Other measures used to prevent transmission of infection, for example the use of cloth filters for water (Guinea Worm).
+\end{itemize}
+
+These interventions are also supported by a range of other activities, such as surveys to assess the geographical distribution of disease, disease surveillance, behaviour change communication, monitoring and evaluation, improved access to safe water, sanitation and hygiene, and vector-control. %
+Table \ref{tab:ntd_impact} provides a summary of the health impacts of each of DFID's six focal NTDs, and the primary interventions applied. %
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Health Impacts of DFID's Focal NTDs and Primary Intervention Applied.}\label{tab:ntd_impact}
+	\begin{tabular}{p{0.15\linewidth}p{0.5\linewidth}p{0.25\linewidth}}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Disease}} & \multicolumn{1}{c}{\textbf{Health Impact}} & \multicolumn{1}{c}{\textbf{Intervention}} \\ \hline
+		\rule{0pt}{10pt}Lymphatic filariasis (elephantiasis) &	Abnormal enlargement of feet, legs and genitals, resulting in pain, disability and social stigma.	& Preventive chemotherapy, Morbidity management \\
+		Trachoma &Eye pain and discomfort, scarring of the eyelid and cornea, causing eventual irreversible blindness. & Preventive chemotherapy, Morbidity management \\
+		Schistosomiasis (bilharzia)	& Can cause liver damage, kidney failure or bladder cancer. &	Preventive chemotherapy \\
+		Visceral leishmaniasis & Fever, weight loss, anaemia, and swelling of internal organs. Untreated cases usually result in death. &	Curative treatment \\
+		Onchocerciasis (river blindness) & Severe itching, disfiguring skin conditions and irreversible blindness. &	Preventive chemotherapy \\
+		Guinea worm & Severe pain over several weeks while worm exits leg or foot.   & Other preventive measures, Curative treatment \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+\newpage

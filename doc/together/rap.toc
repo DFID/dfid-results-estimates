@@ -1,6 +1,0 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Sector Results}{1}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Education}{1}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Humanitarian}{1}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Nutrition}{1}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}WASH}{1}{subsection.2.4}%

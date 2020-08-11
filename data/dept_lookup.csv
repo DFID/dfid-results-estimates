@@ -1,57 +1,58 @@
-dept_from_file_name,region,dept_publication_name,dept_from_dataset_name,iso3c,country,fragility
-Afghanistan,Asia,Afghanistan,DFID Afghanistan,AFG,Afghanistan,Extremely Fragile
-Africa Regional,Africa,Africa Regional,"Africa Regional Department, DFID Southern Africa",,,
-Asia Regional,Asia,Asia Regional,Asia Regional Team,,,
-Bangladesh,Asia,Bangladesh,DFID Bangladesh,BGD,Bangladesh,Fragile
-Burma,Asia,Burma,DFID Burma,MMR,Myanmar,Fragile
-Caribbean,Other,Caribbean,DFID Caribbean,,,
-CED,Policy,Climate and Environment,Climate and Environment,,,
-Central Asia,Asia,Central Asia,DFID Central Asia,,,
-CHASE,Policy,"Conflict, Humanitarian and Security Department","Conflict, Humanitarian and Security Department",,,
-"Children, Youth and Education",Policy,"Children, Youth and Education","Children, Youth and Education",,,
-China,Asia,China,DFID China,CHN,China,Not Fragile
-DRC,Africa,DRC,DFID DRC,COD,Democratic Republic of the Congo,Extremely Fragile
-Ethiopia,Africa,Ethiopia,DFID Ethiopia,ETH,Ethiopia,Extremely Fragile
-Europe department,Policy,Europe,Europe Department,,,
-GFD,Policy,Global Funds,Global Funds Department,,,
-GGF,Europe,Good Governance Fund,Good Governance Fund,,,
-Ghana,Africa,Ghana,DFID Ghana,GHA,,Not Fragile
-GOSAC,Policy,"Governance, Open Societies and Anti-Corruption",Governance Open Societies and Anit-Corruption,,,
-GRD,Policy,Growth and Resilience,Growth and Resilience Dept,,,
-HDG,Policy,Human Development Department,Human Development Group,,,
-,Policy,International Financial Institutions Department,IFID,,,
-India,Asia,India,DFID India,IND,India,Not Fragile
-Iraq team,Middle East,Iraq,Iraq Team,IRQ,Iraq,Extremely Fragile
-ISD,Policy,Inclusive Societies,Inclusive Societies Department,,,
-Joint Sahel Department,Africa,Joint Sahel,Joint Sahel Department,,,
-Jordan,Middle East,Jordan,Jordan,JOR,Jordan,Not Fragile
-Kenya,Africa,Kenya,DFID Kenya,KEN,Kenya,Fragile
-Lebanon,Middle East,Lebanon,Lebanon,LBN,Lebanon,Not Fragile
-Liberia,Africa,Liberia,DFID Sierra Leone and Liberia - Liberia,LBR,Liberia,Fragile
-Malawi,Africa,Malawi,DFID Malawi,MWI,Malawi,Fragile
-MENAD,Africa,Middle East and North Africa,MENAD Regional,,,
-Migration,Policy,Migration,Migration,,,
-Mozambique,Africa,Mozambique,DFID Mozambique,MOZ,Mozambique,Fragile
-Nepal,Asia,Nepal,DFID Nepal,NPL,Nepal,Fragile
-Nigeria,Africa,Nigeria,DFID Nigeria,NGA,Nigeria,Fragile
-OPTs,Middle East,Occupied Palestinian Territories,DFID Jerusalem and Palestinian Programme,PSE,"Palestine, State of",Fragile
-OTD,Other,Overseas Territories,Overseas Territories Department,,,
-Pakistan,Asia,Pakistan,DFID Pakistan,PAK,Pakistan,Fragile
-PRD,Policy,Policy and Research,Policy and Research Department,,,
-PSD,Policy,Private Sector,Private Sector Department,,,
-RED,Policy,Research and Evidence,Research and Evidence,,,
-Rwanda,Africa,Rwanda,DFID Rwanda,RWA,Rwanda,Fragile
-Sierra Leone,Africa,Sierra Leone,DFID Sierra Leone and Liberia - Sierra Leone,SLE,Sierra Leone,Fragile
-Somalia,Africa,Somalia,DFID Somalia,SOM,Somalia,Extremely Fragile
-South Sudan,Africa,South Sudan,DFID South Sudan,SSD,South Sudan,Extremely Fragile
-Sudan,Africa,Sudan,DFID Sudan,SDN,Sudan,Extremely Fragile
-Syria,Middle East,Syria,DFID Syria,SYR,Syrian Arab Republic,Extremely Fragile
-Tanzania,Africa,Tanzania,DFID Tanzania,TZA,Tanzania,Fragile
-TFD,Policy,Trade for Development,Trade for Development,,,
-Turkey,Europe,Turkey,DFID Syria - Turkey,TUR,Turkey,Not Fragile
-Uganda,Africa,Uganda,DFID Uganda,UGA,Uganda,Fragile
-,Policy,United Nations and International,United Nations and Commonwealth Dept,,,
-Ukraine,Europe,Ukraine,DFID Ukraine,UKR,Ukraine,Not Fragile
-Yemen,Middle East,Yemen,DFID Yemen,YEM,Yemen,Extremely Fragile
-Zambia,Africa,Zambia,DFID Zambia,ZMB,Zambia,Fragile
-Zimbabwe,Africa,Zimbabwe,DFID Zimbabwe,ZWE,Zimbabwe,Fragile
+dept_from_file_name,region_wash,region_fp,region,dept_publication_name,dept_from_dataset_name,iso3c,country,fragility
+Afghanistan,Asia,Asia,Asia,Afghanistan,Afghanistan,AFG,Afghanistan,Extremely Fragile
+Africa Regional,CMP,CMP,Africa,Africa Regional,"Africa Regional Department, Southern Africa",,,
+Asia Regional,Asia,CMP,Asia,Asia Regional,Asia Regional Team,,,
+Bangladesh,Asia,Asia,Asia,Bangladesh,Bangladesh,BGD,Bangladesh,Fragile
+Burma,Asia,Asia,Asia,Burma,Burma,MMR,Myanmar,Fragile
+Caribbean,Other,Other,Other,Caribbean,Caribbean,,,
+CED,Policy,Policy,Policy,Climate and Environment,Climate and Environment,,,
+Central Asia,Asia,Asia,Asia,Central Asia,Central Asia,,,
+CHASE,Policy,Policy,Policy,"Conflict, Humanitarian and Security Department","Conflict, Humanitarian and Security Department",,,
+"Children, Youth and Education",Policy,Policy,Policy,"Children, Youth and Education","Children, Youth and Education",,,
+China,Asia,Asia,Asia,China,China,CHN,China,Not Fragile
+DRC,Africa,Africa,Africa,DRC,DRC,COD,Democratic Republic of the Congo,Extremely Fragile
+Ethiopia,Africa,Africa,Africa,Ethiopia,Ethiopia,ETH,Ethiopia,Extremely Fragile
+Europe department,Policy,Policy,Policy,Europe,Europe Department,,,
+GFD,Policy,Policy,Policy,Global Funds,Global Funds Department,,,
+GGF,Policy,Policy,Policy,Good Governance Fund,Good Governance Fund,,,
+Ghana,Africa,Africa,Africa,Ghana,Ghana,GHA,,Not Fragile
+GOSAC,Policy,Policy,Policy,"Governance, Open Societies and Anti-Corruption",Governance Open Societies and Anit-Corruption,,,
+GRD,Policy,Policy,Policy,Growth and Resilience,Growth and Resilience Dept,,,
+HDG,Policy,Policy,Policy,Human Development Department,Human Development Group,,,
+,Policy,Policy,Policy,International Financial Institutions Department,IFID,,,
+India,Asia,Asia,Asia,India,India,IND,India,Not Fragile
+Iraq team,Middle East,Middle East,Middle East,Iraq,Iraq Team,IRQ,Iraq,Extremely Fragile
+ISD,Policy,Policy,Policy,Inclusive Societies,Inclusive Societies Department,,,
+Joint Sahel Department,Africa,Africa,Africa,Joint Sahel,Joint Sahel Department,,,
+Jordan,Middle East,Middle East,Middle East,Jordan,Jordan,JOR,Jordan,Not Fragile
+Kenya,Africa,Africa,Africa,Kenya,Kenya,KEN,Kenya,Fragile
+Lebanon,Middle East,Middle East,Middle East,Lebanon,Lebanon,LBN,Lebanon,Not Fragile
+Liberia,Africa,Africa,Africa,Liberia,Sierra Leone and Liberia - Liberia,LBR,Liberia,Fragile
+Malawi,Africa,Africa,Africa,Malawi,Malawi,MWI,Malawi,Fragile
+MENAD,Africa,Africa,Africa,Middle East and North Africa,MENAD Regional,,,
+Migration,Policy,Policy,Policy,Migration,Migration Dept,,,
+Mozambique,Africa,Africa,Africa,Mozambique,Mozambique,MOZ,Mozambique,Fragile
+Nepal,Asia,Asia,Asia,Nepal,Nepal,NPL,Nepal,Fragile
+Nigeria,Africa,Africa,Africa,Nigeria,Nigeria,NGA,Nigeria,Fragile
+OPTs,Middle East,Middle East,Middle East,Occupied Palestinian Territories,Jerusalem and Palestinian Programme,PSE,"Palestine, State of",Fragile
+OTD,Other,Other,Other,Overseas Territories,Overseas Territories Department,,,
+Pakistan,Asia,Asia,Asia,Pakistan,Pakistan,PAK,Pakistan,Fragile
+PRD,Policy,Policy,Policy,Policy and Research,Policy and Research Department,,,
+PSD,Policy,Policy,Policy,Private Sector,Private Sector Department,,,
+RED,Policy,Policy,Policy,Research and Evidence,Research and Evidence,,,
+Rwanda,Africa,Africa,Africa,Rwanda,Rwanda,RWA,Rwanda,Fragile
+Sierra Leone,Africa,Africa,Africa,Sierra Leone,Sierra Leone and Liberia - Sierra Leone,SLE,Sierra Leone,Fragile
+Somalia,Africa,Africa,Africa,Somalia,Somalia,SOM,Somalia,Extremely Fragile
+South Sudan,Africa,Africa,Africa,South Sudan,South Sudan,SSD,South Sudan,Extremely Fragile
+Sudan,Africa,Africa,Africa,Sudan,Sudan,SDN,Sudan,Extremely Fragile
+Syria,Middle East,Middle East,Middle East,Syria,Syria,SYR,Syrian Arab Republic,Extremely Fragile
+Tanzania,Africa,Africa,Africa,Tanzania,Tanzania,TZA,Tanzania,Fragile
+TFD,Policy,Policy,Policy,Trade for Development,Trade for Development,,,
+Turkey,Europe,Europe,Europe,Turkey,Syria - Turkey,TUR,Turkey,Not Fragile
+Uganda,Africa,Africa,Africa,Uganda,Uganda,UGA,Uganda,Fragile
+,Policy,Policy,Policy,United Nations and International,United Nations and Commonwealth Dept,,,
+Ukraine,Europe,Europe,Europe,Ukraine,Ukraine,UKR,Ukraine,Not Fragile
+Yemen,Middle East,Middle East,Middle East,Yemen,Yemen,YEM,Yemen,Extremely Fragile
+Zambia,Africa,Africa,Africa,Zambia,Zambia,ZMB,Zambia,Fragile
+Zimbabwe,Africa,Africa,Africa,Zimbabwe,Zimbabwe,ZWE,Zimbabwe,Fragile
+Multilateral,Multilateral,Multilateral,Multilateral,Multilateral,Multilateral,,,

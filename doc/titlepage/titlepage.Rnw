@@ -1,18 +1,28 @@
 % title page
 
 
-\SetWatermarkText{\includegraphics{../figs/results_cover_02.pdf}}
+%\SetWatermarkText{\includegraphics{../figs/cover.pdf}}
 
 \vspace*{3cm}
-{\noindent\Huge\textbf{DFID Results Estimates:} \\
+{\noindent\Huge\textbf{DFID Results Estimates 2020:} \\
 Sector Report\par}
 
 \vspace{14cm}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.25\textwidth]{../figs/logo_results.pdf}
-\end{figure}
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=0.3\textwidth]{../figs/dfid.jpg}
+%    \quad
+%    \vspace{cm}
+%    \includegraphics[width=0.20\textwidth]{../figs/ukaid.png}
+%\end{figure}
+
+\begin{minipage}{6in}
+  \centering
+  \raisebox{-0.5\height}{\includegraphics[width=0.3\textwidth]{../images/dfid.jpg}}
+  \hspace*{.2in}
+  \raisebox{-0.5\height}{\includegraphics[width=0.20\textwidth]{../images/ukaid.png}}
+\end{minipage}
 
 
 \thispagestyle{empty}
