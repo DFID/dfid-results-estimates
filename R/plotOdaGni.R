@@ -15,7 +15,7 @@ plotOdaGni <- function(data){
     ylab("Total ODA (GBP Million)") +
     labs(
       title="UK Official Development Assistance (ODA)",
-      subtitle = "Total ODA (A) and ODA:GNI percentage (B) between 1970 and 2018 \n\n",
+      subtitle = "Total ODA (A) and ODA:GNI percentage (B) between 1970 and 2019 \n\n",
       caption = "\n* 2019 is shown in darker shade to indicate that it is a provisional figure"
     ) +
     theme(

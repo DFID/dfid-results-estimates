@@ -94,7 +94,7 @@
 %%% R setup
 % chunk options
 <<echo=FALSE>>=
-# library(knitr)
+library(knitr)
 # knitr::opts_chunk$set(
 #   echo=F,
 #   message=F,
@@ -107,7 +107,7 @@
   #                    }
 #  )
 
-#source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
+source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
 @
 
 
@@ -117,7 +117,7 @@
 # vector of chapters to be knitted
 # UNCOMMENT and move main.Rnw to .. if knitting separately to the pipeline
 
-# sections <- c("titlepage/titlepage",
+ sections <- c(#"titlepage/titlepage",
 #               "frontmatter/frontmatter",
 #               "intro/intro",
 #               "a2f/a2f",
@@ -125,7 +125,7 @@
 #               "climate/climate",
 #               "devcap/devcap",
 #               "education/education",
-#               "energy/energy",
+               "energy/energy"
 #               "ntd/ntd",
 #               "family/family",
 #               "fcas/fcas",
@@ -144,39 +144,38 @@
 #               "polio/polio",
 #               "pfm/pfm",
 #               "wash/wash"
-# )
+ )
 #
-# knitAll(files=sections)
+ knitAll(files=sections)
 
 @
 
 
-\include{doc/titlepage/titlepage}
-\include{doc/frontmatter/frontmatter}
-\include{doc/intro/intro}
-\include{doc/a2f/a2f}
-\include{doc/cdc/cdc}
-\include{doc/climate/climate}
-\include{doc/devcap/devcap}
-\include{doc/education/education}
-\include{doc/energy/energy}
-\include{doc/family/family}
-\include{doc/fcas/fcas}
-\include{doc/humanitarian/humanitarian}
-\include{doc/immunisation/immunisation}
-\include{doc/tax/tax}
-\include{doc/multi/multi}
-\include{doc/jobs/jobs}
-\include{doc/malaria_spend/malaria_spend}
-\include{doc/ntd_spend/ntd_spend}
-\include{doc/ntd/ntd}
-\include{doc/nutrition/nutrition}
-\include{doc/oda/oda}
-\include{doc/pqi/pqi}
-\include{doc/private/private}
-\include{doc/polio/polio}
-\include{doc/pfm/pfm}
-\include{doc/wash/wash}
+%\include{titlepage/titlepage}
+%\include{frontmatter/frontmatter}
+%\include{intro/intro}
+%\include{a2f/a2f}
+%\include{cdc/cdc}
+%\include{climate/climate}
+%\include{devcap/devcap}
+%\include{education/education}
+\include{energy/energy}
+%\include{family/family}
+%\include{fcas/fcas}
+%\include{humanitarian/humanitarian}
+%\include{immunisation/immunisation}
+%\include{tax/tax}
+%\include{multi/multi}
+%\include{jobs/jobs}
+%\include{malaria_spend/malaria_spend}
+%\include{ntd/ntd}
+%\include{nutrition/nutrition}
+%\include{oda/oda}
+%\include{pqi/pqi}
+%\include{private/private}
+%\include{polio/polio}
+%\include{pfm/pfm}
+%\include{wash/wash}
 
 \newpage
 \thispagestyle{empty}

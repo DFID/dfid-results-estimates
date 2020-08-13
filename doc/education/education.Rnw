@@ -20,8 +20,8 @@ All DFID education programmes include a focus on quality of education, so all ch
 \end{figure}
 
 From 2015 to 2020, the largest number of children supported by DFID education programmes were in Africa, with 5.6 million children supported (including 1.2 million in Ethiopia). %
-DFID supported 5.6 million children in Asia (including 1.8 million in Bangladesh, and 2.1 million in Pakistan), and 0.8 million children in the Middle East. %
-A further 4.5 million children were supported via centrally managed programmes and multilateral organisations. %
+DFID supported 5.3 million children in Asia (including 1.8 million in Bangladesh, and 2.1 million in Pakistan), and 0.8 million children in the Middle East. %
+A further 4.6 million children were supported via centrally managed programmes and multilateral organisations. %
 
 \begin{figure}[htbp]
 	\centering

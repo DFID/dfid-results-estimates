@@ -3,19 +3,13 @@ the_plan <-
 
 #### load data ----
 
-## template path
-template_path = "C:/Users/c-baillie/DFID/Results Teamsite - Documents",
-## remote: from indicator tabs
-#education_raw = readEducation(template_path),
-#family_raw = readFamily(template_path),
-#humanitarian_raw = readHumanitarian(template_path),
-#nutrition_raw = readNutrition(template_path),
-#pfm_raw = readPFM(template_path),
-#a2f_raw = readA2F(template_path),
-## remote: from dept tabs
-dept_raw = readDeptData(template_path),
+## remote dept data from dept data tab in each template
+#template_path = "C:/Users/c-baillie/DFID/Results Teamsite - Documents",
+#dept_raw = readDeptData(template_path),
+## local dept data already concatenated
+dept_raw = read_csv("data/dept_raw.csv"),
 
-## local: awkward ones
+## local data (other)
 a2f_raw = read_csv("data/a2f.csv") %>%
           select(Department, `Project Title`, Female, Male, Total) %>%
           group_by(Department) %>%
@@ -63,23 +57,10 @@ nutrition_cmp = read_csv("data/nutrition_cmp_discount.csv") %>% clean_names(.),
 # accessory stuff
 tables_titles = read_csv("data/table_titles.csv"),
 lookup = read_csv("data/dept_lookup.csv"),
-#my_pal = c("#f94144","#f3722c","#f8961e","#f9c74f","#90be6d","#43aa8b","#577590", "#264653"),
 
 
 
-#### format data ----
-
-## use these is extracting data from indicator tabs
-#education_tidy <- tidyEducation(education_raw),
-#family_tidy <- tidyFamily(family_raw),
-#humanitarian_tidy <- tidyHumanitarian("Z:"),
-#nutrition_tidy <- tidyNutrition("Z:"),
-#pfm_tidy <- tidyPFM("Z:"),
-#a2f_tidy <- tidyA2F("Z:"),
-## cat data
-#master <- bind_rows(education_tidy, family_tidy, humanitarian_tidy, nutrition_tidy, pfm_tidy, a2f_tidy, jobs, multilat),
-
-## use this for extracting data from dept data tab
+#### format deptarment data ----
 dept  = tidyDept(dept_raw, multilat, lookup),
 
 

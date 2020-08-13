@@ -6,7 +6,7 @@
 \thispagestyle{empty}
 
 \section{Results}
-From 2015 to March 2020 DFID reached \textbf{33.6 million} people with humanitarian assistance (food aid, cash and voucher transfers). %
+From 2015 to March 2020 DFID reached \textbf{33.7 million} people with humanitarian assistance (food aid, cash and voucher transfers). %
 This is a 1 million person (3\%) increase on the achieved reach from 2015 to March 2019, reported in July 2019. %
 
 From 2015 to 2020 Africa was the largest beneficiary of DFID's humanitarian assistance programmes, with 18.4 million people reached --- approximately 5 out of every 10 people reached throughout the reporting period. %

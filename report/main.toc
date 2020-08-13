@@ -15,9 +15,9 @@
 \contentsline {chapter}{\numberline {5}Education}{9}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Results}{9}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Context}{10}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Energy}{12}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Results}{12}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Context}{13}{section.6.2}%
+\contentsline {chapter}{\numberline {1}Energy}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Results}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Context}{2}{section.1.2}%
 \contentsline {chapter}{\numberline {7}Family Planning}{14}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Results}{14}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Context}{14}{section.7.2}%
