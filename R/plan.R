@@ -80,39 +80,149 @@ jobs = filterJobsGender(jobs_raw),
 
 humanitarian = filterHumanitarian(dept),
 
-nutrition_gender  = filterNutritionGender(dept),
+nutri_gender  = filterNutritionGender(dept),
 
-nutrition_intensity = filterNutritionIntensity(dept),
+nutri_intensity = filterNutritionIntensity(dept),
 
 wash = filterWASH(dept),
 
 
 #### plots ----
-a2f_region_plot = plotA2FRegion(a2f_raw, lookup),
+
+### plot data frames
+
+#a2f
+a2f_region_data =  regionDataA2F(a2f_raw, lookup),
+
+#education
+edu_fragility_data  = education %>%
+  filter(department!="Total" & department!="Double Counting") %>%
+  group_by(fragility) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100),
+
+edu_region_data  = education %>%
+  filter(department!="Total") %>%
+  group_by(region) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+#family
+
+fp_total_fragility_data = fp_total %>%
+  filter(Department!="Total") %>%
+  group_by(Fragility) %>%
+  summarise(results=sum(Average)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+fp_total_region_data = fp_total %>%
+  filter(Department!="Total") %>%
+  group_by(Region) %>%
+  summarise(results=sum(Average)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+fp_additional_fragility_data = fp_additional_plots %>%
+  filter(department!="Total") %>%
+  group_by(fragility) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+fp_additional_region_data = fp_additional_plots %>%
+  filter(department!="Total") %>%
+  group_by(region) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+# humanitarian
+human_fragility_data  = humanitarian %>%
+  filter(department!="Total") %>%
+  group_by(fragility) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100),
+
+human_region_data  = humanitarian %>%
+  filter(department!="Total") %>%
+  group_by(region) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+#jobs
+jobs_region_data = regionDataJobs(jobs_raw, lookup),
+
+#nutrition
+nutrition_fragility_data  = nutri_gender %>%
+  group_by(fragility) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100),
+
+nutrition_intensity_data  = nutri_intensity %>%
+  filter(department!="Total") %>%
+  ungroup() %>%
+  select(low,medium,high,not_identified, total) %>%
+  select(-total) %>%
+  clean_names("title") %>%
+  pivot_longer(cols=everything(),
+               names_to = "intensity") %>%
+  group_by(intensity) %>%
+  summarise(results=sum(value)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  mutate_at(vars(intensity), as.factor) %>%
+  mutate(intensity= fct_relevel(intensity, c("High", "Medium", "Low","Not Identified"))),
+
+nutrition_region_data  = nutri_gender %>%
+  filter(department!="Total") %>%
+  group_by(region) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+#wash
+wash_fragility_data  = wash %>%
+  filter(department!="Total") %>%
+  group_by(fragility) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100),
+
+wash_region_data  = wash %>%
+  filter(department!="Total") %>%
+  group_by(region) %>%
+  summarise(results=sum(total)) %>%
+  mutate(perc=(results/sum(results))*100) %>%
+  filter(results!=0),
+
+
+### plots
+a2f_region_plot = plotA2FRegion(a2f_region_data),
 
 climate_spend_plot = plotClimateSpend(climate_spend),
 
-edu_frag_plot = plotEduFragility(education),
-edu_region_plot  =  plotEduRegion(education),
+edu_frag_plot = plotEduFragility(edu_fragility_data),
+edu_region_plot  =  plotEduRegion(edu_region_data),
 
 energy_cumulative_plot = plotEnergyCumulative(energy),
 
-fp_total_frag_plot = plotFPTotalFragility(fp_total),
-fp_total_region_plot  = plotFPTotalRegion(fp_total),
-fp_additional_frag_plot  = plotFPAdditionalFragility(fp_additional_plots),
-fp_additional_region_plot = plotFPAdditionalRegion(fp_additional_plots),
+fp_total_frag_plot = plotFPTotalFragility(fp_total_fragility_data),
+fp_total_region_plot  = plotFPTotalRegion(fp_total_region_data),
+fp_additional_frag_plot  = plotFPAdditionalFragility(fp_additional_fragility_data),
+fp_additional_region_plot = plotFPAdditionalRegion(fp_additional_region_data),
 
-human_frag_plot = plotHumanFragility(humanitarian),
-human_region_plot = plotHumanRegion(humanitarian),
+human_frag_plot = plotHumanFragility(human_fragility_data),
+human_region_plot = plotHumanRegion(human_region_data),
 
-jobs_region_plot = plotJobsRegion(jobs_raw, lookup),
+jobs_region_plot = plotJobsRegion(jobs_region_data),
 
-nutrition_frag_plot = plotNutritionFragility(nutrition_gender),
-nutrition_region_plot = plotNutritionRegion(nutrition_gender),
-nutrition_intensity_plot= plotNutritionIntensity(nutrition_intensity),
+nutrition_frag_plot = plotNutritionFragility(nutrition_fragility_data),
+nutrition_region_plot = plotNutritionRegion(nutrition_region_data),
+nutrition_intensity_plot = plotNutritionIntensity(nutrition_intensity_data),
 
-wash_frag_plot = plotWASHFragility(wash),
-wash_region_plot = plotWASHRegion(wash),
+wash_frag_plot = plotWASHFragility(wash_fragility_data),
+wash_region_plot = plotWASHRegion(wash_region_data),
 
 oda_gni_plot = plotOdaGni(oda_gni),
 
@@ -233,7 +343,7 @@ humanitarian_table = humanitarian %>%
 jobs_table = jobs %>% clean_names("title"),
 
 
-nutrition_table = nutrition_gender %>%
+nutrition_table = nutri_gender %>%
                   ungroup() %>%
                   add_row(department="Double Counting", # add in double counting
                           fragility="-",

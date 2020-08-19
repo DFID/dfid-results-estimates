@@ -8,7 +8,7 @@
 
 In 2019/20 the total estimated UK government spend on implementation programmes to tackle Neglected Tropical Diseases was \textbf{\pounds 52 million}. %
 
-In 2019/20 the total estimated UK government spending on Neglected Tropical Diseases research programmes was \textbf{\pounds 31 million}. % 
+In 2019/20 the total estimated UK government spending on Neglected Tropical Diseases research programmes was \textbf{\pounds 31 million}. %
 
 
 \section{Context}
@@ -21,12 +21,12 @@ NTDs also prevent adults from working to support their families economically. %
 Reaching people with preventive or curative interventions for NTDs can avoid long-term health complications or the development of disabilities. %
 Large scale intervention can also reduce overall transmission of NTDs, which over time will enable their effective control or elimination\footnote{Control is the reduction of disease incidence, prevalence, morbidity, and/or mortality to a locally acceptable level. Elimination as a public health problem is defined by achievement of measurable targets set by WHO in relation to a specific disease. When reached, continued actions are required to maintain the target.}.
 
-Sustainable Development Goal 3, ``Ensure healthy lives and promote wellbeing for all at all ages'', covers a range of health issues. %
+Sustainable Development Goal 3, ``Ensure healthy lives and promote well-being for all at all ages'', covers a range of health issues. %
 Of the 13 targets, one (target 3.3) covers NTDs specifically: ``By 2030, end the epidemics of AIDS, TB, malaria and NTDs and combat hepatitis, water-borne diseases and other communicable diseases.'' %
-Progress on NTDs is tracked by the SDG indicator ``Number of people requiring interventions against neglected tropical diseases.'' % 
+Progress on NTDs is tracked by the SDG indicator ``Number of people requiring interventions against neglected tropical diseases.'' %
 
 In April 2017 the UK government committed to invest a total of \pounds 360 million (2017/18-2021/22) in implementation programmes to protect over 200 million people from NTDs. %
-Aims of the investment include: 
+Aims of the investment include:
 \begin{itemize}
 \item Wiping out (eradicating\footnote{Eradication is the permanent reduction to zero of the worldwide incidence of infection. Intervention actions are no longer needed.}) Guinea worm, which is transmitted through dirty water;
 \item Preventing tens of thousands of cases of disability caused by lymphatic filariasis, a mosquito-transmitted disease which can cause severe swelling of the lower limbs; and

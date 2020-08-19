@@ -6,18 +6,12 @@
 #'
 
 plotFPTotalRegion <- function(data) {
-  fp_plot_data <- data %>%
-    filter(Department!="Total") %>%
-    group_by(Region) %>%
-    summarise(results=sum(Average)) %>%
-    mutate(perc=(results/sum(results))*100) %>%
-    filter(results!=0)
 
-  adj <- ifelse(fp_plot_data$perc<10,-0.3, 1.6)
-  lab_col  <- ifelse(fp_plot_data$perc>10,"white", "black")
+  adj <- ifelse(data$perc<10,-0.3, 1.6)
+  lab_col  <- ifelse(data$perc>10,"white", "black")
 
   fp_total_region_plot  <-
-    fp_plot_data %>%
+    data %>%
     ggplot(., aes(x = Region, y = perc)) +
     geom_bar(stat = "identity", fill=gov_cols[2], color=darken(gov_cols[2]), size=1) +
     geom_text(aes(label = paste0(round(perc,1), "%"), y=perc, fontface=2),
@@ -38,7 +32,7 @@ plotFPTotalRegion <- function(data) {
       panel.grid.major.x = element_blank(),
       plot.subtitle = element_text(hjust = 1, vjust=-2)
     ) +
-    scale_y_continuous(breaks=seq(0, roundChoose(max(fp_plot_data$perc),10,TRUE), by = 10))
+    scale_y_continuous(breaks=seq(0, roundChoose(max(data$perc),10,TRUE), by = 10))
 
 
   ### comment in if not using drake

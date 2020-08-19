@@ -35,7 +35,7 @@ Most of the children supported by DFID's education programmes live in fragile st
 
 Of the results that can currently be disaggregated by gender from 2015 to 2020 DFID education programs supported 8.1 million girls (over 50\% of the results). %
 DFID is continuously working with our partners to improve collection of disaggregated data.
-Over 95\% of our results are disaggregated by gender in part due to improvments in calculating children reached by multilateral organisations. %
+Over 95\% of our results are disaggregated by gender in part due to improvements in calculating children reached by multilateral organisations. %
 
 
 \section{Context}
@@ -54,13 +54,13 @@ infection among students by around a third a decade later.\footnote{De Neve, J.,
 
 Developing countries have expanded schooling at an impressive rate in recent
 decades. %
-The average adult in 2010 had completed seven years of school, compared to only two in 1950. \footnote{World Bank. (2018). Learning to Realize Education’s Promise. World Development Report. Washington DC: World Bank. Available from: \href{http://www.worldbank.org/en/publication/wdr2018}{http://www.worldbank.org/en/publication/wdr2018} [Accessed 26 January 2018]}
+The average adult in 2010 had completed seven years of school, compared to only two in 1950. \footnote{World Bank. (2018). Learning to Realize Education's Promise. World Development Report. Washington DC: World Bank. Available from: \href{http://www.worldbank.org/en/publication/wdr2018}{http://www.worldbank.org/en/publication/wdr2018} [Accessed 26 January 2018]}
 Most children are now able to access education. %
 Globally, over 97\% of children are expected to attend school at some time in their
 lives. \footnote{\href{http://uis.unesco.org/sites/default/files/documents/reducing-global-poverty-through-universal-primary-secondary-education.pdf}{http://uis.unesco.org/sites/default/files/documents/reducing-global-poverty-through-universal-primary-secondary-education.pdf}}
 
 Yet, many children are in school but failing to learn the basics: over half of all primary school aged children worldwide (387 million) are not on track to complete primary school or able to read well. \footnote{UIS factsheet No 46. \href{http://uis.unesco.org/sites/default/files/documents/fs46-more-than-halfchildren-not-learning-en-2017.pdf}{http://uis.unesco.org/sites/default/files/documents/fs46-more-than-halfchildren-not-learning-en-2017.pdf}}
-This problem is particularly pronounced in subSaharan Africa and Central and South Asia, where nearly 85\% of primary aged children are not learning the basics. %
+This problem is particularly pronounced in sub-Saharan Africa and Central and South Asia, where nearly 85\% of primary aged children are not learning the basics. %
 
 There are still 63 million of the most marginalised children out of primary school
 (91\% of primary aged children globally) and a further 200 million out of secondary

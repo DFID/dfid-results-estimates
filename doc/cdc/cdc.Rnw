@@ -2,8 +2,6 @@
 
 \section*{A rolling weighted average (by investment \pounds) of the Development Impact Grid scores across all of CDC's investments that have reached financial close during the preceding three calendar years.}
 
-\bigskip
-\bigskip
 
 \thispagestyle{empty}
 
@@ -17,10 +15,10 @@ The weighted average Development Impact (DI) score for all CDC investments made 
 CDC is an investment company, wholly owned by DFID. It invests in businesses in
 Africa and South Asia to create jobs, catalyse private sector investment and build
 markets in the world's poorest countries. \\%
-  
+
 The Development Impact Grid incentivises CDC to make investments in harder geographies and in sectors which have the highest propensity to create jobs. %
 It is a tool to measure the shift in CDC's investment portfolio to more impactful investments. \\%
-  
+
 Each investment by CDC is given a Development Impact Grid score between 1 and 4. %
 A score of 1 indicates lower investment difficulty and a lower propensity of the sector to generate employment. %
 Conversely a score of 4 indicates higher investment difficulty, but the propensity of the sector to generate employment may be low, medium or high. %

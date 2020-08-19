@@ -6,17 +6,12 @@
 #'
 plotEduFragility <- function(data) {
 
-  edu_plot_data  <- data %>%
-    filter(department!="Total" & department!="Double Counting") %>%
-    group_by(fragility) %>%
-    summarise(results=sum(total)) %>%
-    mutate(perc=(results/sum(results))*100)
 
-  adj <- ifelse(edu_plot_data$perc<10,-0.3, 1.6)
-  lab_col  <- ifelse(edu_plot_data$perc>10,"white", "black")
+  adj <- ifelse(data$perc<10,-0.3, 1.6)
+  lab_col  <- ifelse(data$perc>10,"white", "black")
 
   edu_frag_plot  <-
-    edu_plot_data   %>%
+    data   %>%
       ggplot(., aes(x = fragility, y = perc)) +
       geom_bar(stat = "identity", fill=gov_cols[1], color=darken(gov_cols[1]), size=1) +
       geom_text(aes(label = paste0(round(perc,1), "%"), y=perc, fontface=2),
@@ -37,7 +32,7 @@ plotEduFragility <- function(data) {
         panel.grid.major.x = element_blank(),
         plot.subtitle = element_text(hjust = 1, vjust=-2)
       ) +
-     scale_y_continuous(breaks=seq(0, roundChoose(max(edu_plot_data$perc),10,TRUE), by = 10))
+     scale_y_continuous(breaks=seq(0, roundChoose(max(data$perc),10,TRUE), by = 10))
 
 
   ### comment in if not using drake

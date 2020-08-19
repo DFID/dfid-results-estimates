@@ -15,12 +15,12 @@ From 2015-2020 DFID reached \textbf{55.1 million} children under 5, women of chi
 \end{figure}
 
 
-From 2015 to 2020, Africa was the largest beneficiary of DFID’s nutrition-related programmes, with 37.5 million beneficiaries reached (see Figure \ref{fig:nutrition_region_plot} for regional percentage breakdown). %
+From 2015 to 2020, Africa was the largest beneficiary of DFID's nutrition-related programmes, with 37.5 million beneficiaries reached (see Figure \ref{fig:nutrition_region_plot} for regional percentage breakdown). %
 DFID reached 8.6 million beneficiaries in Asia: the majority of whom were in Bangladesh (6.1 million). %
 DFID reached 3.9 million beneficiaries in the Middle East: the majority of whom were in Yemen (3.5 million). %
 A further 10.6 million beneficiaries of DFID's nutrition results were delivered via non-country or -region specific programmes, and multilateral organisations. %
 
-Most of the children under 5, women of childbearing age and adolescent girls (48.4 million beneficiaries) reached by DFID’s nutrition-related programmes live in fragile states (using the OECD States of Fragility definition), including 15.2 million beneficiaries living in Extremely Fragile States (Figure \ref{fig:nutrition_fragility_plot}). %
+Most of the children under 5, women of childbearing age and adolescent girls (48.4 million beneficiaries) reached by DFID's nutrition-related programmes live in fragile states (using the OECD States of Fragility definition), including 15.2 million beneficiaries living in Extremely Fragile States (Figure \ref{fig:nutrition_fragility_plot}). %
 
 \begin{figure}[htbp]
 	\centering
@@ -44,9 +44,12 @@ Please refer to the methodology summary, and the published methodology note for 
 	\caption{Percentage of Nutrition results by intervention intensity.}\label{fig:nutrition_intensity_plot}
 \end{figure}
 
-Most of the beneficiaries of DFID nutrition-related programmes received medium intensity intervention (49.9 million beneficiaries; Figure \ref{fig:nutrition_intensity_plot}). %
+The approach to calculating nutrition results has been updated this year as part of or comittment to continuously improve the quality of our results estimates, incorporating the latest available data and reducing the risk of double counting. %
+These improvements show a shift in the pattern of the intensity of the interventions we delivered, compared to the last updated data published on 28th January 2020. %
+There has been a decrease in the proportion of high and low internsity interventions and an increase in the proportion of medium intensity interventions we delivered. %
+Most of the beneficiaries of DFID nutrition-related programmes have received medium intensity interventions (49.9 million beneficiaries; Figure \ref{fig:nutrition_intensity_plot}). %
 DFID nutrition-related programmes reached 2.4 million beneficiaries with high intensity intervention and 7.1 million beneficiaries with low intensity interventions. %
-Intensity information was not available for 2 million beneficiaries of DFID's nutrition results\footnote{The total number beneficiaries counted from the different intensities of intervention may exceed the overall total number of beneficiaries reached on Page 1.This is due to the application of the peak year method at the country level: the overall total achieved counts the single year with the largest number of results within a country. Since the ``peak'' reach within a country may occur in different years for each intensity level, the total achieved by intensity may sum across different years, resulting in a larger reach than the overall total.}. %
+Intensity information was not available for 2 million beneficiaries of DFID's nutrition results\footnote{The total number beneficiaries counted from the different intensities of intervention may exceed the overall total number of beneficiaries reached on Page 1. This is due to the application of the peak year method at the country level: the overall total achieved counts the single year with the largest number of results within a country. Since the ``peak'' reach within a country may occur in different years for each intensity level, the total achieved by intensity may sum across different years, resulting in a larger reach than the overall total.}. %
 
 Of those reached by DFID nutrition-related programs from 2015 to 2019, 24 million were women and girls. %
 DFID is continuously working with our existing partners towards improving collection of disaggregated data. %

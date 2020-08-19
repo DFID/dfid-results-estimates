@@ -15,17 +15,17 @@ This was a 4.3 \% decrease (\pounds 228 million) compared to 2018. %
 Between 2015 and 2018 the UK was consistently ranked top of DAC countries in its level of investment in the multilateral system. %
 
 
- 
+
 \begin{table}[htbp]
   \centering
-  \caption{core Contributions to Multilaterals and Rank Compared to DAC Members.}\label{tab:multi_rank}
+  \caption{Core Contributions to Multilaterals and Rank Compared to DAC Members.}\label{tab:multi_rank}
   \begin{tabular}{lrc}
   \toprule
   \multicolumn{1}{c}{Year} & \multicolumn{1}{c}{Core Multilateral ODA (\pounds) m} & \multicolumn{1}{c}{Rank} \\ \hline
   \rule{0pt}{10pt}2015 & 4,473 & 1 \\
   2016 & 4,843 & 1 \\
   2017 & 5,256 & 1 \\
-  2018 & 5,289 & 1 \\ 
+  2018 & 5,289 & 1 \\
   2019 & 5,061 & TBC\footnotemark \\
   \bottomrule
   \end{tabular}

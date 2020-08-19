@@ -4,47 +4,13 @@
 #' @importFrom magrittr %>%
 #' @export
 #'
-plotA2FRegion <- function(data, lookup){
+plotA2FRegion <- function(data){
 
-  a2f_plot_data <-  data %>%
-    select(-male,-female) %>%
-    ungroup() %>%
-    mutate(region = recode_factor(department, !!!getRegion(lookup))) %>%
-    add_row(
-      department="Private Sector",
-      project_title = "HiFi",
-      total = unlist(.[1,"total"])*0.43,
-      region = "Africa"
-    ) %>%
-    add_row(
-      department="Private Sector",
-      project_title = "HiFi",
-      total = unlist(.[1,"total"])*0.55,
-      region = "Asia"
-    ) %>%
-    add_row(
-      department="Private Sector",
-      project_title = "HiFi",
-      total = unlist(.[1,"total"])*0.02,
-      region = "Middle East"
-    ) %>%
-    mutate_at(vars(region), ~(
-      case_when(
-      project_title=="FSDA" ~ "Africa",
-      TRUE ~ as.character(.)
-    ))) %>%
-    filter(total<45000000) %>%
-    select(-project_title) %>%
-    group_by(region) %>%
-    summarise(results = sum(total)) %>%
-    mutate(perc=(results/sum(results))*100) %>%
-    filter(results!=0)
-
-  adj <- ifelse(a2f_plot_data$perc<10,-0.3, 1.6)
-  lab_col  <- ifelse(a2f_plot_data$perc>10,"white", "black")
+  adj <- ifelse(data$perc<10,-0.3, 1.6)
+  lab_col  <- ifelse(data$perc>10,"white", "black")
 
   a2f_region_plot <-
-    a2f_plot_data %>%
+    data %>%
     ggplot(., aes(x = region, y = perc)) +
     geom_bar(stat = "identity", fill=gov_cols[7], color=darken(gov_cols[7]), size=1) +
     geom_text(aes(label = paste0(round(perc,1), "%"), y=perc, fontface=2),
@@ -65,7 +31,7 @@ plotA2FRegion <- function(data, lookup){
       panel.grid.major.x = element_blank(),
       plot.subtitle = element_text(hjust = 1, vjust=-2)
     ) +
-    scale_y_continuous(breaks=seq(0, roundChoose(max(a2f_plot_data$perc),10, up = TRUE), by = 10))
+    scale_y_continuous(breaks=seq(0, roundChoose(max(data$perc),10, up = TRUE), by = 10))
 
 
   ### comment in if not using drake

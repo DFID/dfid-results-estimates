@@ -21,7 +21,7 @@ From 2015 to 2019, the largest number of people supported by DFID programmes wer
 \end{figure}
 
 \section{Context}
-DFID’s Economic Development Strategy aims to `improve access to finance for both poor women and men,
+DFID's Economic Development Strategy aims to `improve access to finance for both poor women and men,
 helping them to generate and protect their own wealth.' %
 This includes supporting improved access to financial services such as secure savings, money transfer, insurance and affordable loans. %
 

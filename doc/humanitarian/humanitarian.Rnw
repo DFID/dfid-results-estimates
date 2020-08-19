@@ -48,7 +48,7 @@ In 2019/20, 76\% of our reported humanitarian results were disaggregated by gend
 This is a 19 percentage point increase in data disaggregation by gender between the results reported in 2018/19 and 2019/20. %
 There are considerable challenges with robust data collection in humanitarian contexts, particularly for people in greatest need. %
 These are the generally the most unstable situations in which DFID supported programmes operate, where ongoing conflicts substantially increase the risks faced by those delivering emergency assistance and severely hinder access. %
-DFID is collaborating with external partners to develop guidance, support and tools to facilitate data disaggregation but it should be recognised that DFID’s commitment to reach those people in greatest need means that data collection and reliable disaggregation in the most difficult humanitarian contexts will continue to be a considerable challenge. %
+DFID is collaborating with external partners to develop guidance, support and tools to facilitate data disaggregation but it should be recognised that DFID's commitment to reach those people in greatest need means that data collection and reliable disaggregation in the most difficult humanitarian contexts will continue to be a considerable challenge. %
 
 
 \section{Context}
@@ -74,7 +74,7 @@ Fifty-four percent of the \$29.7bn financial requirement was met, leaving unmet 
 In 2019, the UK provided \pounds 1.5bn in bi-lateral humanitarian aid, 9.9 \% of the total UK official development assistance (ODA) spend. %
 This represents an increase of \pounds 208 million compared with 2018 and was partly driven by UK responses to humanitarian crises, for example in Yemen. %
 These are provisional figures from Statistics in International Development; the full release in autumn 2020 will confirm final figures and DFID's share of total spend. %
-In 2018, humanitarian assistance was the UK's second largest area of spend, after health, on sector specific ODA – \pounds 1,299 million (8.9 \% of UK ODA). %
+In 2018, humanitarian assistance was the UK's second largest area of spend, after health, on sector specific ODA --- \pounds 1,299 million (8.9 \% of UK ODA). %
 DFID was responsible for around 99\% of the total UK ODA spend on humanitarian assistance. %
 
 In addition to crisis or country specific spend the UK continues to be one of the largest contributors of core funding to the UN humanitarian agencies and the Red Cross movement, allowing these partners the flexibility to plan, invest in their capacity for timely and equitable humanitarian responses, and to direct resources to where the need is greatest. %
@@ -89,7 +89,7 @@ The UK will:
 \item Continue to protect people in crises: upholding humanitarian law and principles, uphold humanitarian law, and support our partners to do the same.
 \item Deliver bigger, better, faster responses to rapid onset disasters when national systems are overwhelmed, as demonstrated in the Caribbean.
 \item Invest in resilience and preparedness to respond, including using insurance and other risk-based finance to better manage risks from natural hazards.
-\item Adopt a new long-term approach to protracted crises, including support to countries hosting long-term refugees to generate livelihoods, trading opportunities and invest in people’s future.
+\item Adopt a new long-term approach to protracted crises, including support to countries hosting long-term refugees to generate livelihoods, trading opportunities and invest in people's future.
 \item Challenge the international humanitarian system to hold itself to account for delivering better for people affected by crises, and ensuring the most vulnerable people in the world are appropriately protected from environmental and social hazards.
 \item Ensure that response is delivered through organisations and mechanisms which offer best value for money, such as encouraging the use of multi-purpose cash transfers (where appropriate) which are faster, safer and more cost-effective than relief-in kind whilst providing additional support to local economies.
 \end{itemize}

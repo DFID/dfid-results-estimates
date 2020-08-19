@@ -32,6 +32,19 @@ dept_lookup.csv,dept_from_dataset_name,Department names accroding to within temp
 dept_lookup.csv,iso3c,Three letter country code,factor
 dept_lookup.csv,country,OECD country name,factor
 dept_lookup.csv,fragility,OECD states of fragility,factor
+dept_raw.csv,Department_Code,Internal DFID Department code,
+dept_raw.csv,Department,DFID Department or Country Office,
+dept_raw.csv,Indicator,Full Indicator wording,
+dept_raw.csv,Strategic_Objective,Strategic Objective from SDP,
+dept_raw.csv,Method,Calculation methodology,
+dept_raw.csv,Year,Year (including total year as 2015/21),
+dept_raw.csv,Forecast_Achieved,Whether its forecast or achieved figures,
+dept_raw.csv,Gender,Gender disaggregated figures,
+dept_raw.csv,Disabled,Disability disaggregated figures,
+dept_raw.csv,Education_Level,Education level ,
+dept_raw.csv,WaSH_Intervention,Wash intervention,
+dept_raw.csv,Nutrition_Intensity,Intensity of nutrition intervention,
+dept_raw.csv,Results,Beneficiaries ,
 education_cmp_discount.csv,Department,DFID Department or Country Office,factor
 education_cmp_discount.csv,GPE,CMP country breakdown,numeric
 education_cmp_discount.csv,ECW,CMP country breakdown,numeric
@@ -83,3 +96,10 @@ pfm.csv,2017/18,In year countries supported,factor
 pfm.csv,2016/17,In year countries supported,factor
 pfm.csv,2015/16,In year countries supported,factor
 pfm.csv,continuous,Countries continuously supported,factor
+sid_oda_annual.csv,Year,Year,factor
+sid_oda_annual.csv,ODA,ODA spend ,numeric
+sid_oda_annual.csv,ODA:GNI,ODA to GNI ratio,numeric
+tables_titles.csv,tab,Tab title for tables,
+tables_titles.csv,title,Table  title,
+tables_titles.csv,subtitle,Table subtitle,
+tables_titles.csv,type,Type  of indicator,

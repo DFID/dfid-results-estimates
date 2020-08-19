@@ -49,10 +49,10 @@ Changes in the total number of people supported from previous years is affected 
 Each year, new programmes may start reporting results eligible for inclusion in this indicator.  %
 
 One significant change affecting results this year, is that we have included CDC results for the first time. %
-CDC accounted for 0.85 million people supported\footnote{CDC numbers are in full-time equivalents, as per the HIPSO definition, and so are underestimates of individual beneficiaries eg seasonal and part time workers} (of which 28\% were Female and 72\% Male). %
+CDC accounted for 0.85 million people supported\footnote{CDC numbers are in full-time equivalents, as per the HIPSO definition, and so are underestimates of individual beneficiaries, e.g. seasonal and part time workers} (of which 28\% were Female and 72\% Male). %
 Only beneficiary figures for 2018 (not for every year) have been included for CDC in the 2015/16 to 2019/20 DFID results. %
 This is to avoid double counting the same beneficiaries who may otherwise appear in figures for multiple years. %
-Note that CDC also reports indirect employment beneficiaries in supply chains, induced from wages, and enabled by productivity improvements from credit and power, estimated from the Joint Impact Model, which are not included in DFID’s aggregate figures.%
+Note that CDC also reports indirect employment beneficiaries in supply chains, induced from wages, and enabled by productivity improvements from credit and power, estimated from the Joint Impact Model, which are not included in DFID's aggregate figures.%
 
 
 \section{Context}
@@ -63,7 +63,7 @@ Enhanced employment opportunities and skills is also a means to address the unde
 Results have been collected from 30 programmes across DFID. %T
 These programmes all:
 \begin{adjustwidth}{0.5cm}{}
-Focused on job rich activities with an objective to either increase beneficiaries’ income from economic activity or get beneficiaries into more productive and/or better quality employment, and can provide a clear rationale of why and how the programme is doing this.
+Focused on job rich activities with an objective to either increase beneficiaries' income from economic activity or get beneficiaries into more productive and/or better quality employment, and can provide a clear rationale of why and how the programme is doing this.
 \end{adjustwidth}
 
 \begin{adjustwidth}{8cm}{}

@@ -1,59 +1,59 @@
-#' Accessory function for Results. Mainly methods for doing lookups.
+#' Accessory function for Results. Mainly methods for doing lookup_tables.
 #'
-#' Method for lookup table.
-#' @param lookup a lookup table.
+#' Method for lookup_table table.
+#' @param lookup_table a lookup_table table.
 #' @param dept_pub_names use publication names rather than dataset names. Logical.
 #' @keywords internal
-#' @examples getPubNames(lookup)
+#' @examples getPubNames(lookup_table)
 #' @export
-getPubNames <- function(lookup){
-  y <- lookup$dept_publication_name
-  names(y) <- lookup$dept_from_dataset_name
+getPubNames <- function(lookup_table){
+  y <- lookup_table$dept_publication_name
+  names(y) <- lookup_table$dept_from_dataset_name
   return(y)
 }
 
-#' Generalisation of Method for lookup table.
-#' @param lookup a lookup table.
+#' Generalisation of Method for lookup_table table.
+#' @param lookup_table a lookup_table table.
 #' @param column1 values we have. Character (must be quoted).
 #' @param column2 values we want. Character (must be quoted).
 #' @keywords internal
-#' @examples getPubNames(lookup)
+#' @examples getPubNames(lookup_table)
 #' @export
-getVal <- function(lookup, column1, column2){
-  y <- unlist(lookup[column1])
-  names(y) <- unlist(lookup[column2])
+getVal <- function(lookup_table, column1, column2){
+  y <- unlist(lookup_table[column1])
+  names(y) <- unlist(lookup_table[column2])
   return(y)
 }
 
-#' Method for lookup table.
-#' @param lookup a lookup table.
+#' Method for lookup_table table.
+#' @param lookup_table a lookup_table table.
 #' @param dept_pub_names use publication names rather than dataset names. Logical.
 #' @keywords internal
-#' @examples getFragStates(lookup)
+#' @examples getFragStates(lookup_table)
 #' @export
-getFragStates <- function(lookup, dept_pub_names=T){
-  y <- lookup$fragility
+getFragStates <- function(lookup_table, dept_pub_names=T){
+  y <- lookup_table$fragility
   if(dept_pub_names==TRUE){
-  names(y) <- lookup$dept_publication_name
+  names(y) <- lookup_table$dept_publication_name
   }else{
-  names(y) <- lookup$dept_from_dataset_name
+  names(y) <- lookup_table$dept_from_dataset_name
   }
   return(y)
 }
 
 
-#' Method for lookup table.
-#' @param lookup a lookup table.
+#' Method for lookup_table table.
+#' @param lookup_table a lookup_table table.
 #' @param dept_pub_names use publication names rather than dataset names. Logical.
 #' @keywords internal
-#' @examples getRegion(lookup)
+#' @examples getRegion(lookup_table)
 #' @export
-getRegion <- function(lookup, dept_pub_names=T){
-  y <- lookup$region
+getRegion <- function(lookup_table, dept_pub_names=T){
+  y <- lookup_table$region
   if(dept_pub_names==TRUE){
-    names(y) <- lookup$dept_publication_name
+    names(y) <- lookup_table$dept_publication_name
   }else{
-    names(y) <- lookup$dept_from_dataset_name
+    names(y) <- lookup_table$dept_from_dataset_name
   }
   return(y)
 }
