@@ -9,10 +9,10 @@ The pipeline is written in R using the [drake](https://github.com/ropensci/drake
 Technically it should be possible to clone this repo, jump into its root directory and from the console simply run `drake::r_make()`.
 
 *If* you have the `drake` and `packrat` packages installed, and a LaTeX distirbution on your computer, this command will (using an isolated R process):
-*build a private package library load those packages  
-*source all the scripts in `R/` including the drake plan (`R/plan.R`)  
-*configure the environment to to run the plan   
-*execute/compile the plan   
+* build a private package library load those packages  
+* source all the scripts in `R/` including the drake plan (`R/plan.R`)  
+* configure the environment to to run the plan   
+* execute/compile the plan   
 
 This should then output a bunch of plots to `fig/`,  an excel file to `tables/`, and a pdf to `report/` amongst other log files and things.
 
@@ -34,7 +34,7 @@ This workflow is fairly typical of data analysis/report automation but here we'l
 
 SDP results are gatherered from across DFID. The main results this pipeline deals with are those aggregated from policy departments and country office figures. There are methodologies guiding which programmes qualify to be included against a given indicator. Departments input data onto spreadsheets, which is then brought into a tab on the spreadsheet using PowerQuery. 
 
-1. Data  
+### 1. Data  
 * The pipeline begins by reading in data from this tab and concatenating it for all spreadshseets. The file `data/dept_raw.csv` is that data.    
 
 But, this is where it gets messy and we need to bring in other data.  
@@ -47,24 +47,24 @@ But, this is where it gets messy and we need to bring in other data.
 
 * Finally we read in some accessory data which help in the processing.
 
-2. Tidying and Filtering
+### 2. Tidying and Filtering
 * First tidy up the department data, join the multilateral data, and add some columns.  
 
 * Data are filtered to make separate data frames for each indicatos
 
-3. Plots
+### 3. Plots
 * Data are further filtered to get regional and fragility breakdowns, including percentages.   
 
 * The plots are then made from these data
 
-4. Tables   
+### 4. Tables   
 * The tables are filtered and formatted ready for publication, including rounding.   
 
 * Tables are then brought into a list of tables, including 'placeholders' for tables where data is inputted manually at a later time. 
 
 * Tables are placed in a workbook in separate tabs , title information is added, the whole table is formatted and then output to `tables/`. The `tables_titles.csv` data governs/ is needed to complete this process, Since there a number of different table types some manual correction needs to be applied to the formatting. 
 
-5. Report   
+### 5. Report   
 * First, we specify which chapters of the report we want to knit to `.tex`. To specify which chapters are compiled (they will only been knit to .tex by this point, the `main.Rnw` needs to be edited before it is knit. 
 
 * Secondly we knit them. Each chapter will load relevant data and plot targets made in the plan from `drake`'s cache using the `loadd()` function. Any inline figures are pulled from these data using filters in `\Sexpr{}`. As figures will be output to `figs/`.   
