@@ -99,7 +99,8 @@ edu_fragility_data  = education %>%
   filter(department!="Total" & department!="Double Counting") %>%
   group_by(fragility) %>%
   summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100),
+  mutate(perc=(results/sum(results))*100) %>%
+  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
 
 edu_region_data  = education %>%
   filter(department!="Total") %>%
@@ -109,13 +110,13 @@ edu_region_data  = education %>%
   filter(results!=0),
 
 #family
-
 fp_total_fragility_data = fp_total %>%
   filter(Department!="Total") %>%
   group_by(Fragility) %>%
   summarise(results=sum(Average)) %>%
   mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
+  filter(results!=0)%>%
+  mutate(Fragility= fct_relevel(Fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
 
 fp_total_region_data = fp_total %>%
   filter(Department!="Total") %>%
@@ -129,7 +130,8 @@ fp_additional_fragility_data = fp_additional_plots %>%
   group_by(fragility) %>%
   summarise(results=sum(total)) %>%
   mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
+  filter(results!=0)%>%
+  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
 
 fp_additional_region_data = fp_additional_plots %>%
   filter(department!="Total") %>%
@@ -143,7 +145,8 @@ human_fragility_data  = humanitarian %>%
   filter(department!="Total") %>%
   group_by(fragility) %>%
   summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100),
+  mutate(perc=(results/sum(results))*100)%>%
+  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
 
 human_region_data  = humanitarian %>%
   filter(department!="Total") %>%
@@ -159,7 +162,8 @@ jobs_region_data = regionDataJobs(jobs_raw, lookup),
 nutrition_fragility_data  = nutri_gender %>%
   group_by(fragility) %>%
   summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100),
+  mutate(perc=(results/sum(results))*100) %>%
+  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
 
 nutrition_intensity_data  = nutri_intensity %>%
   filter(department!="Total") %>%
@@ -187,7 +191,8 @@ wash_fragility_data  = wash %>%
   filter(department!="Total") %>%
   group_by(fragility) %>%
   summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100),
+  mutate(perc=(results/sum(results))*100)%>%
+  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
 
 wash_region_data  = wash %>%
   filter(department!="Total") %>%
@@ -410,7 +415,7 @@ wash_table = wash %>%
     )
   )
   ) %>%
-  clean_names("title"), # no double counting
+  clean_names("title"), # no double counting to added
 
 
 # Make all the tables into a list. If there are 'missing' tables or ones being
@@ -447,37 +452,41 @@ tables_list = list(a2f_table,
 tables = makeTables(lst_data = tables_list, tables_titles = tables_titles), #NEED TO ADD warning/error message: will error if nrow tables titles != length tables list
 
 
-## knit .Rnw
-sections = c("doc/titlepage/titlepage",
-              "doc/frontmatter/frontmatter",
-              "doc/intro/intro",
-              "doc/a2f/a2f",
-              "doc/cdc/cdc",
-              "doc/climate/climate",
-              "doc/devcap/devcap",
-              "doc/education/education",
-              "doc/energy/energy",
-              "doc/ntd/ntd",
-              "doc/family/family",
-              "doc/fcas/fcas",
-              "doc/humanitarian/humanitarian",
-              "doc/immunisation/immunisation",
-              "doc/tax/tax",
-              "doc/multi/multi",
-              "doc/jobs/jobs",
-              "doc/malaria_spend/malaria_spend",
-              "doc/ntd_spend/ntd_spend",
-              "doc/ntd/ntd",
-              "doc/nutrition/nutrition",
-              "doc/oda/oda",
-              "doc/pqi/pqi",
-              "doc/private/private",
-              "doc/polio/polio",
-              "doc/pfm/pfm",
-              "doc/wash/wash",
+#### Report ----
 
-              "main"
+## knit .Rnw
+sections = c(
+               "doc/titlepage/titlepage",
+               "doc/frontmatter/frontmatter",
+               "doc/intro/intro",
+               "doc/a2f/a2f",
+               "doc/cdc/cdc",
+               "doc/climate/climate",
+               "doc/devcap/devcap",
+               "doc/education/education",
+               "doc/energy/energy",
+               "doc/ntd/ntd",
+               "doc/family/family",
+               "doc/fcas/fcas",
+               "doc/humanitarian/humanitarian",
+               "doc/immunisation/immunisation",
+               "doc/tax/tax",
+               "doc/multi/multi",
+               "doc/jobs/jobs",
+               "doc/malaria_spend/malaria_spend",
+               "doc/ntd_spend/ntd_spend",
+               "doc/ntd/ntd",
+               "doc/nutrition/nutrition",
+               "doc/oda/oda",
+               "doc/pqi/pqi",
+               "doc/private/private",
+               "doc/polio/polio",
+               "doc/pfm/pfm",
+               "doc/wash/wash",
+
+               "main"
 ),
+
 
 report = knitAll(files=sections),
 

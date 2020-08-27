@@ -35,10 +35,10 @@ plotA2FRegion <- function(data){
 
 
   ### comment in if not using drake
-  pdf(file="figs/a2f_region_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
-  print(a2f_region_plot)
-  dev.off()
+  # pdf(file="figs/a2f_region_plot.pdf",
+  #     width=8,
+  #     height=6,
+  #     pointsize=12)
+  # print(a2f_region_plot)
+  # dev.off()
 }

@@ -35,10 +35,10 @@ plotJobsRegion <- function(data){
 
 
 ### comment in if not using drake
-pdf(file="figs/jobs_region_plot.pdf",
-    width=8,
-    height=6,
-    pointsize=12)
-print(jobs_region_plot)
-dev.off()
+# pdf(file="figs/jobs_region_plot.pdf",
+#     width=8,
+#     height=6,
+#     pointsize=12)
+# print(jobs_region_plot)
+# dev.off()
 }

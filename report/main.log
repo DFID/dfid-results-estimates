@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7440 64-bit) (preloaded format=xelatex 2020.5.28)  14 AUG 2020 12:58
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7440 64-bit) (preloaded format=xelatex 2020.5.28)  26 AUG 2020 11:40
 entering extended mode
 **./main.tex
 (main.tex
@@ -558,15 +558,6 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 
 ("C:\Users\c-baillie\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titlesec\title
 ps.sty"))
-("C:\Users\c-baillie\AppData\Local\Programs\MiKTeX 2.9\tex/latex/draftwatermark
-\draftwatermark.sty"
-Package: draftwatermark 2020/05/11 2.1 Put a gray textual watermark on document
- pages
-
-("C:\Users\c-baillie\AppData\Local\Programs\MiKTeX 2.9\tex/latex/everypage\ever
-ypage.sty"
-Package: everypage 2007/06/20 1.1 Hooks to run on every page
-))
 ("C:\Users\c-baillie\AppData\Local\Programs\MiKTeX 2.9\tex/latex/parskip\parski
 p.sty"
 Package: parskip 2020-06-15 v2.0f non-zero parskip adjustments
@@ -812,39 +803,41 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
 
 
-
-])
+] [2])
 \openout2 = `doc/a2f/a2f.aux'.
 
  (doc/a2f/a2f.tex
 Chapter 1.
-File: ../figs/a2f_region_plot.pdf Graphic file (type pdf)
-<use ../figs/a2f_region_plot.pdf>
-[2
+
+Package xcolor Warning: Incompatible color definition on input line 21.
+
+File: figs/a2f_region_plot-1.pdf Graphic file (type pdf)
+<use figs/a2f_region_plot-1.pdf>
+[3
 
 
 
-] [3])
+] [4])
 \openout2 = `doc/cdc/cdc.aux'.
 
  (doc/cdc/cdc.tex
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
+Underfull \hbox (badness 10000) in paragraph at lines 15--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--23
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--28
+Underfull \hbox (badness 10000) in paragraph at lines 22--26
 
  []
 
-[4
+[5
 
 
 
@@ -854,52 +847,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--28
  (doc/climate/climate.tex
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--15
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--22
-
- []
-
-File: ../figs/climate_spend_plot.pdf Graphic file (type pdf)
-<use ../figs/climate_spend_plot.pdf>
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
+Package xcolor Warning: Incompatible color definition on input line 24.
+
+File: figs/climate_spend_plot-1.pdf Graphic file (type pdf)
+<use figs/climate_spend_plot-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
 
  []
 
-[5
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
+
+ []
+
+[6
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--54
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--57
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
 
  []
 
-[6] [7])
+[7] [8])
 \openout2 = `doc/devcap/devcap.aux'.
 
  (doc/devcap/devcap.tex
@@ -915,7 +911,7 @@ Overfull \hbox (6.38971pt too wide) in paragraph at lines 3--3
  cumulative GBP from 2015-
  []
 
-[8
+[9
 
 
 
@@ -924,50 +920,59 @@ Overfull \hbox (6.38971pt too wide) in paragraph at lines 3--3
 
  (doc/education/education.tex
 Chapter 5.
-File: ../figs/education_fragility_plot.pdf Graphic file (type pdf)
-<use ../figs/education_fragility_plot.pdf>
-File: ../figs/education_region_plot.pdf Graphic file (type pdf)
-<use ../figs/education_region_plot.pdf>
-[9
+
+Package xcolor Warning: Incompatible color definition on input line 19.
+
+File: figs/education_fragility_plot-1.pdf Graphic file (type pdf)
+<use figs/education_fragility_plot-1.pdf>
+
+Package xcolor Warning: Incompatible color definition on input line 48.
+
+File: figs/education_region_plot-1.pdf Graphic file (type pdf)
+<use figs/education_region_plot-1.pdf>
+[10
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 [][][]\TU/GDSTransportWebsite(0)/m/n/8 Montenegro, C. and Patrinos, H. (2014). 
 Comparable Estimates of Returns to Schooling Around
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 \TU/GDSTransportWebsite(0)/m/n/8 the World. Policy Research Working Paper. Wash
 ington DC: World Bank. Available from:
  []
 
 
-Underfull \hbox (badness 5726) in paragraph at lines 52--52
+Underfull \hbox (badness 5726) in paragraph at lines 82--82
 [][][]\TU/GDSTransportWebsite(0)/m/n/8 De Neve, J., Fink, G., Subramanian, S. V
 ., Moyo, S., and Bor, J. (2015). Length of Secondary Schooling and Risk
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 \TU/GDSTransportWebsite(0)/m/n/8 of HIV Infection in Botswana: Evidence From a 
 Natural Experiment. The Lancet, 3: e470-477. Available from:
  []
 
-[10] [11])
+[11] [12])
 \openout2 = `doc/energy/energy.aux'.
 
  (doc/energy/energy.tex
 Chapter 6.
-File: ../figs/energy_cumulative_plot.pdf Graphic file (type pdf)
-<use ../figs/energy_cumulative_plot.pdf>
-[12
+
+Package xcolor Warning: Incompatible color definition on input line 18.
+
+File: figs/energy_cumulative_plot-1.pdf Graphic file (type pdf)
+<use figs/energy_cumulative_plot-1.pdf>
+[13
 
 
 
-] [13])
+] [14])
 \openout2 = `doc/family/family.aux'.
 
  (doc/family/family.tex
@@ -980,18 +985,19 @@ File: ../figs/fp_additional_region_plot.pdf Graphic file (type pdf)
 <use ../figs/fp_additional_region_plot.pdf>
 File: ../figs/fp_additional_fragility_plot.pdf Graphic file (type pdf)
 <use ../figs/fp_additional_fragility_plot.pdf>
-[14
+[15
 
 
 
-] [15] [16] [17])
+] [16] [17] [18])
 \openout2 = `doc/fcas/fcas.aux'.
 
  (doc/fcas/fcas.tex
 Chapter 8.
 
-Overfull \hbox (1.92384pt too wide) in paragraph at lines 1--1
-|\TU/GDSTransportWebsite(0)/b/n/24.88 Fragile and Conflicted Affected States| 
+Overfull \hbox (11.07338pt too wide) in paragraph at lines 3--3
+|\TU/GDSTransportWebsite(0)/b/n/14.4 Percentage of DFID’s budget spent on fragi
+le states and conflict affected
  []
 
 
@@ -1009,11 +1015,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-[18
+[19
 
 
 
-] [19])
+] [20])
 \openout2 = `doc/humanitarian/humanitarian.aux'.
 
  (doc/humanitarian/humanitarian.tex
@@ -1024,33 +1030,39 @@ Overfull \hbox (0.38306pt too wide) in paragraph at lines 3--3
  assistance (food aid, cash
  []
 
-File: ../figs/human_region_plot.pdf Graphic file (type pdf)
-<use ../figs/human_region_plot.pdf>
-File: ../figs/human_fragility_plot.pdf Graphic file (type pdf)
-<use ../figs/human_fragility_plot.pdf>
 
-Overfull \hbox (5.8115pt too wide) in paragraph at lines 56--60
+Package xcolor Warning: Incompatible color definition on input line 46.
+
+File: figs/human_region_plot-1.pdf Graphic file (type pdf)
+<use figs/human_region_plot-1.pdf>
+
+Package xcolor Warning: Incompatible color definition on input line 71.
+
+File: figs/human_fragility_plot-1.pdf Graphic file (type pdf)
+<use figs/human_fragility_plot-1.pdf>
+
+Overfull \hbox (5.8115pt too wide) in paragraph at lines 95--99
 \TU/GDSTransportWebsite(0)/m/n/10 opment aid, which seeks to address the underl
 ying causes which may have led to a crisis or emergency. 
  []
 
-[20
+[21
 
 
 
-] [21]
-Overfull \hbox (34.87563pt too wide) in paragraph at lines 71--73
+] [22]
+Overfull \hbox (34.87563pt too wide) in paragraph at lines 110--112
 \TU/GDSTransportWebsite(0)/m/n/10 cent of the $29.7bn financial requirement was
  met, leaving unmet requirements, or a funding gap, of $13.7bn. 
  []
 
 
-Overfull \hbox (11.59273pt too wide) in paragraph at lines 90--91
+Overfull \hbox (11.59273pt too wide) in paragraph at lines 129--130
 []\TU/GDSTransportWebsite(0)/m/n/10 Deliver bigger, better, faster responses to
  rapid onset disasters when national systems are overwhelmed,
  []
 
-[22] [23])
+[23] [24])
 \openout2 = `doc/immunisation/immunisation.aux'.
 
  (doc/immunisation/immunisation.tex
@@ -1062,11 +1074,11 @@ en against killer diseases|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
  []
 
-[24
+[25
 
 
 
@@ -1090,7 +1102,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--26
 
  []
 
-[25
+[26
 
 
 
@@ -1099,7 +1111,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--26
 
  (doc/multi/multi.tex
 Chapter 12.
-[26
+[27
 
 
 
@@ -1108,24 +1120,27 @@ Chapter 12.
 
  (doc/jobs/jobs.tex
 Chapter 13.
-File: ../figs/jobs_region_plot.pdf Graphic file (type pdf)
-<use ../figs/jobs_region_plot.pdf>
 
-Overfull \hbox (14.3206pt too wide) in paragraph at lines 30--31
-\TU/GDSTransportWebsite(0)/m/n/10 Of the total 5.1 million people supported to 
-raise their incomes or maintain/gain a better job or livelihood: 
+Package xcolor Warning: Incompatible color definition on input line 33.
+
+File: figs/jobs_region_plot-1.pdf Graphic file (type pdf)
+<use figs/jobs_region_plot-1.pdf>
+
+Overfull \hbox (7.9876pt too wide) in paragraph at lines 45--46
+\TU/GDSTransportWebsite(0)/m/n/10 Of the total 5 million people supported to ra
+ise their incomes or maintain/gain a better job or livelihood: 
  []
 
-[27
+[28
 
 
 
-] [28])
+] [29])
 \openout2 = `doc/malaria_spend/malaria_spend.aux'.
 
  (doc/malaria_spend/malaria_spend.tex
 Chapter 14.
-[29
+[30
 
 
 
@@ -1152,11 +1167,11 @@ Overfull \hbox (10.59988pt too wide) in paragraph at lines 32--33
 sability caused by lymphatic filariasis, a mosquito-transmitted
  []
 
-[30
+[31
 
 
 
-] [31])
+] [32])
 \openout2 = `doc/ntd/ntd.aux'.
 
  (doc/ntd/ntd.tex
@@ -1168,84 +1183,93 @@ re for one or more neglected
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--53
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
 
  []
 
-[32
+[33
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 54--57
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
 
-Overfull \hbox (10.59988pt too wide) in paragraph at lines 63--64
+Overfull \hbox (10.59988pt too wide) in paragraph at lines 65--66
 []\TU/GDSTransportWebsite(0)/m/n/10 Preventing tens of thousands of cases of di
 sability caused by lymphatic filariasis, a mosquito-transmitted
  []
 
 
-Overfull \hbox (5.33623pt too wide) in paragraph at lines 76--78
+Overfull \hbox (5.33623pt too wide) in paragraph at lines 78--80
 \TU/GDSTransportWebsite(0)/m/n/10 summary of the health impacts of each of DFID
 ’s six focal NTDs, and the primary interventions applied. 
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 86--86
+Underfull \hbox (badness 2096) in paragraph at lines 88--88
 []|[]\TU/GDSTransportWebsite(0)/m/n/10 Lymphatic filar-
  []
 
 
-Overfull \hbox (1.80368pt too wide) in paragraph at lines 88--88
+Overfull \hbox (1.80368pt too wide) in paragraph at lines 90--90
 []|\TU/GDSTransportWebsite(0)/m/n/10 Schistosomiasis
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--89
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
 []|\TU/GDSTransportWebsite(0)/m/n/10 Visceral leish-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 []|\TU/GDSTransportWebsite(0)/m/n/10 Onchocerciasis
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 \TU/GDSTransportWebsite(0)/m/n/10 (river blind-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 []|\TU/GDSTransportWebsite(0)/m/n/10 Other preventive mea-
  []
 
-[33])
+[34])
 \openout2 = `doc/nutrition/nutrition.aux'.
 
  (doc/nutrition/nutrition.tex
 Chapter 17.
-File: ../figs/nutrition_region_plot.pdf Graphic file (type pdf)
-<use ../figs/nutrition_region_plot.pdf>
-File: ../figs/nutrition_fragility_plot.pdf Graphic file (type pdf)
-<use ../figs/nutrition_fragility_plot.pdf>
-[34
+
+Package xcolor Warning: Incompatible color definition on input line 18.
+
+File: figs/nutrition_region_plot-1.pdf Graphic file (type pdf)
+<use figs/nutrition_region_plot-1.pdf>
+
+Package xcolor Warning: Incompatible color definition on input line 38.
+
+File: figs/nutrition_fragility_plot-1.pdf Graphic file (type pdf)
+<use figs/nutrition_fragility_plot-1.pdf>
+[35
 
 
 
 ]
-File: ../figs/nutrition_intensity_plot.pdf Graphic file (type pdf)
-<use ../figs/nutrition_intensity_plot.pdf>
 
-Underfull \hbox (badness 4303) in paragraph at lines 62--62
+Package xcolor Warning: Incompatible color definition on input line 59.
+
+File: figs/nutrition_intensity_plot-1.pdf Graphic file (type pdf)
+<use figs/nutrition_intensity_plot-1.pdf>
+[36]
+Underfull \hbox (badness 4303) in paragraph at lines 86--86
 [][][]\TU/GDSTransportWebsite(0)/m/n/8 UNICEF/WHO/World Bank Group (2020). Join
 t Child Malnutrition Estimates 2018 edition. New York. Available at:
  []
 
-[35] [36])
+[37])
 \openout2 = `doc/oda/oda.aux'.
 
  (doc/oda/oda.tex
@@ -1262,27 +1286,20 @@ ncome per calendar year.|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--16
+Package xcolor Warning: Incompatible color definition on input line 34.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
-
- []
-
-File: ../figs/oda_gni_plot.pdf Graphic file (type pdf)
-<use ../figs/oda_gni_plot.pdf>
-[37
+File: figs/oda_gni_plot-1.pdf Graphic file (type pdf)
+<use figs/oda_gni_plot-1.pdf>
+[38
 
 
 
-] [38])
+] [39])
 \openout2 = `doc/pqi/pqi.aux'.
 
  (doc/pqi/pqi.tex
 Chapter 19.
-[39
+[40
 
 
 
@@ -1296,7 +1313,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-[40
+[41
 
 
 
@@ -1330,7 +1347,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
 
  []
 
-[41
+[42
 
 
 
@@ -1353,11 +1370,11 @@ s with 40 countries in 2018/19 and 39 countries in 2017/18.
 
 File: ../figs/pfm_plot.pdf Graphic file (type pdf)
 <use ../figs/pfm_plot.pdf>
-[42
+[43
 
 
 
-] [43])
+] [44])
 \openout2 = `doc/wash/wash.aux'.
 
  (doc/wash/wash.tex
@@ -1378,7 +1395,7 @@ Overfull \hbox (4.3922pt too wide) in paragraph at lines 30--32
 g 17.4 million beneficiaries living in extremely fragile states. 
  []
 
-[44
+[45
 
 
 
@@ -1394,7 +1411,7 @@ Overfull \hbox (28.08197pt too wide) in paragraph at lines 43--44
 ing trachoma, schistosomiasis and soil transmitted helminths. 
  []
 
-[45] [46]) [47
+[46] [47]) [48
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
@@ -1414,17 +1431,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 185.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1021D740DA5FE066F6020DF7A8F345D4;1543.
+(rerunfilecheck)             Checksum: 1C6AC23319E10F1BCF049F2CEEEE3717;1541.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
- 15928 strings out of 414076
- 289886 string characters out of 2893140
- 643769 words of memory out of 3000000
- 33136 multiletter control sequences out of 15000+200000
- 538041 words of font info for 69 fonts, out of 3000000 for 9000
+ 15837 strings out of 414076
+ 287661 string characters out of 2893140
+ 642294 words of memory out of 3000000
+ 33051 multiletter control sequences out of 15000+200000
+ 538033 words of font info for 68 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 44i,14n,70p,1251b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,14n,70p,1195b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on C:\Users\c-baillie\OneDrive - DFID\Documents\dev\SDPResults\r
-eport\main.pdf (49 pages).
+eport\main.pdf (50 pages).

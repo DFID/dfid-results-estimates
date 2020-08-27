@@ -61,12 +61,13 @@ plotOdaGni <- function(data){
 
   oda_plot <- bar_plot / line_plot
 
+  oda_plot
   ### comment in if not using drake
-   pdf(file="figs/oda_gni_plot.pdf",
-       width=8,
-       height=9,
-       pointsize=12)
-   print(oda_plot)
-   dev.off()
+   # pdf(file="figs/oda_gni_plot.pdf",
+   #     width=8,
+   #     height=9,
+   #     pointsize=12)
+   # print(oda_plot)
+   # dev.off()
 
 }

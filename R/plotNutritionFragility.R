@@ -35,11 +35,11 @@ plotNutritionFragility <- function(data) {
 
 
   ### comment in if not using drake
-  pdf(file="figs/nutrition_fragility_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
-  print(nutrition_frag_plot)
-  dev.off()
+  # pdf(file="figs/nutrition_fragility_plot.pdf",
+  #     width=8,
+  #     height=6,
+  #     pointsize=12)
+  # print(nutrition_frag_plot)
+  # dev.off()
 }
 

@@ -119,7 +119,7 @@ source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
 
  sections <- c(#"titlepage/titlepage",
                #"frontmatter/frontmatter",
-               "intro/intro"
+               #"intro/intro"
 #               "a2f/a2f",
 #               "cdc/cdc",
 #               "climate/climate",
@@ -128,7 +128,7 @@ source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
                #"energy/energy"
 #               "ntd/ntd",
 #               "family/family",
-#               "fcas/fcas",
+               "fcas/fcas"
 #               "humanitarian/humanitarian",
 #               "immunisation/immunisation",
 #               "tax/tax",
@@ -153,7 +153,7 @@ source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
 
 %\include{titlepage/titlepage}
 %\include{frontmatter/frontmatter}
-\include{intro/intro}
+%\include{intro/intro}
 %\include{a2f/a2f}
 %\include{cdc/cdc}
 %\include{climate/climate}
@@ -161,7 +161,7 @@ source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
 %\include{education/education}
 %\include{energy/energy}
 %\include{family/family}
-%\include{fcas/fcas}
+\include{fcas/fcas}
 %\include{humanitarian/humanitarian}
 %\include{immunisation/immunisation}
 %\include{tax/tax}

@@ -35,12 +35,12 @@ plotWASHRegion <- function(data) {
 
 
   ### comment in if not using drake
-  pdf(file="figs/wash_region_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
-  print(wash_region_plot)
-  dev.off()
+  # pdf(file="figs/wash_region_plot.pdf",
+  #     width=8,
+  #     height=6,
+  #     pointsize=12)
+  # print(wash_region_plot)
+  # dev.off()
 }
 
 

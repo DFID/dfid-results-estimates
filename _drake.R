@@ -13,4 +13,3 @@ lapply(list.files("./R", full.names = TRUE)[-c(12)], source)
 drake_config(the_plan,
              lock_envir = FALSE)
 
-

@@ -35,11 +35,11 @@ plotNutritionRegion <- function(data) {
 
 
   ### comment in if not using drake
-  pdf(file="figs/nutrition_region_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
-  print(nutrition_region_plot)
-  dev.off()
+  # pdf(file="figs/nutrition_region_plot.pdf",
+  #     width=8,
+  #     height=6,
+  #     pointsize=12)
+  # print(nutrition_region_plot)
+  # dev.off()
 }
 

@@ -56,11 +56,11 @@ pfm_plot = ggplot(world) +
   ditch_the_axes +
   scale_fill_manual(values=c("grey85","#1b9e77"))
 
-pdf(file="figs/pfm_plot.pdf",
-    width=8,
-    height=6,
-    pointsize=12)
-print(pfm_plot)
-dev.off()
+# pdf(file="figs/pfm_plot.pdf",
+#     width=8,
+#     height=6,
+#     pointsize=12)
+# print(pfm_plot)
+# dev.off()
 
 }

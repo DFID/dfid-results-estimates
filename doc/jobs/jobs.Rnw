@@ -5,13 +5,26 @@
 % make sure numbers and header don't appear
 \thispagestyle{empty}
 
+<<echo=FALSE>>=
+loadd(jobs_table)
+loadd(jobs_region_data)
+@
+
 
 \section{Results}
-From 2015/16 to 2019/20 DFID supported \textbf{5.1 million} people to raise their incomes or maintain/gain a better job or livelihood. %
+From 2015/16 to 2019/20 DFID supported \textbf{
+\Sexpr{jobs_table %>% summarise(Total/1000000) %>% unlist() %>% roundChoose(.,1)} million
+} people to raise their incomes or maintain/gain a better job or livelihood. %
 
 \subsection{Results by gender}
 Ninety-nine percent of results were broken down by gender. %
-Of the 5.1 million people supported, 3.6 million were men and 1.5 million were women (figures do not sum due to rounding).
+Of the
+\Sexpr{jobs_table %>% summarise(Total/1000000) %>% unlist() %>% roundChoose(.,1)}
+million people supported,
+\Sexpr{jobs_table %>% summarise(Male/1000000) %>% unlist()}
+million were men and
+\Sexpr{jobs_table %>% summarise(Female/1000000) %>% unlist()}
+million were women (figures do not sum due to rounding).
 
 \subsection{Results by region}
 See Figure \ref{fig:jobs_region_plot} for regional breakdown of results.  %
@@ -19,7 +32,11 @@ See Figure \ref{fig:jobs_region_plot} for regional breakdown of results.  %
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.8\textwidth]{../figs/jobs_region_plot} \hfill
+<<jobs_region_plot, echo=FALSE, fig.dim=c(8,6), out.width='0.8\\textwidth', fig.path='figs/'>>=
+loadd(jobs_region_plot)
+plot(jobs_region_plot)
+@
+	%\includegraphics[width=0.8\textwidth]{../figs/jobs_region_plot} \hfill
 	\caption{Percentage of Jobs and Income results by region.}
 	\label{fig:jobs_region_plot}
 \end{figure}
@@ -27,7 +44,7 @@ See Figure \ref{fig:jobs_region_plot} for regional breakdown of results.  %
 
 
 \subsection{Results by type}
-Of the total 5.1 million people supported to raise their incomes or maintain/gain a better job or livelihood:
+Of the total \Sexpr{jobs_table %>% summarise(Total/1000000) %>% unlist() %>% roundChoose(.,1)} million people supported to raise their incomes or maintain/gain a better job or livelihood:
 
 \begin{itemize}
 \item 2.4 million people were supported to raise their income.

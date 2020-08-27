@@ -23,11 +23,11 @@ climate_spend_plot  <-
 
 
   ### comment in if not using drake
-  pdf(file="figs/climate_spend_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
-  print(climate_spend_plot)
-  dev.off()
+ # pdf(file="figs/climate_spend_plot.pdf",
+#      width=8,
+#      height=6,
+#      pointsize=12)
+#  print(climate_spend_plot)
+#  dev.off()
 }
 

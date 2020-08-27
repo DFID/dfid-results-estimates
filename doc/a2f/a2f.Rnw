@@ -8,14 +8,23 @@
 
 \section{Results}
 
-Between 2015 and 2019 DFID supported \textbf{69.2 million} people to gain access to finance, including 35.4 million women, representing 51\% of the total. %
+<<echo=FALSE>>=
+loadd(a2f)
+loadd(a2f_region_data)
+@
+
+Between 2015 and 2019 DFID supported \textbf{\Sexpr{round(unlist(a2f$Total)/1000000,1)}} million people to gain access to finance, including \Sexpr{round(unlist(a2f$Female)/1000000,1)} million women, representing \Sexpr{round((unlist(a2f$Female)/1000000)/(unlist(a2f$Total)/1000000)*100,0)}\% of the total. %
 
 From 2015 to 2019, the largest number of people supported by DFID programmes were in Asia, with 41.3 million people supported (Figure \ref{fig:a2f_region_plot}). In Africa, DFID supported 26.8 million people, in the Middle East 0.9 million people were supported and 0.01 million people were supported through centrally managed programmes. %
 
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth]{../figs/a2f_region_plot} \hfill
+  \centering
+<<a2f_region_plot, echo=FALSE, fig.dim=c(8,6), out.width='0.8\\textwidth', fig.path='figs/'>>=
+loadd(a2f_region_plot)
+plot(a2f_region_plot)
+@
+%	\includegraphics[width=0.8\textwidth]{../figs/a2f_region_plot} \hfill
 	\caption{Percentage of Access to Finance results by region.}
 	\label{fig:a2f_region_plot}
 \end{figure}

@@ -5,9 +5,12 @@
 
 \thispagestyle{empty}
 
+<<echo=F>>=
+loadd(climate_spend)
+@
 
 \section{Results}
-From 2016/17 to 2019/20, DFID spent \textbf{\pounds 2.9 billion} on building the resilience of poor people to the impacts of climate change and investing in low carbon development to avoid or prevent harmful greenhouse gases. %
+From 2016/17 to 2019/20, DFID spent \textbf{\pounds \Sexpr{round(unlist(climate_spend[1,1])/1000,1)} billion} on building the resilience of poor people to the impacts of climate change and investing in low carbon development to avoid or prevent harmful greenhouse gases. %
 This indicator contributes to the UK commitment to spend  \pounds  5.8 billion over five years on tackling climate change, of which DFID intends to spend \pounds3.6 billion. \\ %
 
 \pounds 2.6 billion of DFID's spend on climate from 2016/17 to 2019/20 was through bilateral programmes by DFID's network of country offices, or by teams based in the UK whose programmes often operate across a range of countries. %
@@ -18,11 +21,15 @@ These organisations have greater reach across a broader range of countries and w
 DFID contributed \pounds 0.3 billion to climate multilaterals from 2016/17 to 2019/20. %
 
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth]{../figs/climate_spend_plot} \hfill
-	\caption{DFID spend on climate finance from 2016/17 to 2019/2020 set against the cumulative spend target up to 2020/21 of \pounds 3,641 Million.}
-	\label{fig:climate_spend_plot}
+  \centering
+<<climate_spend_plot, echo=FALSE, fig.dim=c(8,6), out.width='0.8\\textwidth', fig.path='figs/'>>=
+loadd(climate_spend_plot)
+plot(climate_spend_plot)
+@
+  \caption{DFID spend on climate finance from 2016/17 to 2019/2020 set against the cumulative spend target up to 2020/21 of \pounds 3,641 Million.}
+  \label{fig:climate_spend_plot}
 \end{figure}
+
 
 \section{Context}
 

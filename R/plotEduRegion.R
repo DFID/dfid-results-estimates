@@ -35,11 +35,11 @@ plotEduRegion <- function(data) {
 
 
   ### comment in if not using drake
-  pdf(file="figs/education_region_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
-  print(edu_region_plot)
-  dev.off()
+  # pdf(file="figs/education_region_plot.pdf",
+  #     width=8,
+  #     height=6,
+  #     pointsize=12)
+  # print(edu_region_plot)
+  # dev.off()
 }
 

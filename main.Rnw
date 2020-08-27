@@ -72,7 +72,7 @@
 %{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
 %\pagestyle{mystyle}
 
-\usepackage{draftwatermark} %comment out to remove watermark
+%\usepackage{draftwatermark} %comment out to remove watermark
 
 % paragraph set up
 %\usepackage{indentfirst} % for indenting first para
@@ -94,20 +94,21 @@
 %%% R setup
 % chunk options
 <<echo=FALSE>>=
-# library(knitr)
-# knitr::opts_chunk$set(
-#   echo=F,
-#   message=F,
-#   warning=F,
-#   #fig.path = "../figs/",
-#   cache = FALSE
-  #fig.process = function(x) {
-  #                    x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
-  #                    if (file.rename(x, x2)) x2 else x
-  #                    }
-#  )
+library(knitr)
+knitr::opts_chunk$set(
+  echo=F,
+  message=F,
+  warning=F
 
-#source("~/dev/SDPResults/R/accessoryFuncs.R") # NEED TO UPDATE PACKAGE
+# If you want figs output to dir
+#fig.path = "figs/",
+#   cache = FALSE,
+#   fig.process = function(x) {
+#                      x2 = sub('-\\d+([.][a-z]+)$', '\\1', x)
+#                     if (file.rename(x, x2)) x2 else x
+#                      }
+  )
+
 @
 
 
@@ -117,12 +118,13 @@
 # vector of chapters to be knitted
 # UNCOMMENT and move main.Rnw to .. if knitting separately to the pipeline
 
-# sections <- c("titlepage/titlepage",
-#               "frontmatter/frontmatter",
-#               "intro/intro",
-#               "a2f/a2f",
-#               "cdc/cdc",
-#               "climate/climate",
+# sections <- c(
+#               "doc/titlepage/titlepage",
+#               "doc/frontmatter/frontmatter",
+#               "doc/intro/intro",
+#               "doc/a2f/a2f",
+#               "doc/cdc/cdc",
+#               "doc/climate/climate"
 #               "devcap/devcap",
 #               "education/education",
 #               "energy/energy",
@@ -146,37 +148,37 @@
 #               "wash/wash"
 # )
 #
-# knitAll(files=sections)
+#knitAll(files=sections)
 
 @
 
 
-\include{doc/titlepage/titlepage}
-\include{doc/frontmatter/frontmatter}
-\include{doc/intro/intro}
-\include{doc/a2f/a2f}
-\include{doc/cdc/cdc}
-\include{doc/climate/climate}
-\include{doc/devcap/devcap}
-\include{doc/education/education}
-\include{doc/energy/energy}
-\include{doc/family/family}
-\include{doc/fcas/fcas}
-\include{doc/humanitarian/humanitarian}
-\include{doc/immunisation/immunisation}
-\include{doc/tax/tax}
-\include{doc/multi/multi}
-\include{doc/jobs/jobs}
-\include{doc/malaria_spend/malaria_spend}
-\include{doc/ntd_spend/ntd_spend}
-\include{doc/ntd/ntd}
-\include{doc/nutrition/nutrition}
-\include{doc/oda/oda}
-\include{doc/pqi/pqi}
-\include{doc/private/private}
-\include{doc/polio/polio}
-\include{doc/pfm/pfm}
-\include{doc/wash/wash}
+ \include{doc/titlepage/titlepage}
+ \include{doc/frontmatter/frontmatter}
+ \include{doc/intro/intro}
+ \include{doc/a2f/a2f}
+ \include{doc/cdc/cdc}
+ \include{doc/climate/climate}
+ \include{doc/devcap/devcap}
+ \include{doc/education/education}
+ \include{doc/energy/energy}
+ \include{doc/family/family}
+ \include{doc/fcas/fcas}
+ \include{doc/humanitarian/humanitarian}
+ \include{doc/immunisation/immunisation}
+ \include{doc/tax/tax}
+ \include{doc/multi/multi}
+ \include{doc/jobs/jobs}
+ \include{doc/malaria_spend/malaria_spend}
+ \include{doc/ntd_spend/ntd_spend}
+ \include{doc/ntd/ntd}
+ \include{doc/nutrition/nutrition}
+ \include{doc/oda/oda}
+ \include{doc/pqi/pqi}
+ \include{doc/private/private}
+ \include{doc/polio/polio}
+ \include{doc/pfm/pfm}
+ \include{doc/wash/wash}
 
 \newpage
 \thispagestyle{empty}

@@ -2,29 +2,41 @@
 
 \section*{An overview of official UK spend on international development and the UK target to spend 0.7\% of gross national income per calendar year.}
 
-\bigskip
-\bigskip
-
-% make sure numbers and header don't appear
 \thispagestyle{empty}
+
+<<echo=FALSE>>=
+loadd(oda_gni)
+@
 
 \section{Results}
 
-In 2019 provisional ODA spend\footnotemark represented \textbf{0.7\%} of UK Gross National Income (GNI). %
-The total amount of ODA provided by the UK Government was provisionally \textbf{\pounds 15,174 million} in 2019. %
-This was an increase of \pounds 623 million (4.3\%) on spend in 2018 (\pounds 14,552 million). \\%
+In 2019 provisional ODA spend\footnotemark represented \textbf{
+\Sexpr{unlist(oda_gni[nrow(oda_gni),"oda_gni"])}\%
+} of UK Gross National Income (GNI). %
+The total amount of ODA provided by the UK Government was provisionally \textbf{\pounds
+\Sexpr{prettyNum(unlist(oda_gni[nrow(oda_gni),"oda"]), big.mark = ",")} million
+} in 2019. %
+This was an increase of \pounds
+\Sexpr{unlist(oda_gni[nrow(oda_gni),"oda"])-unlist(oda_gni[nrow(oda_gni)-1,"oda"])}
+million
+(\Sexpr{round(((unlist(oda_gni[nrow(oda_gni),"oda"])-unlist(oda_gni[nrow(oda_gni)-1,"oda"]))/unlist(oda_gni[nrow(oda_gni),"oda"]))*100,1)}\%) on spend in 2018 (\pounds
+\Sexpr{prettyNum(unlist(oda_gni[nrow(oda_gni)-1,"oda"]), big.mark = ",")} million). %
 
 \footnotetext{In 2018, a grant equivalent basis for ODA is measurement was introduced.}
 
 Figure \ref{fig:oda_gni_plot} shows the trend in UK ODA since 1970. %
-Overall there has been a steady increase in the level of UK ODA since 1970, with a peak in 2005 and 2006 which was driven by high levels of debt relief, and a steep increase in 2013 when the UK Government first met the 0.7\% ODA:GNI target. \\%
+Overall there has been a steady increase in the level of UK ODA since 1970, with a peak in 2005 and 2006 which was driven by high levels of debt relief, and a steep increase in 2013 when the UK Government first met the 0.7\% ODA:GNI target. %
 
 The jump in the level of ODA in 2016 reflects the switch to the European System of Accounts (ESA) 2010 methodology for measuring GNI and the consequent need to increase UK ODA to meet the 0.7\% ODA target. %
 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1\textwidth]{../figs/oda_gni_plot} \hfill
+<<oda_gni_plot, echo=FALSE, fig.dim=c(8,9.5), out.width='0.9\\textwidth', fig.path='figs/'>>=
+loadd(oda_gni_plot)
+plot(oda_gni_plot)
+@
+  %\includegraphics[width=1\textwidth]{../figs/oda_gni_plot} \hfill
   \caption{UK ODA level and ODA as a percentage of GNI between 1970 and 2019.}
   \label{fig:oda_gni_plot}
 \end{figure}

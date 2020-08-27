@@ -37,9 +37,9 @@ plotFPAdditionalFragility <- function(data) {
 
   ### comment in if not using drake
   pdf(file="figs/fp_additional_fragility_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
+       width=8,
+       height=6,
+       pointsize=12)
   print(fp_additional_frag_plot)
   dev.off()
 }

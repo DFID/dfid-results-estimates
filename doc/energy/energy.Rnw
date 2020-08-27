@@ -4,14 +4,24 @@
 
 \thispagestyle{empty}
 
+<<echo=FALSE>>=
+loadd(energy)
+loadd(energy_table)
+@
 
 \section{Results}
 
-From 2015/16 to 2019/20 DFID installed \textbf{771 megawatts} of clean energy capacity (Table \ref{tab:energy}). %
+From 2015/16 to 2019/20 DFID installed \textbf{
+\Sexpr{energy %>% filter(type=="Cumulative") %>% select(energy) %>% top_n(n=1) %>% unlist()}
+} of clean energy capacity (Table \ref{tab:energy}). %
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{../figs/energy_cumulative_plot} \hfill
+<<energy_cumulative_plot, echo=FALSE, fig.dim=c(8,6), out.width='0.8\\textwidth', fig.path='figs/'>>=
+loadd(energy_cumulative_plot)
+plot(energy_cumulative_plot)
+@
+	%\includegraphics[width=0.7\textwidth]{../figs/energy_cumulative_plot} \hfill
 	\caption{Line plot of cumulative clean energy capacity installed (in megawatts) from 2015/16 to 2019/20.}
 	\label{fig:energy_cumulative_plot}
 \end{figure}
@@ -23,9 +33,10 @@ Simultaneously, corrections were made to results estimates from the Clean Techno
 Corrections have been made where it was discovered that either results were being taken from the wrong source, data were inputted incorrectly, or inappropriate adjustments for over/under reporting had been made. %
 These errors are difficult pick up during the quality assurance process since the CIFs rely on implementing partners to report project data accurately in the first instance. %
 
+% Need to convert to xtable
 \begin{table}[htbp]
 	\centering
-	\caption{Cumulative Totals of MW Clean Energy Capacity Installed (ICF KPI 7)}\label{tab:energy}
+  \caption{Cumulative Totals of MW Clean Energy Capacity Installed (ICF KPI 7)}\label{tab:energy}
 	\begin{tabular}{rrrrr}
 		\toprule
 		\multicolumn{1}{c}{\textbf{2015/16}}&\multicolumn{1}{c}{\textbf{2016/17}}&\multicolumn{1}{c}{\textbf{2017/18}}&\multicolumn{1}{c}{\textbf{2018/19}}&\multicolumn{1}{c}{\textbf{2019/20}} \\ \hline

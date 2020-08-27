@@ -35,12 +35,12 @@ plotHumanRegion <- function(data) {
 
 
   ### comment in if not using drake
-  pdf(file="figs/human_region_plot.pdf",
-      width=8,
-      height=6,
-      pointsize=12)
-  print(human_region_plot)
-  dev.off()
+  # pdf(file="figs/human_region_plot.pdf",
+  #     width=8,
+  #     height=6,
+  #     pointsize=12)
+  # print(human_region_plot)
+  # dev.off()
 }
 
 
