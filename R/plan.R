@@ -226,12 +226,14 @@ nutrition_frag_plot = plotNutritionFragility(nutrition_fragility_data),
 nutrition_region_plot = plotNutritionRegion(nutrition_region_data),
 nutrition_intensity_plot = plotNutritionIntensity(nutrition_intensity_data),
 
-wash_frag_plot = plotWASHFragility(wash_fragility_data),
-wash_region_plot = plotWASHRegion(wash_region_data),
-
 oda_gni_plot = plotOdaGni(oda_gni),
 
 pfm_plot =  plotPFM(pfm),
+
+wash_frag_plot = plotWASHFragility(wash_fragility_data),
+wash_region_plot = plotWASHRegion(wash_region_data),
+
+
 
 
 #### Tables ----

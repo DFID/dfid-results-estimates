@@ -4,17 +4,25 @@
 % make sure numbers and header don't appear
 \thispagestyle{empty}
 
+<<echo=FALSE>>=
+loadd(pfm_table)
+@
+
 \section{Results}
 
-In 2019/120 DFID supported \textbf{39 countries} to manage their public finances (including natural resources and extractives) more transparently. %
-This compares with 40 countries in 2018/19 and 39 countries in 2017/18. %
+In 2019/120 DFID supported \textbf{\Sexpr{pfm_table %>% filter(Department=="Total") %>% select(ncol(.)) %>% unlist()} countries} to manage their public finances (including natural resources and extractives) more transparently. %
+This compares with \Sexpr{pfm_table %>% filter(Department=="Total") %>% select(ncol(.)-1) %>% unlist()} countries in 2018/19 and \Sexpr{pfm_table %>% filter(Department=="Total") %>% select(ncol(.)-2) %>% unlist()} countries in 2017/18. %
 
 From 2015 to 2020 DFID continuously supported 26 countries to manage their public finances (including natural resources and extractives) more transparently.
 %
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.95\textwidth]{../figs/pfm_plot} \hfill
+<<pfm_plot, echo=FALSE, fig.dim=c(8,6), out.width='0.8\\textwidth', fig.path='figs/'>>=
+loadd(pfm_plot)
+plot(pfm_plot)
+@
+  %\includegraphics[width=0.95\textwidth]{../figs/pfm_plot} \hfill
   \caption{Countries supported in 2019/20 to manage their public finances more transparently.}
   \label{fig:pfm_plot}
 \end{figure}
@@ -22,7 +30,7 @@ From 2015 to 2020 DFID continuously supported 26 countries to manage their publi
 
 \section{Context}
 
-Developing countries need to raise and utilise their own revenues to finance public services, and enable sustainable and inclusive growth and poverty reduction. %
+Developing countries need to raise and use their own revenues to finance public services, and enable sustainable and inclusive growth and poverty reduction. %
 Lack of transparency over Government budgeting makes it difficult to track spending, detect
 misuse of public funds and hold decision makers to account. %
 
