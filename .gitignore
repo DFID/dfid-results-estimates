@@ -1,4 +1,4 @@
-.gitignore
+.drake
 .Rproj.user
 packrat/lib*/
 packrat/lib-ext/
@@ -12,7 +12,7 @@ report/main.aux
 report/main.log
 report/main.toc
 report/main.tex
-report/main.Rnw
+report/main.pdf
 R/readEducation.R
 R/readFamily.R
 R/readHumanitarian.R
