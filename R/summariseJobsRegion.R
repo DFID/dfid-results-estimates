@@ -4,7 +4,7 @@
 #' @importFrom magrittr %>%
 #' @export
 #'
-regionDataJobs <- function(data, lookup){
+summariseJobsRegion <- function(data, lookup){
   data %>%
     select(department,gender, results) %>%
     mutate(region = recode_factor(department, !!!getRegion(lookup))) %>%

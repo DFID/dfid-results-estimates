@@ -30,7 +30,7 @@ This should output:
 * an excel file to `tables/`   
 * a pdf to `report/` 
 
-In practice, **this will not go so smoothly**. Our next steps with the pipeline are to bundle it all in a container with the complete environment required for it to successfully run but for now there are some prerequisite dependencies.
+In practice, **this may not go so smoothly**. Our next steps with the pipeline are to bundle it all in a container with the complete environment required for it to successfully run but for now there are some prerequisite dependencies.
 
 ### Prerequisites
 
@@ -40,7 +40,7 @@ In practice, **this will not go so smoothly**. Our next steps with the pipeline 
 
 3. R version >= 4.0.0. 
 
-4. If you don't want to use `packrat` then you must install all the packages manually (see the `packages.R`script). **If** you do this you must remove the `packrat_setup.R` script `root/` or make sure the script isn't sourced in `_drake.R`. **WARNING:** if packages are not the same version as we used to run the pipeline there may be breaking changes between those we installed and those installed on your machine. We recommend using packrat.    
+4. If you don't want to use `packrat` then you must install all the packages manually (see the `./packages.R`script). **WARNING:** if packages are not the same version as we used to run the pipeline there may be breaking changes between those we installed and those installed on your machine. We recommend using packrat.    
 
 
 

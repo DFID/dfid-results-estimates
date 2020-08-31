@@ -4,11 +4,15 @@ packrat/lib*/
 packrat/lib-ext/
 packrat/lib-R/
 packrat/packrat.opts
+packrat/src
+packrat/init.R
 backup.Rproj.user
 report/doc
 report/main.aux
 report/main.log
 report/main.toc
+report/main.tex
+report/main.Rnw
 R/readEducation.R
 R/readFamily.R
 R/readHumanitarian.R
@@ -21,4 +25,4 @@ R/tidyHumanitarian.R
 R/tidyNutrition.R
 R/tidyPFM.R
 R/tidyWASH.R
-doc/main.Rnw
+

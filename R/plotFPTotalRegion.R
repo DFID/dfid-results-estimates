@@ -12,7 +12,7 @@ plotFPTotalRegion <- function(data) {
 
   fp_total_region_plot  <-
     data %>%
-    ggplot(., aes(x = Region, y = perc)) +
+    ggplot(., aes(x = region, y = perc)) +
     geom_bar(stat = "identity", fill=gov_cols[2], color=darken(gov_cols[2]), size=1) +
     geom_text(aes(label = paste0(round(perc,1), "%"), y=perc, fontface=2),
               vjust = adj, size =6,

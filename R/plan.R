@@ -4,8 +4,9 @@ the_plan <-
 #### load data ----
 
 ## remote dept data from dept data tab in each template
-#template_path = "C:/Users/c-baillie/DFID/Results Teamsite - Documents",
+#template_path = "",
 #dept_raw = readDeptData(template_path),
+
 ## local dept data already concatenated
 dept_raw = read_csv("data/dept_raw.csv"),
 
@@ -60,11 +61,16 @@ lookup = read_csv("data/dept_lookup.csv"),
 
 
 
-#### format deptarment data ----
+
+
+#### Format Deptarment Data ----
 dept  = tidyDept(dept_raw, multilat, lookup),
 
 
-#### indicator dataframes  -----
+
+
+
+#### Indicator Dataframes  -----
 
 a2f = filterA2F(a2f_raw),
 
@@ -87,122 +93,46 @@ nutri_intensity = filterNutritionIntensity(dept),
 wash = filterWASH(dept),
 
 
-#### plots ----
 
-### plot data frames
+
+
+#### Plot setup ----
 
 #a2f
 a2f_region_data =  regionDataA2F(a2f_raw, lookup),
 
 #education
-edu_fragility_data  = education %>%
-  filter(department!="Total" & department!="Double Counting") %>%
-  group_by(fragility) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
-
-edu_region_data  = education %>%
-  filter(department!="Total") %>%
-  group_by(region) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
+edu_fragility_data  = summariseFragility(education),
+edu_region_data  = summariseRegion(education),
 
 #family
-fp_total_fragility_data = fp_total %>%
-  filter(Department!="Total") %>%
-  group_by(Fragility) %>%
-  summarise(results=sum(Average)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0)%>%
-  mutate(Fragility= fct_relevel(Fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
-
-fp_total_region_data = fp_total %>%
-  filter(Department!="Total") %>%
-  group_by(Region) %>%
-  summarise(results=sum(Average)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
-
-fp_additional_fragility_data = fp_additional_plots %>%
-  filter(department!="Total") %>%
-  group_by(fragility) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0)%>%
-  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
-
-fp_additional_region_data = fp_additional_plots %>%
-  filter(department!="Total") %>%
-  group_by(region) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
+fp_total_fragility_data = summariseFragility(fp_total),
+fp_total_region_data = summariseRegion(fp_total),
+fp_additional_fragility_data = summariseFragility(fp_additional_plots),
+fp_additional_region_data = summariseRegion(fp_additional_plots),
 
 # humanitarian
-human_fragility_data  = humanitarian %>%
-  filter(department!="Total") %>%
-  group_by(fragility) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100)%>%
-  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
-
-human_region_data  = humanitarian %>%
-  filter(department!="Total") %>%
-  group_by(region) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
+human_fragility_data  = summariseFragility(humanitarian),
+human_region_data  = summariseRegion(humanitarian),
 
 #jobs
-jobs_region_data = regionDataJobs(jobs_raw, lookup),
+jobs_region_data = summariseJobsRegion(jobs_raw, lookup),
 
 #nutrition
-nutrition_fragility_data  = nutri_gender %>%
-  group_by(fragility) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
-
-nutrition_intensity_data  = nutri_intensity %>%
-  filter(department!="Total") %>%
-  ungroup() %>%
-  select(low,medium,high,not_identified, total) %>%
-  select(-total) %>%
-  clean_names("title") %>%
-  pivot_longer(cols=everything(),
-               names_to = "intensity") %>%
-  group_by(intensity) %>%
-  summarise(results=sum(value)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  mutate_at(vars(intensity), as.factor) %>%
-  mutate(intensity= fct_relevel(intensity, c("High", "Medium", "Low","Not Identified"))),
-
-nutrition_region_data  = nutri_gender %>%
-  filter(department!="Total") %>%
-  group_by(region) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
+nutrition_fragility_data  = summariseFragility(nutri_gender),
+nutrition_intensity_data  = summariseNutritionIntensity(nutri_intensity),
+nutrition_region_data  = summariseRegion(nutri_gender),
 
 #wash
-wash_fragility_data  = wash %>%
-  filter(department!="Total") %>%
-  group_by(fragility) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100)%>%
-  mutate(fragility= fct_relevel(fragility, c("Extremely Fragile", "Fragile", "Not Fragile","Not Identified"))),
-
-wash_region_data  = wash %>%
-  filter(department!="Total") %>%
-  group_by(region) %>%
-  summarise(results=sum(total)) %>%
-  mutate(perc=(results/sum(results))*100) %>%
-  filter(results!=0),
+wash_fragility_data  = summariseFragility(wash),
+wash_region_data  = summariseRegion(wash),
 
 
-### plots
+
+
+
+#### Plots ----
+
 a2f_region_plot = plotA2FRegion(a2f_region_data),
 
 climate_spend_plot = plotClimateSpend(climate_spend),
@@ -240,185 +170,22 @@ wash_region_plot = plotWASHRegion(wash_region_data),
 
 a2f_table = a2f %>% clean_names("title"),
 
+energy_table = tableEnergy(energy),
 
-energy_table = energy %>%
-               filter(type=="Annual") %>%
-               pivot_wider(.,
-                  names_from = c("year"),
-                  values_from="energy"
-                ) %>%
-               select(-type),
+education_table =  tableEducation(education, education_cmp),
 
+fp_total_table = tableFPTotal(fp_total, family_total_cmp),
+fp_additional_table = tableFPAdditional(fp_additional, family_additional_cmp),
 
-education_table =  education %>%
-                   add_row(department="Double Counting", # add in double counting
-                            fragility="-",
-                            region="-",
-                            male=0,
-                            female=0,
-                            not_identified=0,
-                            total= unlist(
-                                        left_join(education, education_cmp, by="department") %>%
-                                        mutate(min = pmin(total.x, total.y)) %>%
-                                        ungroup() %>%
-                                        summarise_at(vars(min),sum, na.rm=T))*-1) %>%
-                   adorn_totals() %>%
-                   mutate_if(is.numeric, roundChoose, 1000) %>%
-                   mutate_if(is.numeric, ~(
-                            case_when(
-                                      department=="Total" ~ roundChoose(.,100000),
-                                      TRUE~.
-                                      )
-                                          )
-                            ) %>%
-                  clean_names("title"),
-
-
-fp_total_table = fp_total %>%
-                 add_row(
-                   Department="Double Counting",
-                   Fragility="-",
-                   Region="-",
-                   `2015/16`=unlist(family_total_cmp[1]),
-                   `2016/17`=unlist(family_total_cmp[2]),
-                   `2017/18`=unlist(family_total_cmp[3]),
-                   `2018/19`=unlist(family_total_cmp[4]),
-                   `2019/20`=unlist(family_total_cmp[5]),
-                   Average = mean(unlist(family_total_cmp))
-                    ) %>%
-                add_row(
-                  Department="Total",
-                  Fragility="-",
-                  Region="-",
-                  `2015/16`=sum(.$`2015/16`),
-                  `2016/17`=sum(.$`2016/17`),
-                  `2017/18`=sum(.$`2017/18`),
-                  `2018/19`=sum(.$`2018/19`),
-                  `2019/20`=sum(.$`2019/20`),
-                  Average = NA #add totals manually then swap out total avg.
-                  ) %>%
-                mutate(Average = replace_na(Average, mean(unlist(.[nrow(.),4:8])))) %>%
-                mutate_if(is.numeric, ~(
-                  case_when(
-                    Department!="Inclusive Societies" ~ roundChoose(.,1000),
-                    TRUE~.
-                  )
-                )
-                ) %>%
-               mutate_if(is.numeric, ~(
-                  case_when(
-                    Department=="Inclusive Societies" ~ roundChoose(.,100),
-                    TRUE~.
-                  )
-                )
-                ) %>%
-                mutate_if(is.numeric, ~(
-                            case_when(
-                                      Department=="Total" ~ roundChoose(.,100000),
-                                      TRUE~.
-                                      )
-                                         )
-                            ), #!!! don't clean_names or year col_names will mess up !!!
-
-
-fp_additional_table = fp_additional %>%
-                      mutate_if(is.numeric, ~(
-                                  case_when(
-                                    str_detect(Indicator, "-20") ~ .+unlist(family_additional_cmp),
-                                    TRUE~.
-                                            )
-                                              )
-                      ) %>%
-                    add_row(Indicator="Total Additional Users",
-                            Total = sum(.$Total)
-                            ) %>%
-                      mutate_if(is.numeric,  roundChoose, 100000) %>%
-                      clean_names("title"),
-
-
-humanitarian_table = humanitarian %>%
-                     mutate_if(is.numeric, roundChoose, 1000) %>%
-                     mutate_if(is.numeric, ~(
-                     case_when(
-                          department=="Total" ~ roundChoose(.,100000),
-                          TRUE~.)
-                                            )
-                              ) %>%
-                     clean_names("title"), #double counting already included in figures so nothing to add
-
+humanitarian_table = tableHumanitarian(humanitarian), #double counting already included in figures so nothing to add
 
 jobs_table = jobs %>% clean_names("title"),
 
+nutrition_table = tableNutrition(nutri_gender, nutrition_cmp),
 
-nutrition_table = nutri_gender %>%
-                  ungroup() %>%
-                  add_row(department="Double Counting", # add in double counting
-                          fragility="-",
-                          region="-",
-                          male=NA,
-                          female=NA,
-                          not_identified=NA,
-                          total=unlist(summarize_if(nutrition_cmp, is.numeric, sum, na.rm=TRUE))  *-1) %>%
-                          replace(.,is.na(.),0) %>%
-                  mutate_at(vars(not_identified), ~(
-                        case_when(
-                                  department=="Multilateral" ~ total,
-                                  TRUE~.
-                                  )
-                                                    )
-                            ) %>%
-                  mutate_if(is.numeric, roundChoose, 1000) %>%
-                  adorn_totals() %>%
-                  mutate_if(is.numeric, ~(
-                        case_when(
-                                  department=="Total" ~ roundChoose(.,100000),
-                                  TRUE~.
-                                  )
-                                                    )
-                            ) %>%
-                  clean_names("title"),
+pfm_table = tablePFM(pfm), # no double counting to added
 
-
-pfm_table = pfm  %>%
-  mutate_at(vars(`2015/16`), ~( #these countries were not included in the Caribbean in 2015/16
-    case_when(
-      `2015/16` %in% c("Belize",
-                  "Dominica",
-                  "Grenada",
-                  "Guyana",
-                  "Jamaica",
-                  "Suriname",
-                  "Saint Lucia",
-                  "St Vincent & the Grenadines",
-                  "Haiti",
-                  "Montserrat") ~ "-",
-      TRUE~.
-    )
-  )
-  ) %>%
-  add_row(dept="Total",
-          `2015/16`=as.character(length(unique(.$`2015/16`))-1),
-          `2016/17`=as.character(length(unique(.$`2016/17`))-1),
-          `2017/18`=as.character(length(unique(.$`2017/18`))-1),
-          `2018/19`=as.character(length(unique(.$`2018/19`))-1),
-          `2019/20`=as.character(length(unique(.$`2019/20`))-1)
-          ) %>%
-  mutate(dept = recode(dept, "-"="")) %>%
-  rename(Department="dept"),
-
-
-wash_table = wash %>%
-  mutate_if(is.numeric, roundChoose, 1000) %>%
-  adorn_totals("row") %>%
-  mutate_if(is.numeric, ~(
-    case_when(
-      department=="Total" ~ roundChoose(.,100000),
-      TRUE~.
-    )
-  )
-  ) %>%
-  clean_names("title"), # no double counting to added
-
+wash_table = tableWASH(wash),
 
 # Make all the tables into a list. If there are 'missing' tables or ones being
 # brought in from elsewhere you need to include them in the right order as the
@@ -448,10 +215,11 @@ tables_list = list(a2f_table,
                  pfm_table,
                  wash_table),
 
-
-#### Output Tables ----
-
+# output tables
 tables = makeTables(lst_data = tables_list, tables_titles = tables_titles), #NEED TO ADD warning/error message: will error if nrow tables titles != length tables list
+
+
+
 
 
 #### Report ----
@@ -496,5 +264,3 @@ compile = system("xelatex main.tex --output-directory=report --aux-directory=rep
 
 )
 
-
-loadd(wash_fragility_plot)
