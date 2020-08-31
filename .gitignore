@@ -11,8 +11,7 @@ report/doc
 report/main.aux
 report/main.log
 report/main.toc
-report/main.tex
-report/main.pdf
+report/main.out
 R/readEducation.R
 R/readFamily.R
 R/readHumanitarian.R
