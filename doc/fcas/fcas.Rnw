@@ -2,8 +2,6 @@
 
 \section*{Percentage of DFID's budget spent on fragile states and conflict affected states.}
 
-\bigskip
-\bigskip
 
 \thispagestyle{empty}
 

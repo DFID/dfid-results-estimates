@@ -1,74 +1,75 @@
+\thispagestyle {empty}
 \contentsline {chapter}{Introduction}{1}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Access to Finance}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Results}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Context}{3}{section.1.2}%
-\contentsline {chapter}{\numberline {2}CDC Development Impact Grid Score}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Results}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Context}{4}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Climate Finance}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Results}{5}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Context}{5}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Programmes using DFID Climate Finance}{6}{subsection.3.2.1}%
-\contentsline {chapter}{\numberline {4}Development Capital Investment Levels}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Results}{8}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Context}{8}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Education}{9}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Results}{9}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Context}{10}{section.5.2}%
-\contentsline {chapter}{\numberline {1}Energy}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Results}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Context}{2}{section.1.2}%
-\contentsline {chapter}{\numberline {7}Family Planning}{14}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Results}{14}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Context}{14}{section.7.2}%
-\contentsline {chapter}{\numberline {1}Fragile and Conflict Affected States}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Results}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Context}{1}{section.1.2}%
-\contentsline {chapter}{\numberline {9}Humanitarian}{20}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Results}{20}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Context}{22}{section.9.2}%
-\contentsline {chapter}{\numberline {10}Immunisations}{24}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Results}{24}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Context}{24}{section.10.2}%
-\contentsline {chapter}{\numberline {11}Improving Tax Systems}{25}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Results}{25}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Context}{25}{section.11.2}%
-\contentsline {chapter}{\numberline {12}Investment in the Multilateral System}{26}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Results}{26}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Context}{26}{section.12.2}%
-\contentsline {chapter}{\numberline {13}Jobs and Income}{27}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Results}{27}{section.13.1}%
-\contentsline {subsection}{\numberline {13.1.1}Results by gender}{27}{subsection.13.1.1}%
-\contentsline {subsection}{\numberline {13.1.2}Results by region}{27}{subsection.13.1.2}%
-\contentsline {subsection}{\numberline {13.1.3}Results by type}{28}{subsection.13.1.3}%
-\contentsline {section}{\numberline {13.2}Context}{28}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Malaria: Spend}{29}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Results}{29}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Context}{29}{section.14.2}%
-\contentsline {chapter}{\numberline {15}Neglected Tropical Diseases: Spend}{30}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Results}{30}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Context}{30}{section.15.2}%
-\contentsline {chapter}{\numberline {16}Neglected Tropical Diseases}{32}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Results}{32}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Context}{32}{section.16.2}%
-\contentsline {chapter}{\numberline {17}Nutrition}{34}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Results}{34}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Context}{35}{section.17.2}%
-\contentsline {chapter}{\numberline {18}Official Development Assistance (ODA)}{37}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Results}{37}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Context}{37}{section.18.2}%
-\contentsline {chapter}{\numberline {19}Portfolio Quality Index}{39}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Results}{39}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Context}{39}{section.19.2}%
-\contentsline {chapter}{\numberline {20}Private Sector Investment}{40}{chapter.20}%
-\contentsline {section}{\numberline {20.1}Results}{40}{section.20.1}%
-\contentsline {section}{\numberline {20.2}Context}{40}{section.20.2}%
-\contentsline {chapter}{\numberline {21}Progress Towards Polio Eradication}{41}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Results}{41}{section.21.1}%
-\contentsline {section}{\numberline {21.2}Context}{41}{section.21.2}%
-\contentsline {chapter}{\numberline {22}Public Financial Management}{42}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Results}{42}{section.22.1}%
+\contentsline {chapter}{\numberline {2}CDC Development Impact Grid Score}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Results}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Context}{5}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Climate Finance}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Results}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Context}{6}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Programmes using DFID Climate Finance}{7}{subsection.3.2.1}%
+\contentsline {chapter}{\numberline {4}Development Capital Investment Levels}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Results}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Context}{9}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Education}{10}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Results}{10}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Context}{11}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Energy}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Results}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Context}{14}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Family Planning}{15}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Results}{15}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Context}{15}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Fragile and Conflict Affected States}{19}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Results}{19}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Context}{19}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Humanitarian}{21}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Results}{21}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Context}{23}{section.9.2}%
+\contentsline {chapter}{\numberline {10}Immunisations}{25}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Results}{25}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Context}{25}{section.10.2}%
+\contentsline {chapter}{\numberline {11}Improving Tax Systems}{26}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Results}{26}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Context}{26}{section.11.2}%
+\contentsline {chapter}{\numberline {12}Investment in the Multilateral System}{27}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Results}{27}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Context}{27}{section.12.2}%
+\contentsline {chapter}{\numberline {13}Jobs and Income}{28}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Results}{28}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}Results by gender}{28}{subsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.1.2}Results by region}{28}{subsection.13.1.2}%
+\contentsline {subsection}{\numberline {13.1.3}Results by type}{29}{subsection.13.1.3}%
+\contentsline {section}{\numberline {13.2}Context}{29}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Malaria: Spend}{30}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Results}{30}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Context}{30}{section.14.2}%
+\contentsline {chapter}{\numberline {15}Neglected Tropical Diseases: Spend}{31}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Results}{31}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Context}{31}{section.15.2}%
+\contentsline {chapter}{\numberline {16}Neglected Tropical Diseases}{33}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Results}{33}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Context}{33}{section.16.2}%
+\contentsline {chapter}{\numberline {17}Nutrition}{35}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Results}{35}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Context}{36}{section.17.2}%
+\contentsline {chapter}{\numberline {18}Official Development Assistance (ODA)}{38}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Results}{38}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Context}{38}{section.18.2}%
+\contentsline {chapter}{\numberline {19}Portfolio Quality Index}{40}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Results}{40}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Context}{40}{section.19.2}%
+\contentsline {chapter}{\numberline {20}Private Sector Investment}{41}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Results}{41}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Context}{41}{section.20.2}%
+\contentsline {chapter}{\numberline {21}Progress Towards Polio Eradication}{42}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Results}{42}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Context}{42}{section.21.2}%
+\contentsline {chapter}{\numberline {22}Public Financial Management}{43}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Results}{43}{section.22.1}%
 \contentsline {section}{\numberline {22.2}Context}{43}{section.22.2}%
-\contentsline {chapter}{\numberline {23}Water, Sanitation and Hygiene}{44}{chapter.23}%
-\contentsline {section}{\numberline {23.1}Results}{44}{section.23.1}%
-\contentsline {section}{\numberline {23.2}Context}{45}{section.23.2}%
+\contentsline {chapter}{\numberline {23}Water, Sanitation and Hygiene}{45}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Results}{45}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Context}{46}{section.23.2}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7440 64-bit) (preloaded format=xelatex 2020.5.28)  26 AUG 2020 11:40
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7440 64-bit) (preloaded format=xelatex 2020.5.28)  31 AUG 2020 08:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -754,10 +754,10 @@ LaTeX Info: Redefining \nameref on input line 139.
 \openout2 = `doc/titlepage/titlepage.aux'.
 
 (doc/titlepage/titlepage.tex
-File: ../images/dfid.jpg Graphic file (type bmp)
-<../images/dfid.jpg>
-File: ../images/ukaid.png Graphic file (type bmp)
-<../images/ukaid.png>
+File: images/dfid.jpg Graphic file (type bmp)
+<images/dfid.jpg>
+File: images/ukaid.png Graphic file (type bmp)
+<images/ukaid.png>
 LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
 
@@ -977,14 +977,14 @@ File: figs/energy_cumulative_plot-1.pdf Graphic file (type pdf)
 
  (doc/family/family.tex
 Chapter 7.
-File: ../figs/fp_total_region_plot.pdf Graphic file (type pdf)
-<use ../figs/fp_total_region_plot.pdf>
-File: ../figs/fp_total_fragility_plot.pdf Graphic file (type pdf)
-<use ../figs/fp_total_fragility_plot.pdf>
-File: ../figs/fp_additional_region_plot.pdf Graphic file (type pdf)
-<use ../figs/fp_additional_region_plot.pdf>
-File: ../figs/fp_additional_fragility_plot.pdf Graphic file (type pdf)
-<use ../figs/fp_additional_fragility_plot.pdf>
+File: figs/fp_total_region_plot.pdf Graphic file (type pdf)
+<use figs/fp_total_region_plot.pdf>
+File: figs/fp_total_fragility_plot.pdf Graphic file (type pdf)
+<use figs/fp_total_fragility_plot.pdf>
+File: figs/fp_additional_region_plot.pdf Graphic file (type pdf)
+<use figs/fp_additional_region_plot.pdf>
+File: figs/fp_additional_fragility_plot.pdf Graphic file (type pdf)
+<use figs/fp_additional_fragility_plot.pdf>
 [15
 
 
@@ -1001,17 +1001,17 @@ le states and conflict affected
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--18
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
@@ -1363,13 +1363,22 @@ anage their public finances
  []
 
 
-Overfull \hbox (20.47185pt too wide) in paragraph at lines 9--11
+Overfull \hbox (20.47185pt too wide) in paragraph at lines 11--13
 \TU/GDSTransportWebsite(0)/m/n/10 extractives) more transparently. This compare
 s with 40 countries in 2018/19 and 39 countries in 2017/18. 
  []
 
-File: ../figs/pfm_plot.pdf Graphic file (type pdf)
-<use ../figs/pfm_plot.pdf>
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+File: figs/pfm_plot-1.pdf Graphic file (type pdf)
+<use figs/pfm_plot-1.pdf>
+
+Overfull \hbox (8.35869pt too wide) in paragraph at lines 32--35
+\TU/GDSTransportWebsite(0)/m/n/10 makes it difficult to track spending, detect 
+misuse of public funds and hold decision makers to account. 
+ []
+
 [43
 
 
@@ -1379,19 +1388,25 @@ File: ../figs/pfm_plot.pdf Graphic file (type pdf)
 
  (doc/wash/wash.tex
 Chapter 23.
-File: ../figs/wash_region_plot.pdf Graphic file (type pdf)
-<use ../figs/wash_region_plot.pdf>
 
-Overfull \hbox (5.00029pt too wide) in paragraph at lines 19--22
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+File: figs/wash_region_plot-1.pdf Graphic file (type pdf)
+<use figs/wash_region_plot-1.pdf>
+
+Overfull \hbox (5.00029pt too wide) in paragraph at lines 27--30
 []\TU/GDSTransportWebsite(0)/m/n/10 From 2015 to 2020, Africa was the largest b
 eneficiary of DFID Water Supply, Sanitation and Hygiene (WASH)
  []
 
-File: ../figs/wash_fragility_plot.pdf Graphic file (type pdf)
-<use ../figs/wash_fragility_plot.pdf>
 
-Overfull \hbox (4.3922pt too wide) in paragraph at lines 30--32
-\TU/GDSTransportWebsite(0)/m/n/10 states (37.8 million beneficiaries), includin
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+File: figs/wash_fragility_plot-1.pdf Graphic file (type pdf)
+<use figs/wash_fragility_plot-1.pdf>
+
+Overfull \hbox (6.25743pt too wide) in paragraph at lines 43--45
+\TU/GDSTransportWebsite(0)/m/n/10 states (36.6 million beneficiaries), includin
 g 17.4 million beneficiaries living in extremely fragile states. 
  []
 
@@ -1400,13 +1415,13 @@ g 17.4 million beneficiaries living in extremely fragile states.
 
 
 ]
-Overfull \hbox (2.942pt too wide) in paragraph at lines 38--42
+Overfull \hbox (2.942pt too wide) in paragraph at lines 51--55
 \TU/GDSTransportWebsite(0)/m/n/10 Successive governments have emphasised the im
 portance of water supply and sanitation to support broader
  []
 
 
-Overfull \hbox (28.08197pt too wide) in paragraph at lines 43--44
+Overfull \hbox (28.08197pt too wide) in paragraph at lines 56--57
 \TU/GDSTransportWebsite(0)/m/n/10 prevalent neglected tropical diseases, includ
 ing trachoma, schistosomiasis and soil transmitted helminths. 
  []
@@ -1435,10 +1450,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
- 15837 strings out of 414076
- 287661 string characters out of 2893140
- 642294 words of memory out of 3000000
- 33051 multiletter control sequences out of 15000+200000
+ 15835 strings out of 414076
+ 287604 string characters out of 2893140
+ 642267 words of memory out of 3000000
+ 33050 multiletter control sequences out of 15000+200000
  538033 words of font info for 68 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,14n,70p,1195b,367s stack positions out of 5000i,500n,10000p,200000b,50000s

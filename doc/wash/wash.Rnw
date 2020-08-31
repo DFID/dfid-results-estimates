@@ -34,8 +34,8 @@ A further \Sexpr{wash_region_data %>% filter(region=="Policy" | region=="Multila
 \begin{figure}[htbp]
 	\centering
 <<wash_fragility_plot, echo=FALSE, fig.dim=c(8,6), out.width='0.8\\textwidth', fig.path='figs/'>>=
-loadd(wash_fragility_plot)
-plot(wash_fragility_plot)
+loadd(wash_frag_plot)
+plot(wash_frag_plot)
 @
 	%\includegraphics[width=0.8\textwidth]{../figs/wash_fragility_plot} \hfill
 	\caption{Percentage of WASH results by fragility level.}

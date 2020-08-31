@@ -497,3 +497,4 @@ compile = system("xelatex main.tex --output-directory=report --aux-directory=rep
 )
 
 
+loadd(wash_fragility_plot)

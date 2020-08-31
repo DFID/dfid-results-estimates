@@ -20,30 +20,30 @@ options(repos = my_repos)
 
 #### Install CRAN packages ----
  cran_packages <- c(
-"conflicted",
-"dplyr",
-"dotenv",
-"drake",
-"ggplot2",
-"govstyle",
-"patchwork",
-"purrr",
-"here",
-"janitor",
-"knitr",
-"lubridate",
-"magrittr",
-"openxlsx",
-"scales",
-"stringr",
-"tidyr",
-"readr",
-"forcats",
-"zoo",
-"rnaturalearth",
-"rnaturalearthdata",
-"ggrepel",
-"sf"
+    "conflicted",
+    "dplyr",
+    "dotenv",
+    "drake",
+    "ggplot2",
+    "patchwork",
+    "purrr",
+    "here",
+    "janitor",
+    "knitr",
+    "lubridate",
+    "magrittr",
+    "openxlsx",
+    "scales",
+    "stringr",
+    "tidyr",
+    "readr",
+    "forcats",
+    "zoo",
+    "rnaturalearth",
+    "rnaturalearthdata",
+    "ggrepel",
+    "sf",
+    "xtable"
 )
 
 install.packages(cran_packages)
@@ -55,8 +55,6 @@ install.packages(cran_packages)
 
 remotes::install_github(github_packages)
 
-# If using, gt needs to be installed at a specific commit to deal with a bug to work with latex: https://github.com/rstudio/gt/issues/280
-# remotes::install_github("rstudio/gt", ref = "51a812ba6a10769bd24e01c82a3e1b7de44a5a40")
 
 #### Take snapshot ----
 

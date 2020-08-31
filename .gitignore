@@ -21,3 +21,4 @@ R/tidyHumanitarian.R
 R/tidyNutrition.R
 R/tidyPFM.R
 R/tidyWASH.R
+doc/main.Rnw
