@@ -26,7 +26,7 @@ These commands will:
 * execute/compile the plan (using an isolated R process)
 
 This should output:
-* a bunch of plots to `fig/`   
+* a bunch of plots to `figs/`   
 * an excel file to `tables/`   
 * a pdf to `report/` 
 
@@ -40,13 +40,13 @@ In practice, **this may not go so smoothly**. Our next steps with the pipeline a
 
 3. R version >= 4.0.0. 
 
-4. If you don't want to use `packrat` then you must install all the packages manually (see the `./packages.R`script). **WARNING:** if packages are not the same version as we used to run the pipeline there may be breaking changes between those we installed and those installed on your machine. We recommend using packrat.    
+4. If you don't want to use `packrat` then you must install all the packages manually (see the `packages.R`script). **WARNING:** if packages are not the same version as we used to run the pipeline there may be breaking changes between those we installed and those installed on your machine. We recommend using packrat.    
 
 
 
 ## The Plan
 
-Here we cover some of aspects of the processing, peculiar to our setup. It might also be useful to `vis_r_drake(the_plan)` after sourcing `_drake.R` to view a dependency graph of the pipeline targets and how they connect with each other.   
+Here we cover some aspects of the processing peculiar to our project. It might also be useful to `vis_r_drake(the_plan)` after sourcing `_drake.R` to view a dependency graph of the pipeline targets and how they connect with each other.   
 
 Headline results data are gathered from across DFID. The main results this pipeline deals with are those aggregated from policy departments and country office programmes, rather than single value figures such as spend. Departments input data onto individial spreadsheets containing separate tabs for each indicator. Data from these tabs, which pass internal Quality Assurance (QA), are then concatenated into another tab on the spreadsheet using PowerQuery. 
 
@@ -61,7 +61,7 @@ But, this is where it gets messy and we need to bring in other data.
 
 * Family Planning results are calculated over a longer time frame than the current SDP period (2015-2020) and, therefore, include some figures from the previous results framework. This data is read in separately.      
 
-* Centrally Managed Programmes (CMPs) are programmes managed from the centre that typically cover a wide geography. In some cases programmes may overlap with bilateral programmes managed by country offices. In these cases we conservatively subtract a percentage of results based on potential geographic overlap to ensure beneficiaries are not counted twice. These data are either the country breakdowns yet to be deducted or the actual amount to be deducted already calculated. Each of these data files has a `_cmp.csv` suffix.
+* Centrally Managed Programmes (CMPs) are programmes managed from the centre that typically cover a wide geography. In some cases programmes may overlap with bilateral programmes managed by country offices. In these cases we conservatively subtract a percentage of results based on potential geographic overlap to ensure beneficiaries are not counted twice. These data are either the country breakdowns yet to be deducted or the actual amount to be deducted already calculated. Each of these data files has a `*_cmp.csv` suffix.
 
 * Finally we read in some accessory data which help in the processing.   
 
@@ -82,7 +82,7 @@ But, this is where it gets messy and we need to bring in other data.
 
 * Tables are then brought into a list of tables, including 'place-holders' for tables where data is inputted manually at a later time (these are mainly spend or other "input" indicators which are mostly single values). The `tables_titles.csv` data is needed to complete this process.  
 
-* Tables are placed in a workbook in separate tabs, title information is added, the whole table is formatted and then output to `tables/`. Here we attempt to format all the tables at once, but since there a number of different table types, each with their own structure, some manual correction needs to be applied to the formatting after the spreadsheet is output.
+* Tables are placed in a workbook in separate tabs, title information is added, the whole table is formatted and then output to `tables/`. Here we attempt to format all the tables at once but since there are a number of different table types, each with their own structure, some manual correction needs to be applied to the formatting after the spreadsheet is output.
 
 ### 5. Report   
 * First, we specify which chapters of the report we want to knit to `.tex`. To specify which chapters are *compiled* in the last step, `main.Rnw` needs to be edited **before** it is knit (though if missed this can be corrected afterwards by editing `main.tex` to `\include{}` any missed chapters)! 
