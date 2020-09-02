@@ -3,13 +3,13 @@
 
 This repository contains the pipeline used for creating DFID's headline results estimates publication. It will generate plots, tables and a report ready for publication (almost).   
 
-The pipeline is written in R using the [drake](https://github.com/ropensci/drake) package. The report is written and compiled using [knitr](https://yihui.org/knitr/) and LaTeX (xelatex to be precise). 
+The pipeline is written in R using the [drake](https://github.com/ropensci/drake) package. The report is written and compiled using [knitr](https://yihui.org/knitr/) and LaTeX (XeLaTeX to be precise so we can use system fonts). 
 
 The general workflow is based heavily on the suggestions of Miles McBain, set out in [this](https://milesmcbain.xyz/posts/the-drake-post/) blog post.
 
 
 ## Usage
-Technically it should be possible to:
+If you have `drake` and `packrat` installed it should be possible to:
 
 1. clone this repository  
 2. cd to the project `root/` directory
@@ -50,7 +50,6 @@ Here we cover some aspects of the processing peculiar to our project. It might a
 
 Headline results data are gathered from across DFID. The main results this pipeline deals with are those aggregated from policy departments and country office programmes, rather than single value figures such as spend. Departments input data onto individial spreadsheets containing separate tabs for each indicator. Data from these tabs, which pass internal Quality Assurance (QA), are then concatenated into another tab on the spreadsheet using PowerQuery. 
 
-All data are located in `data/`.
 
 ### 1. Data  
 * The pipeline begins by reading in data from this tab and concatenating it for all department spreadsheets. During the commissioning of results data collection we use the live spreadsheets as input. If you have access to these files there is an option in `R/plan.R` to use them. The file `data/dept_raw.csv` is a cold copy of that data saved at the end of the QA phase of results data collection, on Friday 7th of August 2020.    
@@ -65,7 +64,7 @@ But, this is where it gets messy and we need to bring in other data.
 
 * Finally we read in some accessory data which help in the processing.   
 
-* A metadata file is also included in `data/` that explains each of the variables in each dataset. 
+* In terms of data, this project is small and all of the above datasets, required to run this pipeline, are provided in `data/`. A metadata file is also included that explains each of the variables in each dataset.    
 
 ### 2. Tidying and Filtering
 * First, department data are tidied, the multilateral data are joined, and some columns are added from the lookup.  
