@@ -8,7 +8,8 @@ the_plan <-
 #dept_raw = readDeptData(template_path),
 
 ## local dept data already concatenated
-dept_raw = read_csv("data/dept_raw.csv"),
+dept_raw = read_csv("data/dept_raw_achieved.csv"),
+
 
 ## local data (other)
 a2f_raw = read_csv("data/a2f.csv") %>%
@@ -17,30 +18,32 @@ a2f_raw = read_csv("data/a2f.csv") %>%
           mutate(Department = recode(Department, PSD="Private Sector", ISD="Inclusive Societies")) %>%
           clean_names(.),
 
-jobs_raw = read_csv("data/jobs.csv") %>%
-          select(-Prog) %>%
-          group_by(Office)  %>%
-          summarise_all(sum) %>%
-          pivot_longer(.,
-               cols=c("male", "female", "results"),
-               names_to=c("gender" ),
-               values_to="results"
-            ) %>%
-          rename(department="Office") %>%
-          mutate(gender=recode(gender, results="total")) %>%
-          mutate(department = recode(department, PSD="Private Sector")),
+climate_spend = read_csv("data/climate_spend.csv"),
 
 energy = read_csv("data/energy.csv") %>%
-  pivot_longer(.,
+               pivot_longer(.,
                cols=c(`2015/16`:`2019/20`),
                names_to = c("year"),
                values_to="energy"),
 
-climate_spend = read_csv("data/climate_spend.csv"),
+family_drf = read_csv("data/family_drf.csv"), # don't clean names to keep year col format
+
+inputs = read_csv("data/inputs.csv"),
+
+jobs_raw = read_csv("data/jobs.csv") %>%
+  select(-Prog) %>%
+  group_by(Office)  %>%
+  summarise_all(sum) %>%
+  pivot_longer(.,
+               cols=c("male", "female", "results"),
+               names_to=c("gender" ),
+               values_to="results"
+  ) %>%
+  rename(department="Office") %>%
+  mutate(gender=recode(gender, results="total")) %>%
+  mutate(department = recode(department, PSD="Private Sector")),
 
 multilat = read_csv("data/multilat.csv"),
-
-family_drf = read_csv("data/family_drf.csv"), # don't clean names to keep year col format
 
 oda_gni = read_csv("data/sid_oda_annual.csv") %>% clean_names(.),
 
@@ -61,14 +64,8 @@ lookup = read_csv("data/dept_lookup.csv"),
 
 
 
-
-
-#### Format Deptarment Data ----
-dept  = tidyDept(dept_raw, multilat, lookup),
-
-
-
-
+#### Format Department Data ----
+dept  = tidyDept(bilateral_data = dept_raw, multilateral_data = multilat, lookup = lookup),
 
 #### Indicator Dataframes  -----
 
@@ -82,6 +79,8 @@ fp_additional = filterFPAdditionalTotals(dept, family_drf),
 
 fp_additional_plots = filterFPAdditionalBreakdown(dept, family_drf),
 
+immunisations = filterImmunisations(dept),
+
 jobs = filterJobsGender(jobs_raw),
 
 humanitarian = filterHumanitarian(dept),
@@ -94,9 +93,7 @@ wash = filterWASH(dept),
 
 
 
-
-
-#### Plot setup ----
+#### Disaggregation Summaries ----
 
 #a2f
 a2f_region_data =  regionDataA2F(a2f_raw, lookup),
@@ -170,6 +167,12 @@ wash_region_plot = plotWASHRegion(wash_region_data),
 
 a2f_table = a2f %>% clean_names("title"),
 
+cdc_table = tableCDC(inputs),
+
+climate_table = tableClimate(inputs),
+
+devcap_table = tableDevCap(inputs),
+
 energy_table = tableEnergy(energy),
 
 education_table =  tableEducation(education, education_cmp),
@@ -177,13 +180,36 @@ education_table =  tableEducation(education, education_cmp),
 fp_total_table = tableFPTotal(fp_total, family_total_cmp),
 fp_additional_table = tableFPAdditional(fp_additional, family_additional_cmp),
 
+fcas_table = tableFCAS(inputs),
+
 humanitarian_table = tableHumanitarian(humanitarian), #double counting already included in figures so nothing to add
+
+immunisations_table = tableImmunisations(immunisations),
+
+improve_tax_table = tableTax(inputs),
+
+invest_multilat_table = tableMultilat(inputs),
 
 jobs_table = jobs %>% clean_names("title"),
 
+malaria_table = tableMalaria(inputs),
+
+ntd_spend_table = tableNTDSpend(inputs),
+
+ntd_table_a = tableNTDa(inputs),
+ntd_table_b = tableNTDb(inputs),
+
 nutrition_table = tableNutrition(nutri_gender, nutrition_cmp),
 
-pfm_table = tablePFM(pfm), # no double counting to added
+oda_table = tableODA(inputs),
+
+pqi_table = tablePQI(inputs),
+
+psi_table = tablePSI(inputs),
+
+polio_table = tablePolio(inputs),
+
+pfm_table = tablePFM(pfm), # no double counting to be added
 
 wash_table = tableWASH(wash),
 
@@ -191,32 +217,33 @@ wash_table = tableWASH(wash),
 # brought in from elsewhere you need to include them in the right order as the
 # data in 'tables_titles.csv'. Here its just named tibbles.
 tables_list = list(a2f_table,
-                 tibble("CDC"), #named tibble of 'missing' or 'to be added manually' table
-                 tibble("Climate Finance"), #named tibble of 'missing' or 'to be added manually' table
-                 tibble("Dev Cap"), #named tibble of 'missing' or 'to be added manually' table
+                 cdc_table, #named tibble of 'missing' or 'to be added manually' table
+                 climate_table,
+                 devcap_table,
                  education_table,
                  energy_table,
                  fp_total_table,
                  fp_additional_table,
-                 tibble("FCAS"),
+                 fcas_table,
                  humanitarian_table,
-                 tibble("Immunisations"),
-                 tibble("Improving Tax"),
-                 tibble("Investment in the Multilateral System"),
+                 immunisations_table,
+                 improve_tax_table,
+                 invest_multilat_table,
                  jobs_table,
-                 tibble("Malaria: Spend"),
-                 tibble("Neglected Tropical Diseases: Spend"),
-                 tibble("Neglected Tropical Diseases"),
+                 malaria_table,
+                 ntd_spend_table,
+                 ntd_table_a, #leave out ntd_table_b
                  nutrition_table,
-                 tibble("Official Development Assistance (ODA)"),
-                 tibble("Portfolio Quality Index"),
-                 tibble("Private Sector Investment"),
-                 tibble("Polio"),
+                 oda_table,
+                 pqi_table,
+                 psi_table,
+                 polio_table,
                  pfm_table,
                  wash_table),
 
+
 # output tables
-tables = makeTables(lst_data = tables_list, tables_titles = tables_titles), #NEED TO ADD warning/error message: will error if nrow tables titles != length tables list
+tables = formatTables(lst_data = tables_list, tables_titles = tables_titles, ntd_table_b), #NEED TO ADD warning/error message: will error if nrow tables titles != length tables list
 
 
 
@@ -259,6 +286,7 @@ sections = c(
 
 
 report = knitAll(files=sections),
+
 
 compile = system("xelatex main.tex --output-directory=report --aux-directory=report")
 

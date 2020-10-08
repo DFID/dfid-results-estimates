@@ -6,7 +6,6 @@ packrat/lib-R/
 packrat/packrat.opts
 packrat/src
 packrat/init.R
-backup.Rproj.user
 report/doc
 report/main.aux
 report/main.log

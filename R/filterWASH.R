@@ -6,7 +6,7 @@
 #'
 filterWASH  <-  function(data){
 
-data %>% filter(indicator==levels(data$indicator)[9] &
+data %>% filter(indicator==levels(data$indicator)[6] &
                     year=="2015/21" &
                     forecast_achieved=="Achieved" &
                     wash_intervention=="All",

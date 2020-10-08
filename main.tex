@@ -74,7 +74,7 @@
 
 \usepackage[ampersand]{easylist}
 
-%\usepackage[many]{tcolorbox}
+%\usepackage[many]{tcolorbox} %no boxes in 2020 version of report.
 
 \usepackage[table, svgnames]{xcolor}
 
@@ -112,17 +112,12 @@
 %\fancyhead[R]{ \includegraphics[width=0.2\textwidth]{./figs/logo} }
 %\renewcommand{\headrulewidth}{0pt}
 
-%\title{\textbf{Results Commission 2020:} Guidance\vspace{-30em}}
-%\date{}
-%\author{}
-
 \usepackage[pagestyles]{titlesec}
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
-%\newpagestyle{mystyle}
-%{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
-%\pagestyle{mystyle}
+
 
 %\usepackage{draftwatermark} %comment out to remove watermark
+
 
 % paragraph set up
 %\usepackage{indentfirst} % for indenting first para
@@ -137,16 +132,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-% \SweaveOpts{concordance=TRUE}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% R setup
 % chunk options
 
 
 
-% knit
+% If you want to compile document out of the pipeline e.g. in a tex editor then uncomment here and remove or add chapter locations
 
 
 

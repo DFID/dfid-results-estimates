@@ -6,7 +6,7 @@
 #'
 filterHumanitarian  <-  function(data){
 
-  data %>% filter(indicator==levels(data$indicator)[6] &
+  data %>% filter(indicator==levels(data$indicator)[5] &
                     year=="2015/21" &
                     forecast_achieved=="Achieved" &
                     disabled=="No") %>%

@@ -1,0 +1,74 @@
+﻿indicator,year,results,multilat_rank,ntd_spend_type,ntd_gender,ntd_intervention_type,pf_body,format
+cdc,2012-2015,3.15,,,,,,numeric
+cdc,2014-2016**,3.04,,,,,,numeric
+cdc,2015-2017**,3.01,,,,,,numeric
+cdc,2016-2018**,2.95,,,,,,numeric
+cdc,2017-2019**,2.94,,,,,,numeric
+climate finance,2015/16*,827000000,,,,,,gbp
+climate finance,2016/17,755000000,,,,,,gbp
+climate finance,2017/18,586000000,,,,,,gbp
+climate finance,2018/19,807000000,,,,,,gbp
+climate finance,2019/20,761000000,,,,,,gbp
+dev cap,2015/16,505000000,,,,,,gbp
+dev cap,2016/17,314000000,,,,,,gbp
+dev cap,2017/18,428000000,,,,,,gbp
+dev cap,2018/19,782800000,,,,,,gbp
+dev cap,2019/20,1009000000,,,,,,gbp
+fcas,2015,0.53,,,,,,percent
+fcas,2016,0.57,,,,,,percent
+fcas,2017,0.57,,,,,,percent
+fcas,2018,0.54,,,,,,percent
+fcas,2019,,,,,,,percent
+tax,2015,32600000,,,,,,gbp
+tax,2016,26000000,,,,,,gbp
+tax,2017,27200000,,,,,,gbp
+tax,2018,23300000,,,,,,gbp
+tax,2019,29000000,,,,,,gbp
+multilat,2015,4473,1,,,,,gbp
+multilat,2016,4843,1,,,,,gbp
+multilat,2017,5256,1,,,,,gbp
+multilat,2018,5289,1,,,,,gbp
+multilat,2019,5061,,,,,,gbp
+malaria spend,2016/17,499,,,,,,gbp
+malaria spend,2017/18,481,,,,,,gbp
+malaria spend,2018/19,452,,,,,,gbp
+malaria spend,2019/20,429,,,,,,gbp
+ntd spend,2017/18,44,,Implementation,,,,gbp
+ntd spend,2018/19,49,,Implementation,,,,gbp
+ntd spend,2019/20,52,,Implementation,,,,gbp
+ntd spend,2017/18,24,,Research,,,,gbp
+ntd spend,2018/19,28,,Research,,,,gbp
+ntd spend,2019/20,31,,Research,,,,gbp
+ntd total,NA,78500000,,,Male ,,,numeric
+ntd total,NA,80300000,,,Female,,,numeric
+ntd total,NA,166100000,,,Total,,,numeric
+ntd intervention,NA,159700000,,,,Preventive chemotherapy,,numeric
+ntd intervention,NA,7500000,,,,Other preventive measures,,numeric
+ntd intervention,NA,100000,,,,Morbidity management,,numeric
+ntd intervention,NA,10000,,,,Curative treatment,,numeric
+ntd intervention,NA,166100000,,,,Total,,numeric
+oda,2014-2015,0.7,,,,,,gbp
+oda,2015-2016,0.7,,,,,,gbp
+oda,2016-2017,0.7,,,,,,gbp
+oda,2017-2018,0.7,,,,,,gbp
+oda,2018-2019,0.7,,,,,,gbp
+pqi,2015/16,103,,,,,,numeric
+pqi,2016/17,104,,,,,,numeric
+pqi,2017/18,102.36,,,,,,numeric
+pqi,2018/19,103.8,,,,,,numeric
+pqi,2019/20,104.5,,,,,,numeric
+psi,2015,1.7,,,,,pidg,gbp
+psi,2016,1.6,,,,,pidg,gbp
+psi,2017,1.6,,,,,pidg,gbp
+psi,2018,2,,,,,pidg,gbp
+psi,2019,1.6,,,,,pidg,gbp
+psi,2015,1.5,,,,,cdc,usd
+psi,2016,1.1,,,,,cdc,usd
+psi,2017,0.7,,,,,cdc,usd
+psi,2018,0.5,,,,,cdc,usd
+psi,2019,0.8,,,,,cdc,usd
+polio,2015,74,,,,,,numeric
+polio,2016,37,,,,,,numeric
+polio,2017,22,,,,,,numeric
+polio,2018,33,,,,,,numeric
+polio,2019,175,,,,,,numeric

@@ -6,16 +6,11 @@
 #' @export
 
 tidyDept  <-  function(bilateral_data, multilateral_data, lookup){
+
 bilateral_data %>%
-    # clear up miss spelling
-  mutate(Department=recode(Department, `Good Goverannce Fund`="Good Governance Fund")) %>%
-    # Education called two diff things
-  mutate(Indicator=
-           recode(Indicator, `Total number of children supported each single year for to gain a decent education`=
-                  "Number of children supported to gain a decent education")) %>%
-    # Nutrition called two diff things
+    # Remove brackets - indicator wording in some files have ()
   mutate(Indicator=str_replace_all(Indicator, "[()]", "")) %>%
-    # clear up weird Jordan trailing space issue
+    # Remove trailing spaces - issue with some encoding
   mutate(Department=sub("\\s+$", "", Department)) %>%
     # remove DFID from names
   mutate(Department=sub("DFID ", "", Department)) %>%

@@ -70,7 +70,7 @@ filterFPAdditionalBreakdown  <-  function(data, family_drf){
 #'
 filterFPTotal  <-  function(data){
 
-  data %>% filter(indicator==levels(data$indicator)[10] &
+  data %>% filter(indicator==levels(data$indicator)[7] &
                   forecast_achieved=="Achieved" &
                   disabled=="No") %>%
     mutate(region_fp = fct_recode(region_fp, Policy="CMP")) %>%
