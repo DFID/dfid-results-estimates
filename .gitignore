@@ -11,6 +11,8 @@ report/main.aux
 report/main.log
 report/main.toc
 report/main.out
+R/filesetup.R
+R/readA2F.R
 R/readEducation.R
 R/readFamily.R
 R/readHumanitarian.R
