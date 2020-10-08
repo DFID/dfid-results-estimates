@@ -57,9 +57,9 @@ For background, the bulk of the work is in handling headline results estimates, 
 
 
 ### 1. Data  
-* The pipeline begins by reading in data from this tab and concatenating it for all department spreadsheets. In production we use these live spreadsheets as input  and if you have access to these files there is an option in `R/plan.R` to use them. The file `data/dept_raw_achieved.csv` is a cold copy of that data saved at the end of the QA phase of results data collection, on Friday 7th of August 2020. There are differences between the cold copy and the live copy:
-1. Only achieved data is provided in the cold copy. We use forecasts for internal auditing purposes.
-2. Only the aggregated results are provided. Countries report results yearly but we do not publish annual breakdowns due to the aggregation methodologies used and time lags for some data - for more information aboutplease see the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).
+* The pipeline begins by reading in data from this tab and concatenating it for all department spreadsheets. In production we use these live spreadsheets as input  and if you have access to these files there is an option in `R/plan.R` to use them. The file `data/dept_raw_achieved.csv` is a cold copy of that data saved at the end of the QA phase of results data collection, on Friday 7th of August 2020. However, there are differences between the cold copy and the live copy:
+1. Only achieved data is provided in the cold copy.
+2. Only the aggregated results are provided. Countries report results yearly but we do not publish annual breakdowns due to the aggregation methodologies used and time lags for some data - for more information about this please see the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).
 
 However, not all indicators use this system and various other datasets need to be used in the pipeline.  
 
