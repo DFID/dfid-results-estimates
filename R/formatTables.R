@@ -3,6 +3,7 @@
 
 formatTables <- function(lst_data, tables_titles, ntd_table_two){
 
+  if(length(lst_data)!=nrow(tables_titles)) stop("Number of tables does not equal number of table titles")
 
 #Title bits
 title_style <- createStyle(fontName= "GDS Transport Website", textDecoration = "bold",

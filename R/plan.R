@@ -1,36 +1,36 @@
 the_plan <-
   drake_plan(
 
-#### load data ----
+#### Load data ----
 
 ## remote dept data from dept data tab in each template
 #template_path = "",
 #dept_raw = readDeptData(template_path),
 
 ## local dept data already concatenated
-dept_raw = read_csv("data/dept_raw_achieved.csv"),
+dept_raw = read_csv(file_in("data/dept_raw_achieved.csv")),
 
 
 ## local data (other)
-a2f_raw = read_csv("data/a2f.csv") %>%
+a2f_raw = read_csv(file_in("data/a2f.csv")) %>%
           select(Department, `Project Title`, Female, Male, Total) %>%
           group_by(Department) %>%
           mutate(Department = recode(Department, PSD="Private Sector", ISD="Inclusive Societies")) %>%
           clean_names(.),
 
-climate_spend = read_csv("data/climate_spend.csv"),
+climate_spend = read_csv(file_in("data/climate_spend.csv")),
 
-energy = read_csv("data/energy.csv") %>%
+energy = read_csv(file_in("data/energy.csv")) %>%
                pivot_longer(.,
                cols=c(`2015/16`:`2019/20`),
                names_to = c("year"),
                values_to="energy"),
 
-family_drf = read_csv("data/family_drf.csv"), # don't clean names to keep year col format
+family_drf = read_csv(file_in("data/family_drf.csv")), # don't clean names to keep year col format
 
-inputs = read_csv("data/inputs.csv"),
+inputs = read_csv(file_in("data/inputs.csv")),
 
-jobs_raw = read_csv("data/jobs.csv") %>%
+jobs_raw = read_csv(file_in("data/jobs.csv")) %>%
   select(-Prog) %>%
   group_by(Office)  %>%
   summarise_all(sum) %>%
@@ -43,24 +43,24 @@ jobs_raw = read_csv("data/jobs.csv") %>%
   mutate(gender=recode(gender, results="total")) %>%
   mutate(department = recode(department, PSD="Private Sector")),
 
-multilat = read_csv("data/multilat.csv"),
+multilat = read_csv(file_in("data/multilat.csv")),
 
-oda_gni = read_csv("data/sid_oda_annual.csv") %>% clean_names(.),
+oda_gni = read_csv(file_in("data/sid_oda_annual.csv")) %>% clean_names(.),
 
-pfm = read_csv("data/pfm.csv") %>% select(dept,`2015/16`:`2019/20`) %>% replace(is.na(.), "-"),
+pfm = read_csv(file_in("data/pfm.csv")) %>% select(dept,`2015/16`:`2019/20`) %>% replace(is.na(.), "-"),
 
 # cmp discounts
-family_total_cmp = read_csv("data/family_total_cmp_discount.csv"),
+family_total_cmp = read_csv(file_in("data/family_total_cmp_discount.csv")),
 
-family_additional_cmp = read_csv("data/family_additional_cmp_discount.csv"),
+family_additional_cmp = read_csv(file_in("data/family_additional_cmp_discount.csv")),
 
-education_cmp = read_csv("data/education_cmp_discount.csv") %>% clean_names(.),
+education_cmp = read_csv(file_in("data/education_cmp_discount.csv")) %>% clean_names(.),
 
-nutrition_cmp = read_csv("data/nutrition_cmp_discount.csv") %>% clean_names(.),
+nutrition_cmp = read_csv(file_in("data/nutrition_cmp_discount.csv")) %>% clean_names(.),
 
 # accessory stuff
-tables_titles = read_csv("data/table_titles.csv"),
-lookup = read_csv("data/dept_lookup.csv"),
+tables_titles = read_csv(file_in("data/table_titles.csv")),
+lookup = read_csv(file_in("data/dept_lookup.csv")),
 
 
 
@@ -213,37 +213,38 @@ pfm_table = tablePFM(pfm), # no double counting to be added
 
 wash_table = tableWASH(wash),
 
-# Make all the tables into a list. If there are 'missing' tables or ones being
-# brought in from elsewhere you need to include them in the right order as the
-# data in 'tables_titles.csv'. Here its just named tibbles.
-tables_list = list(a2f_table,
-                 cdc_table, #named tibble of 'missing' or 'to be added manually' table
-                 climate_table,
-                 devcap_table,
-                 education_table,
-                 energy_table,
-                 fp_total_table,
-                 fp_additional_table,
-                 fcas_table,
-                 humanitarian_table,
-                 immunisations_table,
-                 improve_tax_table,
-                 invest_multilat_table,
-                 jobs_table,
-                 malaria_table,
-                 ntd_spend_table,
-                 ntd_table_a, #leave out ntd_table_b
-                 nutrition_table,
-                 oda_table,
-                 pqi_table,
-                 psi_table,
-                 polio_table,
-                 pfm_table,
-                 wash_table),
 
-
-# output tables
-tables = formatTables(lst_data = tables_list, tables_titles = tables_titles, ntd_table_b), #NEED TO ADD warning/error message: will error if nrow tables titles != length tables list
+# output tables - these needs to be provided in a list
+tables = target(
+  command= {formatTables(lst_data = list(a2f_table,
+                                         cdc_table,
+                                         climate_table,
+                                         devcap_table,
+                                         education_table,
+                                         energy_table,
+                                         fp_total_table,
+                                         fp_additional_table,
+                                         fcas_table,
+                                         humanitarian_table,
+                                         immunisations_table,
+                                         improve_tax_table,
+                                         invest_multilat_table,
+                                         jobs_table,
+                                         malaria_table,
+                                         ntd_spend_table,
+                                         ntd_table_a, #ntd_table_b is added as a separate argument below
+                                         nutrition_table,
+                                         oda_table,
+                                         pqi_table,
+                                         psi_table,
+                                         polio_table,
+                                         pfm_table,
+                                         wash_table),
+                         tables_titles = tables_titles,
+                         ntd_table_b)
+    file_out="tables/tables.xlsx"
+    }
+  ),
 
 
 
@@ -251,44 +252,83 @@ tables = formatTables(lst_data = tables_list, tables_titles = tables_titles, ntd
 
 #### Report ----
 
-## knit .Rnw
-sections = c(
-               "doc/titlepage/titlepage",
-               "doc/frontmatter/frontmatter",
-               "doc/intro/intro",
-               "doc/a2f/a2f",
-               "doc/cdc/cdc",
-               "doc/climate/climate",
-               "doc/devcap/devcap",
-               "doc/education/education",
-               "doc/energy/energy",
-               "doc/ntd/ntd",
-               "doc/family/family",
-               "doc/fcas/fcas",
-               "doc/humanitarian/humanitarian",
-               "doc/immunisation/immunisation",
-               "doc/tax/tax",
-               "doc/multi/multi",
-               "doc/jobs/jobs",
-               "doc/malaria_spend/malaria_spend",
-               "doc/ntd_spend/ntd_spend",
-               "doc/ntd/ntd",
-               "doc/nutrition/nutrition",
-               "doc/oda/oda",
-               "doc/pqi/pqi",
-               "doc/private/private",
-               "doc/polio/polio",
-               "doc/pfm/pfm",
-               "doc/wash/wash",
-
-               "main"
+## knit .Rnw to .tex
+report = target(
+  command = {knitAll(files=file_in(
+    c(
+    "doc/titlepage/titlepage.Rnw",
+    "doc/frontmatter/frontmatter.Rnw",
+    "doc/intro/intro.Rnw",
+    "doc/a2f/a2f.Rnw",
+    "doc/cdc/cdc.Rnw",
+    "doc/climate/climate.Rnw",
+    "doc/devcap/devcap.Rnw",
+    "doc/education/education.Rnw",
+    "doc/energy/energy.Rnw",
+    "doc/ntd/ntd.Rnw",
+    "doc/family/family.Rnw",
+    "doc/fcas/fcas.Rnw",
+    "doc/humanitarian/humanitarian.Rnw",
+    "doc/immunisation/immunisation.Rnw",
+    "doc/tax/tax.Rnw",
+    "doc/multi/multi.Rnw",
+    "doc/jobs/jobs.Rnw",
+    "doc/malaria_spend/malaria_spend.Rnw",
+    "doc/ntd_spend/ntd_spend.Rnw",
+    "doc/ntd/ntd.Rnw",
+    "doc/nutrition/nutrition.Rnw",
+    "doc/oda/oda.Rnw",
+    "doc/pqi/pqi.Rnw",
+    "doc/private/private.Rnw",
+    "doc/polio/polio.Rnw",
+    "doc/pfm/pfm.Rnw",
+    "doc/wash/wash.Rnw",
+    "main.Rnw"
+  )
+  )
+  )
+  file_out=c(
+    "doc/titlepage/titlepage.tex",
+    "doc/frontmatter/frontmatter.tex",
+    "doc/intro/intro.tex",
+    "doc/a2f/a2f.tex",
+    "doc/cdc/cdc.tex",
+    "doc/climate/climate.tex",
+    "doc/devcap/devcap.tex",
+    "doc/education/education.tex",
+    "doc/energy/energy.tex",
+    "doc/ntd/ntd.tex",
+    "doc/family/family.tex",
+    "doc/fcas/fcas.tex",
+    "doc/humanitarian/humanitarian.tex",
+    "doc/immunisation/immunisation.tex",
+    "doc/tax/tax.tex",
+    "doc/multi/multi.tex",
+    "doc/jobs/jobs.tex",
+    "doc/malaria_spend/malaria_spend.tex",
+    "doc/ntd_spend/ntd_spend.tex",
+    "doc/ntd/ntd.tex",
+    "doc/nutrition/nutrition.tex",
+    "doc/oda/oda.tex",
+    "doc/pqi/pqi.tex",
+    "doc/private/private.tex",
+    "doc/polio/polio.tex",
+    "doc/pfm/pfm.tex",
+    "doc/wash/wash.tex",
+    "main.tex"
+  )
+  }
 ),
 
 
-report = knitAll(files=sections),
+# compile .tex
+compile = target(
+  command = {
+    system(paste0("xelatex ", report[[length(report)]], " --output-directory=report  --aux-directory=report"))
+    file_out("report/main.pdf")
+  }
+)
 
-
-compile = system("xelatex main.tex --output-directory=report --aux-directory=report")
 
 )
 
