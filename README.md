@@ -1,12 +1,14 @@
-# SDPResults
+# DFID Results Estimates
 ***
 
-This repository contains the pipeline used for creating DFID's headline results estimates publication. It will generate the plots, tables and report as they appear on the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).   
+## Background
+This repository contains the pipeline used for producing DFID's headline results estimates publication. It will generate the plots, tables and report as they appear on the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).   
 
 The pipeline is written in R using the [drake](https://github.com/ropensci/drake) package. The report is written and compiled using [knitr](https://yihui.org/knitr/) and XeLaTeX (for native OTF and TTF support). 
 
-The general workflow is based heavily on the suggestions of Miles McBain, set out in [this](https://milesmcbain.xyz/posts/the-drake-post/) blog post.
+The approach is based heavily on the suggestions of Miles McBain, set out in [this](https://milesmcbain.xyz/posts/the-drake-post/) blog post.
 
+## Aims
 
 ## Usage
 If you have `drake` and `packrat` installed it should be possible to:
@@ -30,7 +32,7 @@ This should output:
 * an excel file to `tables/`   
 * a pdf to `report/` 
 
-In practice, **this may not go so smoothly**. Our next steps with the pipeline are to bundle it all in a container with the complete environment required for it to successfully run but for now there are some prerequisite dependencies.
+In practice, **this may not go so smoothly**. Please raise an issue or contact [statistics@fcdo.gov.uk]() if you have any suggestions, comments, or issues.
 
 
 ### Prerequisites
@@ -49,29 +51,29 @@ In practice, **this may not go so smoothly**. Our next steps with the pipeline a
 
 ## The Plan
 
-'The plan' (`R/plan.R`) defines each of the pipeline targets and sets out the general workflow.  
+The plan (`R/plan.R`) is the heart of a drake pipeline and it defines each of the pipeline targets and sets out the general workflow.  
 
-Here we describe aspects of the pipeline peculiar to our project and our data. It might also be useful to `vis_r_drake(the_plan)` after sourcing `_drake.R` to view a dependency graph of the pipeline targets and how they interconnect.   
+To better understand the workflow, here we briefly describe aspects of the pipeline peculiar to our project and our data. It might also be useful to `vis_r_drake(the_plan)` after sourcing `_drake.R` to view a dependency graph of the pipeline targets and how they interconnect.   
 
-For background, the bulk of the work is in handling headline results estimates, which are those aggregated from policy department and country office programmes. Departments input data onto template spreadsheets, which are then subject to several rounds of quality assurance (for further information about results see our [webpages](https://www.gov.uk/guidance/dfid-results-estimates)). Results that pass the QA process are brought into a 'department level' results tab on the department spreadsheet.  
+For background, the bulk of the pipeline handles headline results estimates that are aggregated from policy department and country office programmes for a particular indicator. DFID Departments and Country Offices input data onto template spreadsheets, which are then subject to several rounds of quality assurance (for further information about results see our [webpages](https://www.gov.uk/guidance/dfid-results-estimates)). Results that pass the QA process are brought into a 'department level' results tab on the department spreadsheet  using PowerQuery.  
 
 
 ### 1. Data  
-* The pipeline begins by reading in data from this tab and concatenating it for all department spreadsheets. In production we use these live spreadsheets as input  and if you have access to these files there is an option in `R/plan.R` to use them. The file `data/dept_raw_achieved.csv` is a cold copy of that data saved at the end of the QA phase of results data collection, on Friday 7th of August 2020. However, there are differences between the cold copy and the live copy:
-1. Only achieved data is provided in the cold copy.
-2. Only the aggregated results are provided. Countries report results yearly but we do not publish annual breakdowns due to the aggregation methodologies used and time lags for some data - for more information about this please see the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).
+* The pipeline begins by reading in data from this tab 'department level' tab and concatenating it for all department spreadsheets. In production we use the live spreadsheets as input  and if you have access to these files there is an option in `R/plan.R` to use them. The file `data/dept_raw_achieved.csv` is a cold copy of that data saved at the end of the QA phase of results data collection, on Friday 7th of August 2020. However, there are differences between the cold copy and the live copy:   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. Only achieved data is provided in the cold copy;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Only the aggregated results are provided. Countries report results yearly but we do not publish annual breakdowns due to the aggregation methodologies used and time lags for some data - for more information about this please see the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).
 
-However, not all indicators use this system and various other datasets need to be used in the pipeline.  
+However, not all indicators use these templates and various other datasets need to be used in the pipeline.  
 
-* Jobs, Public Financial Management and Access to Finance indicators use their own tracking systems to QA their data so we read these in separately. Multilateral results are also calculated and submitted separately. As are Climate spend figures, ODA figures and Energy figures.    
+* Jobs, Public Financial Management and Access to Finance indicators use their own collation and QA systems so we read these in separately. Multilateral results are also calculated and submitted separately. As are Climate spend figures, ODA figures and Energy figures.    
 
 * Family Planning results are calculated over a longer time frame than the current SDP period (2015-2020) and, therefore, include some figures from the previous results framework. This data is read in separately.      
 
-* 'Inputs' are a set of data drawn directly from financial and programme management systems, and mainly cover things like spend in particular areas. 
+* 'Inputs' are a set of data drawn directly from financial and programme management systems, and mainly cover spend-type indicators. 
 
-* Centrally Managed Programmes (CMPs) are programmes managed by central departments that typically cover a wide geography. In some cases programmes may overlap with bilateral programmes managed by country offices. In these cases we conservatively subtract a percentage of results based on potential geographic overlap to ensure beneficiaries are not counted twice. These data are either the country breakdowns yet to be deducted or the actual amount to be deducted already calculated, depending on the department submitting the data. Each of these data files has a `*_cmp.csv` suffix.
+* Centrally Managed Programmes (CMPs) are programmes managed by central DFID Departments that typically cover a wide geography. In some cases programmes may overlap with bilateral programmes managed by Country Offices. In these cases we conservatively subtract a percentage of results based on potential geographic overlap to ensure beneficiaries are not counted twice. These data are either the country breakdowns yet to be deducted or the actual amount to be deducted already calculated, depending on the department submitting the data. Each of these data files has a `*_cmp.csv` suffix.
 
-* Finally we read in some accessory data: a lookup table for fragility level and department names, and a file containing table subtitles and names used for producing the final data tables.  
+* Finally, we read in some accessory data: a lookup table for fragility level and department names, and a file containing table subtitles and names used for producing the final data tables.  
 
 * In terms of data, this project is not large and all of the datasets required to run this pipeline, are provided in `data/`. A metadata file is also included that explains each of the variables in each dataset.    
 
@@ -86,15 +88,13 @@ However, not all indicators use this system and various other datasets need to b
 * Plots are then made from these data.
 
 ### 4. Tables   
-* Indicator data are formatted into tables ready for publication, including application of rounding rules (see [Technical Notes](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911809/dfid_results-estimates_technical-notes_2015-2020.pdf)) and addition of double counting deductions, if applicable.   
+* Indicator data are formatted into tables ready for publication, including application of rounding rules (see [Technical Notes](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911809/dfid_results-estimates_technical-notes_2015-2020.pdf)) and addition of CMP double counting deductions, if applicable.   
 
-* Tables are then brought into a list of tables.  
-
-* Tables are placed in a workbook in separate tabs, title information is added, the whole table is formatted and then output to `tables/`. The `tables_titles.csv` data is needed to complete this process. Here we attempt to format all the tables at once but since there are a number of different table types, each with their own structure, some manual correction needs to be applied to the formatting after the spreadsheet is output.
+* Tables are inserted in a workbook in separate tabs, indicator title information is added, the whole table is formatted and then output to `tables/`. The `tables_titles.csv` data is needed to complete this process. Here we attempt to format all the tables at once but since there are a number of different table types, each with their own structure, some manual correction may need to be applied to the formatting after the spreadsheet is output. We may also manually add footnotes with important additional information.
 
 ### 5. Report   
 * First, we specify which chapters of the report we want to knit to `.tex`. To specify which chapters are then *compiled* in the last step, `main.Rnw` needs to be edited **before** it is knit (though if missed this can be corrected afterwards by editing `main.tex` to `\include{}` any missed chapters)! 
 
-* Secondly, we knit each chapter in `doc/` and `main.Rnw`. Each chapter will load relevant data and plot targets in the plan from `drake`'s cache using the `loadd()` function. Any in-line values are pulled from these data using filters in `\Sexpr{}`. Figures will also be output to `figs/` so they can be used separately.   
+* Secondly, we knit each chapter in `doc/` and `main.Rnw`. Each chapter will load relevant data and plot targets in the plan from `drake`'s cache using the `loadd()` function. Any in-line values are pulled from these data using filters in `\Sexpr{}`. Figures will also be output to `figs/` so they can be used separately in other documents.   
 
-* Finally, `main.tex` is compiled and will output a pdf and log files to `report/`. 
+* Finally, `main.tex` is compiled and will output a pdf and log files to `report/`. In some cases, to ensure the table of contents, and and other linked elements are correctly compiled, it may be  necessary to `clean(c(report,compile))` and re-run  `r_make()`.  This will clean the report and compile targets from the cache and re-compile the .pdf. 
