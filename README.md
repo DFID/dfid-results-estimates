@@ -69,7 +69,7 @@ However, not all indicators use these templates and various other datasets need 
 
 * 'Inputs' are a set of data drawn directly from financial and programme management systems, and mainly cover spend-type indicators. 
 
-* Centrally Managed Programmes (CMPs) are programmes managed by central DFID departments that typically cover a wide geography. In some cases programmes may overlap with bilateral programmes managed by Country Offices. In these cases we conservatively subtract a percentage of results based on potential geographic overlap to ensure beneficiaries are not counted twice. These data are either the country breakdowns yet to be deducted or the actual amount to be deducted already calculated, depending on the department submitting the data. Each of these data files has a `*_cmp.csv` suffix.
+* Centrally Managed Programmes (CMPs) are programmes managed by central DFID departments that typically cover a wide geography. In some cases programmes may overlap with bilateral programmes managed by country offices. In these cases we conservatively subtract a percentage of results based on potential geographic overlap to ensure beneficiaries are not counted twice. These data are either the CMP country breakdowns yet to be deducted or the actual amount to be deducted already calculated, depending on the department submitting the data. Each of these data files has a `*_cmp.csv` suffix.
 
 * Finally, we read in some accessory data: a lookup table for fragility level and department names, and a file containing table subtitles and names used for producing the final data tables.  
 
