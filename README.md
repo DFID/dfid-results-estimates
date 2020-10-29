@@ -8,8 +8,6 @@ The pipeline is written in R using the [drake](https://github.com/ropensci/drake
 
 The approach is based heavily on the suggestions of Miles McBain, set out in [this](https://milesmcbain.xyz/posts/the-drake-post/) blog post.
 
-## Aims
-
 ## Usage
 If you have `drake` and `packrat` installed it should be possible to:
 
