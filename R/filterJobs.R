@@ -14,7 +14,7 @@ filterJobsGender  <-  function(data){
     mutate_at(vars(not_identified),function(x)ifelse(x<=1,0,x)) %>%
     adorn_totals("row") %>%
     select(department,  female, male, not_identified,  total)  %>%
-    slice_tail(n()) %>%
+    slice_tail() %>%
     mutate_if(is.numeric, roundChoose, 1000) %>%
     mutate_at(vars(male, female, total), roundChoose, 100000) %>%
     select(-department) %>%
