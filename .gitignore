@@ -27,3 +27,4 @@ R/tidyPFM.R
 R/tidyWASH.R
 data/dept_raw.csv
 data/bak.multilat.csv
+packrat/src/

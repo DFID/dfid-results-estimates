@@ -3,19 +3,19 @@
 
 %%%% FONTS %%%%
 % Use with pdflatex since system fonts not available:
-%\usepackage[T1]{fontenc}
-%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 % For setting tgheros and sans as default:
-%\renewcommand{\encodingdefault}{T1}
-%\renewcommand{\rmdefault}{transport}
-%\renewcommand{\familydefault}{\sfdefault}
-%\usepackage{tgheros}
+\renewcommand{\encodingdefault}{T1}
+\renewcommand{\rmdefault}{transport}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tgheros}
 
 % Can use system font with xelatex:
-\usepackage{fontspec}
+%\usepackage{fontspec}
 % GDS font doesn't have textit so can fake it like so:
-\setmainfont[SlantedFont=*,SlantedFeatures={FakeSlant=0.2}]{GDS Transport Website}
+%\setmainfont[SlantedFont=*,SlantedFeatures={FakeSlant=0.2}]{GDS Transport Website}
 		% this is not the latex way though....
 
 %%%%%%%%%%%%%%%%
