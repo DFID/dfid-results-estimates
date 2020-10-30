@@ -6,7 +6,6 @@
 #'
 plotEduFragility <- function(data) {
 
-
   adj <- ifelse(data$perc<10,-0.3, 1.6)
   lab_col  <- ifelse(data$perc>10,"white", "black")
 

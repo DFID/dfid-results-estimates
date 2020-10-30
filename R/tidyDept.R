@@ -1,6 +1,6 @@
 #' tidy Dept Data tab
 #'
-#' tidies dept data read in with readDeptData and adds some stuff from lookup
+#' tidies dept data and adds some stuff from lookup
 #' @param data dept_raw
 #' @importFrom magrittr %>%
 #' @export

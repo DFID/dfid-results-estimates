@@ -4,7 +4,7 @@
 #' @importFrom magrittr %>%
 #' @export
 #'
-regionDataA2F <- function(data, lookup){
+summariseA2FRegion <- function(data, lookup){
     data %>%
       select(-male,-female) %>%
       ungroup() %>%

@@ -89,14 +89,14 @@ nutri_gender  = filterNutritionGender(dept),
 
 nutri_intensity = filterNutritionIntensity(dept),
 
-wash = filterWASH(dept),
+wash = filterWASH(dept), #2020 Ukraine WASH results could not be QA'd so removed here
 
 
 
 #### Disaggregation Summaries ----
 
 #a2f
-a2f_region_data =  regionDataA2F(a2f_raw, lookup),
+a2f_region_data =  summariseA2FRegion(a2f_raw, lookup),
 
 #education
 edu_fragility_data  = summariseFragility(education),
@@ -139,6 +139,7 @@ edu_region_plot  =  plotEduRegion(edu_region_data),
 
 energy_cumulative_plot = plotEnergyCumulative(energy),
 
+### FP plots not loaded from cache instead output directly to figs/ as its tricky to use subfloat in .Rnw with code chunks to have one fig caption.
 fp_total_frag_plot = plotFPTotalFragility(fp_total_fragility_data),
 fp_total_region_plot  = plotFPTotalRegion(fp_total_region_data),
 fp_additional_frag_plot  = plotFPAdditionalFragility(fp_additional_fragility_data),

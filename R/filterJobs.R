@@ -1,4 +1,4 @@
-#' create jobs dataframe
+#' create jobs gender dataframe
 #' @param data jobs data
 #' @keywords internal
 #' @importFrom magrittr %>%
@@ -23,32 +23,8 @@ filterJobsGender  <-  function(data){
 }
 
 
-#' create jobs dataframe
-#' @param data jobs data
-#' @keywords internal
-#' @importFrom magrittr %>%
-#' @export
-#'
-# filterJobsType  <-  function(data){
-#
-#   jobs_raw %>% select(department, jobs, income, additional) %>% View()
-#     group_by(department) %>%
-#     slice(1) %>%
-#   #  rowwise() %>%
-#   #  mutate(total = sum(jobs, income, additional)) %>%
-#
-#     adorn_totals("row") %>%
-#     select(department,  male,  female, not_identified,  total)  %>%
-#     slice_tail(n()) %>%
-#     mutate_if(is.numeric, roundChoose, 10000) %>%
-#     mutate_at(vars(total), roundChoose, 100000) %>%
-#     select(-department) %>%
-#     clean_names("title")
-#
-# }
 
-
-#' create jobs dataframe
+#' create jobs region dataframe
 #' @param data jobs data
 #' @keywords internal
 #' @importFrom magrittr %>%

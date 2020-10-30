@@ -46,10 +46,9 @@ background_style <- createStyle(fgFill = "white")
 
 
 
-# should be using _table which are final tables
+# should be using "_table" which are final tables
 lst_data <- lst_data
 names(lst_data) <- unlist(tables_titles[,"tab"])
-
 
 titles <- map(split(tables_titles[,2], seq(nrow(tables_titles[,2]))), setNames, "temp")
 subtitles <- map(split(tables_titles[,3], seq(nrow(tables_titles[,3]))) , setNames, "temp")
@@ -58,6 +57,7 @@ type  <- map(split(tables_titles[,4], seq(nrow(tables_titles[,4]))), setNames, "
 titles_list <- purrr::map2(titles,subtitles, function(x,y){bind_rows(x,y)}) %>%
                purrr::map2(., type, function(x,y){bind_rows(x,y)})
 names(titles_list) <- unlist(tables_titles[,"tab"])
+
 
 # create workbook
 wb <- openxlsx::createWorkbook()
@@ -71,7 +71,7 @@ purrr::imap(
   }
 )
 
-# write second table to Table_17 - NTD
+# write second NTD table to Table_17
 writeData(wb = wb, sheet = "Table_17", x = ntd_table_two, startCol = 1, startRow = 9)
 
 # Table 1 - Access to Finance

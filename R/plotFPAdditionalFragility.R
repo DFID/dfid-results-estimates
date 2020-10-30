@@ -35,7 +35,7 @@ plotFPAdditionalFragility <- function(data) {
     scale_y_continuous(breaks=seq(0, roundChoose(max(data$perc),10,TRUE), by = 10))
 
 
-  ### comment in if not using drake
+  ### FP plots not loaded from cache instead output directly to figs/ as its tricky to use subfloat in .Rnw with code chunks to have one fig caption.
   pdf(file="figs/fp_additional_fragility_plot.pdf",
        width=8,
        height=6,

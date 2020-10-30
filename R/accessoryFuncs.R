@@ -138,10 +138,10 @@ bindRowsKeepFactors <- function(...) {
     mutate_at(vars(one_of(factors)), factor)
 }
 
-#' bind rows
+#' rounding up or down
 #' @param x numeric vector
 #' @param roundTo integer
-#' @param dir integer describing direction up or down
+#' @param dir logical describing direction up or down
 #' @keywords internal
 #' @export
 roundChoose <- function(x, roundTo, up=FALSE) {
