@@ -2,17 +2,29 @@
 \usepackage[a4paper, margin=1in]{geometry}
 
 %%%% FONTS %%%%
+
+%%%% IMPORTANT %%%%
+% IF NOT USING XeLaTeX & GDS TRANSPORT
+% UNCOMMENT LINES 13, 14, 19, 20, 21, 22
+% AND COMMENT OUT LINE 27 AND 29
+
+
 % Use with pdflatex since system fonts not available:
+% UNCOMMMENT IF NOT USING GDS TRANSPORT!!!
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8]{inputenc}
 
+
 % For setting tgheros and sans as default:
+% UNCOMMMENT IF NOT USING GDS TRANSPORT!!!
 %\renewcommand{\encodingdefault}{T1}
 %\renewcommand{\rmdefault}{transport}
 %\renewcommand{\familydefault}{\sfdefault}
 %\usepackage{tgheros}
 
-% Can use system font with xelatex:
+
+% Using GDS Transport font
+% COMMENT OUT IF NOT USING GDS TRANSPORT!!!
 \usepackage{fontspec}
 % GDS font doesn't have textit so can fake it like so:
 \setmainfont[SlantedFont=*,SlantedFeatures={FakeSlant=0.2}]{GDS Transport Website}
@@ -68,8 +80,7 @@
 
 %\usepackage{draftwatermark} %comment out to remove watermark
 
-
-% paragraph set up
+%%% paragraph set up
 %\usepackage{indentfirst} % for indenting first para
 \usepackage[parfill]{parskip} % for new line no indent
 
@@ -77,13 +88,13 @@
 
 \setcounter{tocdepth}{0}
 
+
 % Start Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%%% R setup
 % chunk options
 <<echo=FALSE>>=
 library(knitr)
@@ -104,44 +115,7 @@ knitr::opts_chunk$set(
 @
 
 
-% If you want to compile document out of the pipeline e.g. in a tex editor then uncomment here and remove or add chapter locations
-<<knitting,include=FALSE>>=
-
-# sections <- c(
-#               "doc/titlepage/titlepage",
-#               "doc/frontmatter/frontmatter",
-#               "doc/intro/intro",
-#               "doc/a2f/a2f",
-#               "doc/cdc/cdc",
-#               "doc/climate/climate"
-#               "devcap/devcap",
-#               "education/education",
-#               "energy/energy",
-#               "ntd/ntd",
-#               "family/family",
-#               "fcas/fcas",
-#               "humanitarian/humanitarian",
-#               "immunisation/immunisation",
-#               "tax/tax",
-#               "multi/multi",
-#               "jobs/jobs",
-#               "malaria_spend/malaria_spend",
-#               "ntd_spend/ntd_spend",
-#               "ntd/ntd",
-#               "nutrition/nutrition",
-#               "oda/oda",
-#               "pqi/pqi",
-#               "private/private",
-#               "polio/polio",
-#               "pfm/pfm",
-#               "wash/wash"
-# )
-#
-#knitAll(files=sections)
-
-@
-
-
+% include chapters here
  \include{doc/titlepage/titlepage}
  \include{doc/frontmatter/frontmatter}
  \include{doc/intro/intro}
@@ -169,6 +143,7 @@ knitr::opts_chunk$set(
  \include{doc/pfm/pfm}
  \include{doc/wash/wash}
 
+% blank last page
 \newpage
 \thispagestyle{empty}
 \mbox{}

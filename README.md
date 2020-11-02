@@ -1,5 +1,18 @@
+<img src="https://github.com/DFID/dfid-results-estimates/blob/master/images/ukaid.png" width="250" height="250"/>
+
 # DFID Results Estimates
 ***
+
+- [DFID Results Estimates](#dfid-results-estimates)
+  * [Background](#background)
+  * [Usage](#usage)
+    + [Prerequisites](#prerequisites)
+  * [The Plan](#the-plan)
+    + [1. Data](#1-data)
+    + [2. Tidying and Filtering](#2-tidying-and-filtering)
+    + [3. Plots](#3-plots)
+    + [4. Tables](#4-tables)
+    + [5. Report](#5-report)
 
 ## Background
 This repository contains the pipeline used for producing DFID's headline results estimates publication. It will generate the plots, tables and report as they appear on the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).   
@@ -26,16 +39,18 @@ These commands will:
 * execute/compile the plan using an isolated R process
 
 This should output:
-* plots in pdf format to `figs/`   
-* an excel file to `tables/`   
-* a pdf to `report/` 
+* plots in pdf format to [figs/](figs/)   
+* an excel file to [tables/](tables/)  
+* a pdf to [report/](report) 
 
-In practice, **this may not go so smoothly**. Please raise an issue or contact [statistics@fcdo.gov.uk]() if you have any suggestions, comments, or issues.
+In practice, **this may not go so smoothly**. Please see the Wiki for further detail about the pipeline and prerequisites for a successful run. 
+
+Please contact [statistics@fcdo.gov.uk](mailto:statistics@fcdo.gov.uk) if you have any suggestions, questions or comments. If you find any bugs or errors please raise an [issue](https://github.com/DFID/dfid-results-estimates/issues).
 
 
 ### Prerequisites
 
-1. Since the report is written in XeLaTeX you need to have a distribution installed on your computer - probably [MiKTeX](https://miktex.org/) for Windows systems. You don't need to worry about configuring R/RStudio to compile using XeLaTeX since we use a system call.   
+1. Since the report is written in XeLaTeX you need to have a distribution installed on your computer - probably [MiKTeX](https://miktex.org/download) for Windows systems. You don't need to worry about configuring R/RStudio to compile using XeLaTeX since we use a system call.   
 
 2. Also assumed is that the `GDS Transport` font is installed on your system. If it isn't, it will be necessary to install it or to specify another font option in `main.Rnw`.  
 > **WARNING:** `GDS Transport` is a proprietary font and is for sole use on GOV.UK: permission must be sought before use. 

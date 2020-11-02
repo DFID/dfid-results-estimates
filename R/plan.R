@@ -13,7 +13,7 @@ dept_raw = read_csv(file_in("data/dept_raw_achieved.csv")),
 
 ## local data (other)
 a2f_raw = read_csv(file_in("data/a2f.csv")) %>%
-          select(Department, `Project Title`, Female, Male, Total) %>%
+          select(Department, Female, Male, Total) %>%
           group_by(Department) %>%
           mutate(Department = recode(Department, PSD="Private Sector", ISD="Inclusive Societies")) %>%
           clean_names(.),
@@ -31,15 +31,14 @@ family_drf = read_csv(file_in("data/family_drf.csv")), # don't clean names to ke
 inputs = read_csv(file_in("data/inputs.csv")),
 
 jobs_raw = read_csv(file_in("data/jobs.csv")) %>%
-  select(-Prog) %>%
-  group_by(Office)  %>%
+  group_by(Department)  %>%
   summarise_all(sum) %>%
   pivot_longer(.,
                cols=c("male", "female", "results"),
                names_to=c("gender" ),
                values_to="results"
   ) %>%
-  rename(department="Office") %>%
+  clean_names() %>%
   mutate(gender=recode(gender, results="total")) %>%
   mutate(department = recode(department, PSD="Private Sector")),
 
@@ -139,7 +138,9 @@ edu_region_plot  =  plotEduRegion(edu_region_data),
 
 energy_cumulative_plot = plotEnergyCumulative(energy),
 
-### FP plots not loaded from cache instead output directly to figs/ as its tricky to use subfloat in .Rnw with code chunks to have one fig caption.
+### FP plots not loaded from cache in .Rnw files and instead output directly to figs/
+### as its tricky to use subfloat in .Rnw with code chunks. We use subfloat to group
+### plots total and additional with a single figure caption.
 fp_total_frag_plot = plotFPTotalFragility(fp_total_fragility_data),
 fp_total_region_plot  = plotFPTotalRegion(fp_total_region_data),
 fp_additional_frag_plot  = plotFPAdditionalFragility(fp_additional_fragility_data),
