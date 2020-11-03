@@ -1,5 +1,4 @@
 #' Accessory function for Results. Mainly methods for doing lookup_tables.
-#'
 #' Method for lookup_table table.
 #' @param lookup_table a lookup_table table.
 #' @param dept_pub_names use publication names rather than dataset names. Logical.
@@ -11,6 +10,7 @@ getPubNames <- function(lookup_table){
   names(y) <- lookup_table$dept_from_dataset_name
   return(y)
 }
+
 
 #' Generalisation of Method for lookup_table table.
 #' @param lookup_table a lookup_table table.
@@ -24,6 +24,7 @@ getVal <- function(lookup_table, column1, column2){
   names(y) <- unlist(lookup_table[column2])
   return(y)
 }
+
 
 #' Method for lookup_table table.
 #' @param lookup_table a lookup_table table.
@@ -72,6 +73,7 @@ darken <- function(colour, factor=1.4){
   col
 }
 
+
 #' Method for plotting.
 #' @param colour hex xolor code. Character.
 #' @param factor factor by which to lighten colour. Numeric.
@@ -83,44 +85,6 @@ lighten <- function(colour, factor=1.4){
   col <- col*factor
   col <- rgb(t(col), maxColorValue=255)
   col
-}
-
-#' knit chapters
-#' @param file File name.
-#' @keywords internal
-#' @examples darken("#2E358B", factor=1.4)
-#' @export
-doKnit <- function(file){
-  # create full names of files
-  rnw <- sprintf("%s.Rnw", file)
-  tex <- sprintf("%s.tex", file)
-  # if the rnw file doesn't exist, just exit and do nothing
-  if(!file.exists(rnw)){
-    return(NULL)
-  }
-# add WARNING!!!!
-  ## create the tex file if necessary
-  # if the tex file doesn't exist, or it is older than the rnw file you have to create it
-  if(!file.exists(tex) || file.info(tex)$mtime < file.info(rnw)$mtime){
-    knit(input=rnw, output=tex)
-  } else {
-    # just return NULL
-    NULL
-  }
-}
-
-
-#' knit chapters
-#' @param files vector of file names.
-#' @keywords internal
-#' @export
-knitAll <- function(files)
-{
-  ## loop through and knit each chapter file if the tex file is older
-  for(a in files)
-  {
-    doKnit(file=a)
-  }
 }
 
 
@@ -137,6 +101,7 @@ bindRowsKeepFactors <- function(...) {
   suppressWarnings(bind_rows(...)) %>%
     mutate_at(vars(one_of(factors)), factor)
 }
+
 
 #' rounding up or down
 #' @param x numeric vector

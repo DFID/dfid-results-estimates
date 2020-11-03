@@ -1,9 +1,13 @@
 #' format final data tables
 #' NEEDS WORK
 
-formatTables <- function(lst_data, tables_titles, ntd_table_two){
+formatTables <- function(lst_data, tables_titles, ntd_table_two, gds_transport=FALSE){
 
   if(length(lst_data)!=nrow(tables_titles)) stop("Number of tables does not equal number of table titles")
+
+  font  <- systemfonts::system_fonts() %>% filter(path==systemfonts::match_font("sans")) %>% select(family) %>% unlist()
+
+  if(gds_transport==TRUE){
 
 #Title bits
 title_style <- createStyle(fontName= "GDS Transport Website", textDecoration = "bold",
@@ -41,10 +45,45 @@ totals_style_plain <-  createStyle(fontName= "GDS Transport Website", fontSize =
 totals_style_plain_center <-  createStyle(fontName= "GDS Transport Website", fontSize = 11, fontColour = "#000000",
                                    halign = "center", border = "Bottom", borderColour = "#000000", borderStyle = "thin")
 
-background_style <- createStyle(fgFill = "white")
+  } else {
+
+    title_style <- createStyle(fontName= font, textDecoration = "bold",
+                               fontSize = 16, fontColour = "#000000", halign = "left")
+    info_style <- createStyle(fontName= font, textDecoration = "bold",
+                              fontSize = 11, fontColour = "#000000", halign = "left")
+
+    #Table bits
+    number_style <- createStyle(fontName= font,
+                                fontSize = 11, fontColour = "#000000", halign = "right", numFmt = "#,##0;-#,##0;0")
+    pound_style <- createStyle(fontName= font,
+                               fontSize = 11, fontColour = "#000000", halign = "right", numFmt = paste0("\U00A3","0,0"))
+    dollar_style <- createStyle(fontName= font,
+                                fontSize = 11, fontColour = "#000000", halign = "right", numFmt = "$0,0")
 
 
+    # first column where dept
+    department_style <- createStyle(fontName= font,
+                                    fontSize = 11, fontColour = "#000000", halign = "left")
+    # frag states and region
+    factor_style <- createStyle(fontName= font,
+                                fontSize = 11, fontColour = "#000000", halign = "center")
 
+    header_style <- createStyle(fontName= font, textDecoration = "bold",
+                                fontSize = 11, fontColour = "#000000", halign = "center",
+                                border = "TopBottom", borderColour = "#000000", borderStyle = "thin")
+
+    totals_style_bold <- createStyle(fontName= font, textDecoration = "bold",
+                                     fontSize = 11, fontColour = "#000000", halign = "right",
+                                     border = "TopBottom", borderColour = "#000000", borderStyle = "thin")
+
+    totals_style_plain <-  createStyle(fontName= font, fontSize = 11, fontColour = "#000000",
+                                       halign = "right", border = "Bottom", borderColour = "#000000", borderStyle = "thin")
+
+    totals_style_plain_center <-  createStyle(fontName= font, fontSize = 11, fontColour = "#000000",
+                                              halign = "center", border = "Bottom", borderColour = "#000000", borderStyle = "thin")
+}
+
+  background_style <- createStyle(fgFill = "white")
 
 # should be using "_table" which are final tables
 lst_data <- lst_data
@@ -206,7 +245,7 @@ addStyle(wb, sheet="Table_23", style = header_style, rows = 6, cols=1:6)
 addStyle(wb, sheet="Table_23", style = totals_style_bold, rows = 56, cols=1:6, stack = T)
 addStyle(wb, sheet="Table_23", style = number_style, rows = 56, cols=2:6, stack = T)
 addStyle(wb, sheet="Table_23", style = department_style, rows = 6:56, col = 1, stack = T)
-addStyle(wb, sheet="Table_23", style = createStyle(fontName= "GDS Transport Website", fontSize = 11, halign="left"), rows = 7:55, col = 2:6, stack = T, gridExpand = T)
+addStyle(wb, sheet="Table_23", style = department_style, rows = 7:55, col = 2:6, stack = T, gridExpand = T)
 
 # Table 24 - WASH
 addStyle(wb, sheet="Table_24", style = header_style, rows = 6, cols=1:7)

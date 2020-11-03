@@ -13,7 +13,6 @@ dept_raw = read_csv(file_in("data/dept_raw_achieved.csv")),
 
 ## local data (other)
 a2f_raw = read_csv(file_in("data/a2f.csv")) %>%
-          select(Department, Female, Male, Total) %>%
           group_by(Department) %>%
           mutate(Department = recode(Department, PSD="Private Sector", ISD="Inclusive Societies")) %>%
           clean_names(.),
@@ -243,7 +242,8 @@ tables = target(
                                          pfm_table,
                                          wash_table),
                          tables_titles = tables_titles,
-                         ntd_table_b)
+                         ntd_table_b,
+                         gds_transport=FALSE) # change to TRUE if using GDS Transport Website font
     file_out="tables/tables.xlsx"
     }
   ),
@@ -254,10 +254,13 @@ tables = target(
 
 #### Report ----
 
+
+
 ## knit .Rnw to .tex
 report = target(
-  command = {knitAll(files=file_in(
-    c(
+  knit(file_in(input), file_out(output)),
+  transform = map(
+  input = c(
     "doc/titlepage/titlepage.Rnw",
     "doc/frontmatter/frontmatter.Rnw",
     "doc/intro/intro.Rnw",
@@ -286,10 +289,8 @@ report = target(
     "doc/pfm/pfm.Rnw",
     "doc/wash/wash.Rnw",
     "main.Rnw"
-  )
-  )
-  )
-  file_out=c(
+  ),
+  output = c(
     "doc/titlepage/titlepage.tex",
     "doc/frontmatter/frontmatter.tex",
     "doc/intro/intro.tex",
@@ -319,18 +320,19 @@ report = target(
     "doc/wash/wash.tex",
     "main.tex"
   )
-  }
+  )
 ),
 
 
 # compile .tex
 compile = target(
   command = {
-    system(paste0("xelatex ", report[[length(report)]], " --output-directory=report  --aux-directory=report"))
+    system(paste0("xelatex ", file_in("main.tex"), " --output-directory=report  --aux-directory=report"))
     file_out("report/main.pdf")
   }
 )
 
-
 )
+
+
 

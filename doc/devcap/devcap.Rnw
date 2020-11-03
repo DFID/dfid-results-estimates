@@ -8,7 +8,7 @@
 \bigskip
 
 \section{Results}
-DFID invested \textbf{£3,039} million in Development Capital (DevCap) to create more and better inclusive jobs that benefit people across society, including women.
+DFID invested \textbf{\$3,039} million in Development Capital (DevCap) to create more and better inclusive jobs that benefit people across society, including women.
 
 \section{Context}
 
