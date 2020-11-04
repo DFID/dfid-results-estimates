@@ -28,7 +28,7 @@ Please contact [statistics@fcdo.gov.uk](mailto:statistics@fcdo.gov.uk) if you ha
 If you have `drake` and `packrat` installed it should be possible to:
 
 1. clone this repository  
-2. cd to the project `root/` directory
+2. `cd` to the project `root/` directory
 3. run `packrat::restore()`   
 4. run `packrat::init(infer.dependencies = FALSE, options = list(vcs.ignore.lib = TRUE, vcs.ignore.src = TRUE))` (additional options are not required but ensure `packrat/lib/` and `packrat/source/` are added to `.gitignore`)  
 5. run `drake::r_make()`    
@@ -90,17 +90,17 @@ The bulk of the pipeline handles results that are aggregated from policy departm
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** lookup table for fragility level and department names.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ii.** table subtitles and names used for producing the final data tables.    
 
-&nbsp;&nbsp;**g.** In terms of data, this project is not large and all of the datasets required to run this pipeline, are provided in `data/`. A metadata file is also included that explains each of the variables in each dataset.    
+&nbsp;&nbsp;**g.** In terms of data, this project is not large and all of the datasets required to run this pipeline are provided in `data/`. A metadata file is also included that explains each of the variables in each dataset.    
 
 ### 2. Tidying and Filtering
 &nbsp;&nbsp;**a.** Department data are tidied, the multilateral data are joined, and some columns are added from the lookup.  
 
 &nbsp;&nbsp;**b.** Data are filtered to make separate data frames for each indicator.
 
-### 3. Plots
+### 3. Plots   
 &nbsp;&nbsp;**a.** Indicator data are summarised into regional and fragility breakdowns.   
 
-&nbsp;&nbsp;**b.** Plots are then made from these data. Plots are all stored as targets in `drake`'s cache and output separately when chapters are knit, except  for Family Planning plots which are written to `figs` at this stage. This is so its easier to *Total* and *Additional* plots togather with a single caption.
+&nbsp;&nbsp;**b.** Plots are then made from these data. Plots are all stored as targets in `drake`'s cache and output separately when chapters are knit, except  for Family Planning plots which are written to `figs` at this stage. This is so its easier to group *Total* and *Additional* plots together with a single caption in the final report.
 
 ### 4. Tables   
 &nbsp;&nbsp;**a.** Indicator data are formatted into tables ready for publication, including application of rounding rules (see [Technical Notes](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911809/dfid_results-estimates_technical-notes_2015-2020.pdf)) and addition of CMP double counting deductions, if applicable.   
@@ -108,7 +108,7 @@ The bulk of the pipeline handles results that are aggregated from policy departm
 &nbsp;&nbsp;**b.** Tables are inserted in a workbook in separate tabs, indicator title information is added (from `tables_titles.csv`), the whole table is formatted and then output to `tables/`. Here we attempt to format all the tables at once but since there are a number of different table types, each with their own structure, some manual correction may need to be applied to the formatting after the spreadsheet is output. 
 > We may also manually add footnotes with important additional information. The [official publication](https://www.gov.uk/guidance/dfid-results-estimates) should be consulted for this important context.
 
-&nbsp;&nbsp;**c.** The published data tables use **GDS Transport website**. The function `R/formatTables()` takes a boolean to specifiy whether it should be output using **GDS Transport website** and by default is set to `FALSE`. This should output the tables in `Arial` on Windows,  **Helvetica** on Mac, and the default sans-serif font on Linux (**DejaVu Sans** on Ubuntu).
+&nbsp;&nbsp;**c.** The published data tables use **GDS Transport Website** font, which we assume is not installed on most systems. The function `R/formatTables()` takes a boolean to specify whether tables should be output using **GDS Transport website** and by default is set to `FALSE`. Tables should be output in **Arial** on Windows,  **Helvetica** on Mac, and the default sans-serif font on Linux (**DejaVu Sans** on Ubuntu).
 
 ### 5. Report   
 &nbsp;&nbsp;**a.** All sweave files (`*.Rnw`) in `doc/` and `main.Rnw` are knit to `.tex`.     
