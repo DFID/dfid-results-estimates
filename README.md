@@ -18,7 +18,7 @@
 ## Background
 This repository contains the pipeline used for producing DFID's headline results estimates publication. It will generate the plots, tables and report as they appear on the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).   
 
-The pipeline is written in R using the [drake](https://github.com/ropensci/drake) package. The report is written and compiled using [knitr](https://yihui.org/knitr/) and <span class="texhtml" style="font-family: 'CMU Serif', cmr10, LMRoman10-Regular, 'Times New Roman', 'Nimbus Roman No9 L', Times, serif;">X<span style="text-transform: uppercase; margin-left: -0.1667em; vertical-align: -0.5ex; line-height: 0; margin-right: -0.125em;">Ǝ</span>T<span style="text-transform: uppercase; margin-left: -0.1667em; vertical-align: -0.5ex; line-height: 0; margin-right: -0.125em;">e</span>X</span>. 
+The pipeline is written in R using the [drake](https://github.com/ropensci/drake) package. The report is written and compiled using [knitr](https://yihui.org/knitr/) and XeLaTeX. 
 
 The approach is based heavily on the suggestions of Miles McBain, set out in [this](https://milesmcbain.xyz/posts/the-drake-post/) blog post.  
 
@@ -72,17 +72,12 @@ The bulk of the pipeline handles results that are aggregated from policy departm
 
 ### 1. Data  
 &nbsp;&nbsp;**a.** The pipeline begins by reading in data from the 'department level' tab and concatenating it for all department spreadsheets. In *production* we use the live spreadsheets as input but `data/dept_raw_achieved.csv` is a cold copy of that data saved at the end of the QA phase of results data collection, on Friday 7th of August 2020. There are important differences between the cold copy and the live copy:   
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** Only achieved data are provided in the cold copy   
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ii.** Only cumulative results are provided. Countries report results yearly but we do not publish annual breakdowns due to the aggregation methodologies used and time lags for some data - for more information about this please see the [results estimates webpages](https://www.gov.uk/guidance/dfid-results-estimates).
 
 &nbsp;&nbsp;**b.** However, not all indicators use these templates and various other datasets need to be used in the pipeline:   
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** Jobs, Public Financial Management and Access to Finance indicators use their own collation and QA systems so we read these in separately. 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ii.** Multilateral results are also calculated and submitted separately. 
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** Jobs, Public Financial Management and Access to Finance indicators use their own collation and QA systems so we read these in separately.     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ii.** Multilateral results are also calculated and submitted separately.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **iii.** As are Climate spend figures, ODA figures and Energy figures.      
 
 &nbsp;&nbsp;**c.** Family Planning results are calculated over a longer time frame than the current SDP period (2015-2020) and, therefore, include some figures from the previous results framework. This data is read in separately.      
@@ -91,10 +86,8 @@ The bulk of the pipeline handles results that are aggregated from policy departm
 
 &nbsp;&nbsp;**e.** Centrally Managed Programmes (CMPs) are programmes managed by central DFID departments that typically cover a wide geography. In some cases programmes may overlap with bilateral programmes managed by country offices. In these cases we conservatively subtract a percentage of results based on potential geographic overlap to ensure beneficiaries are not counted twice. These data are either the CMP country breakdowns yet to be deducted or the actual amount to be deducted already calculated, depending on the department submitting the data. Each of these data files has a `*_cmp_discount.csv` suffix.
 
-&nbsp;&nbsp;**f.** Finally, we read in some accessory data:  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** lookup table for fragility level and department names.  
-
+&nbsp;&nbsp;**f.** Finally, we read in some accessory data:    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** lookup table for fragility level and department names.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ii.** table subtitles and names used for producing the final data tables.    
 
 &nbsp;&nbsp;**g.** In terms of data, this project is not large and all of the datasets required to run this pipeline, are provided in `data/`. A metadata file is also included that explains each of the variables in each dataset.    
@@ -118,12 +111,9 @@ The bulk of the pipeline handles results that are aggregated from policy departm
 &nbsp;&nbsp;**c.** The published data tables use **GDS Transport website**. The function `R/formatTables()` takes a boolean to specifiy whether it should be output using **GDS Transport website** and by default is set to `FALSE`. This should output the tables in `Arial` on Windows,  **Helvetica** on Mac, and the default sans-serif font on Linux (**DejaVu Sans** on Ubuntu).
 
 ### 5. Report   
-&nbsp;&nbsp;**a.** All sweave files (`*.Rnw`) in `doc/` and `main.Rnw` are knit to `.tex`.   
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** Each chapter will load relevant data and plot targets in the plan from `drake`'s cache using the `loadd()` function.    
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ii.** In-line values are pulled from these data using filters in `\Sexpr{}`.   
-
+&nbsp;&nbsp;**a.** All sweave files (`*.Rnw`) in `doc/` and `main.Rnw` are knit to `.tex`.     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **i.** Each chapter will load relevant data and plot targets in the plan from `drake`'s cache using the `loadd()` function in a code chunk.    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ii.** In-line values are filtered from these data using `\Sexpr{}`.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **iii.** Figures are output to `figs/` so they can be used separately in other documents if required.   
 
 &nbsp;&nbsp;**b.** Finally, `main.tex` is compiled, which will output `main.pdf` and log files to `report/`. These  are useful for debugging LaTeX compilation errors. In some cases, to ensure the table of contents and other reference elements are correctly compiled, it may be  necessary to `clean(compile)` and re-run  `r_make()`.  This will clean the compile target from the cache and re-compile `main.pdf`

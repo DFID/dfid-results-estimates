@@ -5,22 +5,6 @@ a2f.csv,Project Title,Programme title,factor
 a2f.csv,Total,Programme total beneficiaries,numeric
 a2f.csv,Male,Programme male beneficiaries,numeric
 a2f.csv,Female,Programme femal beneficiaries,numeric
-a2f.csv,Calculations,Cumulative of peak year methodology,factor
-a2f.csv,2015/16,Year total,numeric
-a2f.csv,2015/16 Male,Year male beneficiaries,numeric
-a2f.csv,2015/16 Female,Year female beneficiaries,numeric
-a2f.csv,2016/17,Year total,numeric
-a2f.csv,2016/17 Male,Year male beneficiaries,numeric
-a2f.csv,2016/17 Female,Year female beneficiaries,numeric
-a2f.csv,2017/18,Year total,numeric
-a2f.csv,2017/18 Male,Year male beneficiaries,numeric
-a2f.csv,2017/18 Female,Year female beneficiaries,numeric
-a2f.csv,2018/19,Year total,numeric
-a2f.csv,2018/19 Male,Year male beneficiaries,numeric
-a2f.csv,2018/19 Female,Year female beneficiaries,numeric
-a2f.csv,2019/20,Year total,numeric
-a2f.csv,2019/20 Male,Year male beneficiaries,numeric
-a2f.csv,2019/20 Female,Year female beneficiaries,numeric
 climate_spend.csv,vals,Value in pounds ,numeric
 climate_spend.csv,type,Money spent or the spend target,factor
 dept_lookup.csv,dept_from_file_name,Department names according to return templates file names,factor
@@ -32,19 +16,20 @@ dept_lookup.csv,dept_from_dataset_name,Department names accroding to within temp
 dept_lookup.csv,iso3c,Three letter country code,factor
 dept_lookup.csv,country,OECD country name,factor
 dept_lookup.csv,fragility,OECD states of fragility,factor
-dept_raw.csv,Department_Code,Internal DFID Department code,
-dept_raw.csv,Department,DFID Department or Country Office,
-dept_raw.csv,Indicator,Full Indicator wording,
-dept_raw.csv,Strategic_Objective,Strategic Objective from SDP,
-dept_raw.csv,Method,Calculation methodology,
-dept_raw.csv,Year,Year (including total year as 2015/21),
-dept_raw.csv,Forecast_Achieved,Whether its forecast or achieved figures,
-dept_raw.csv,Gender,Gender disaggregated figures,
-dept_raw.csv,Disabled,Disability disaggregated figures,
-dept_raw.csv,Education_Level,Education level ,
-dept_raw.csv,WaSH_Intervention,Wash intervention,
-dept_raw.csv,Nutrition_Intensity,Intensity of nutrition intervention,
-dept_raw.csv,Results,Beneficiaries ,
+dept_lookup.csv,iso2c,Two letter country code,factor
+dept_raw.csv,Department_Code,Internal DFID Department code,factor
+dept_raw.csv,Department,DFID Department or Country Office,factor
+dept_raw.csv,Indicator,Full Indicator wording,character
+dept_raw.csv,Strategic_Objective,Strategic Objective from SDP,factor
+dept_raw.csv,Method,Calculation methodology,factor
+dept_raw.csv,Year,Year (including total year as 2015/21),factor
+dept_raw.csv,Forecast_Achieved,Whether its forecast or achieved figures,factor
+dept_raw.csv,Gender,Gender disaggregated figures,numeric
+dept_raw.csv,Disabled,Disability disaggregated figures,numeric
+dept_raw.csv,Education_Level,Education level ,factor
+dept_raw.csv,WaSH_Intervention,Wash intervention,factor
+dept_raw.csv,Nutrition_Intensity,Intensity of nutrition intervention,factor
+dept_raw.csv,Results,Beneficiaries ,numeric
 education_cmp_discount.csv,Department,DFID Department or Country Office,factor
 education_cmp_discount.csv,GPE,CMP country breakdown,numeric
 education_cmp_discount.csv,ECW,CMP country breakdown,numeric
@@ -64,14 +49,10 @@ family_total_cmp_discount.csv,2016/17,In year discount of beneficiaries to be ap
 family_total_cmp_discount.csv,2017/18,In year discount of beneficiaries to be applied,numeric
 family_total_cmp_discount.csv,2018/19,In year discount of beneficiaries to be applied,numeric
 family_total_cmp_discount.csv,2019/20,In year discount of beneficiaries to be applied,numeric
-jobs.csv,Office,DFID Department or Country Office,factor
-jobs.csv,Prog,Programme name,factor
+jobs.csv,Department,DFID Department or Country Office,factor
 jobs.csv,male,Programme male beneficiaries,numeric
 jobs.csv,female,Programme female beneficiaries,numeric
 jobs.csv,results,Programme total beneficiaries,numeric
-jobs.csv,income,Programme type beneficiaries,numeric
-jobs.csv,jobs,Programme type beneficiaries,numeric
-jobs.csv,additional,Programme type beneficiaries,numeric
 multilat.csv,forecast_achieved,Forecast or Achieved figures,factor
 multilat.csv,department,DFID Department or Country Office,factor
 multilat.csv,fragility,Fragility level (all Not Identified),factor
@@ -99,7 +80,7 @@ pfm.csv,continuous,Countries continuously supported,factor
 sid_oda_annual.csv,Year,Year,factor
 sid_oda_annual.csv,ODA,ODA spend ,numeric
 sid_oda_annual.csv,ODA:GNI,ODA to GNI ratio,numeric
-tables_titles.csv,tab,Tab title for tables,
-tables_titles.csv,title,Table  title,
-tables_titles.csv,subtitle,Table subtitle,
-tables_titles.csv,type,Type  of indicator,
+tables_titles.csv,tab,Tab title for tables,character
+tables_titles.csv,title,Table  title,character
+tables_titles.csv,subtitle,Table subtitle,character
+tables_titles.csv,type,Type  of indicator,character
