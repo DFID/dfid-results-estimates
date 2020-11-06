@@ -49,9 +49,10 @@ family_total_cmp_discount.csv,2016/17,In year discount of beneficiaries to be ap
 family_total_cmp_discount.csv,2017/18,In year discount of beneficiaries to be applied,numeric
 family_total_cmp_discount.csv,2018/19,In year discount of beneficiaries to be applied,numeric
 family_total_cmp_discount.csv,2019/20,In year discount of beneficiaries to be applied,numeric
-jobs.csv,Department,DFID Department or Country Office,factor
+jobs.csv,region,Regional where results achieved,factor
 jobs.csv,male,Programme male beneficiaries,numeric
 jobs.csv,female,Programme female beneficiaries,numeric
+jobs.csv,not_identified,Programme not identified beneficiaries,numeric
 jobs.csv,results,Programme total beneficiaries,numeric
 multilat.csv,forecast_achieved,Forecast or Achieved figures,factor
 multilat.csv,department,DFID Department or Country Office,factor
