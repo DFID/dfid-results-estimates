@@ -29,17 +29,7 @@ family_drf = read_csv(file_in("data/family_drf.csv")), # don't clean names to ke
 
 inputs = read_csv(file_in("data/inputs.csv")),
 
-jobs_raw = read_csv(file_in("data/jobs.csv")) %>%
-  group_by(Department)  %>%
-  summarise_all(sum) %>%
-  pivot_longer(.,
-               cols=c("male", "female", "results"),
-               names_to=c("gender" ),
-               values_to="results"
-  ) %>%
-  clean_names() %>%
-  mutate(gender=recode(gender, results="total")) %>%
-  mutate(department = recode(department, PSD="Private Sector")),
+jobs_raw = read_csv(file_in("data/jobs.csv")) %>% clean_names(),
 
 multilat = read_csv(file_in("data/multilat.csv")),
 
@@ -79,8 +69,6 @@ fp_additional_plots = filterFPAdditionalBreakdown(dept, family_drf),
 
 immunisations = filterImmunisations(dept),
 
-jobs = filterJobsGender(jobs_raw),
-
 humanitarian = filterHumanitarian(dept),
 
 nutri_gender  = filterNutritionGender(dept),
@@ -111,7 +99,7 @@ human_fragility_data  = summariseFragility(humanitarian),
 human_region_data  = summariseRegion(humanitarian),
 
 #jobs
-jobs_region_data = summariseJobsRegion(jobs_raw, lookup),
+jobs_region_data = summariseJobsRegion(jobs_raw),
 
 #nutrition
 nutrition_fragility_data  = summariseFragility(nutri_gender),
@@ -191,7 +179,7 @@ improve_tax_table = tableTax(inputs),
 
 invest_multilat_table = tableMultilat(inputs),
 
-jobs_table = jobs %>% clean_names("title"),
+jobs_table = tableJobs(jobs_raw),
 
 malaria_table = tableMalaria(inputs),
 

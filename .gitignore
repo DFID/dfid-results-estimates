@@ -12,6 +12,7 @@ report/main.log
 report/main.toc
 report/main.out
 R/filesetup.R
+R/filterJobs.R
 R/readA2F.R
 R/readEducation.R
 R/readFamily.R
@@ -25,4 +26,5 @@ R/tidyHumanitarian.R
 R/tidyNutrition.R
 R/tidyPFM.R
 R/tidyWASH.R
+
 

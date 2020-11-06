@@ -7,7 +7,6 @@
 
 <<echo=FALSE>>=
 loadd(jobs_table)
-loadd(jobs_region_data)
 @
 
 

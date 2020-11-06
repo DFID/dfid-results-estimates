@@ -106,7 +106,7 @@ The bulk of the pipeline handles results that are aggregated from policy departm
 &nbsp;&nbsp;**a.** Indicator data are formatted into tables ready for publication, including application of rounding rules (see [Technical Notes](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/911809/dfid_results-estimates_technical-notes_2015-2020.pdf)) and addition of CMP double counting deductions, if applicable.   
 
 &nbsp;&nbsp;**b.** Tables are inserted in a workbook in separate tabs, indicator title information is added (from `tables_titles.csv`), the whole table is formatted and then output to `tables/`. Here we attempt to format all the tables at once but since there are a number of different table types, each with their own structure, some manual correction may need to be applied to the formatting after the spreadsheet is output. 
-> We may also manually add footnotes with important additional information. The [official publication](https://www.gov.uk/guidance/dfid-results-estimates) should be consulted for this important context.
+> **NOTE:** We may also manually add footnotes with important additional information. The [official publication](https://www.gov.uk/guidance/dfid-results-estimates) should be consulted for this important context.
 
 &nbsp;&nbsp;**c.** The published data tables use **GDS Transport Website** font, which we assume is not installed on most systems. The function `R/formatTables()` takes a boolean to specify whether tables should be output using **GDS Transport website** and by default is set to `FALSE`. Tables should be output in **Arial** on Windows,  **Helvetica** on Mac, and the default sans-serif font on Linux (**DejaVu Sans** on Ubuntu).
 
