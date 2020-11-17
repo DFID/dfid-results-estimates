@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1601407826903.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3853717333",
+    "id" : "19662672",
+    "lastKnownWriteTime" : 1601575140,
+    "last_content_update" : 1601575140817,
+    "path" : "~/dev/SDPResults/R/plan.R",
+    "project_path" : "R/plan.R",
+    "properties" : {
+        "cursorPosition" : "208,21",
+        "scrollLine" : "200"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
