@@ -7,6 +7,7 @@
   - [Background](#background)
   - [Usage](#usage)
     * [Prerequisites](#prerequisites)
+  - [Releases](#releases)
   - [Overview](#overview)
     * [1. Data](#1-data)
     * [2. Tidying and Filtering](#2-tidying-and-filtering)
@@ -26,10 +27,10 @@ Please contact [statistics@fcdo.gov.uk](mailto:statistics@fcdo.gov.uk) if you ha
 
 ## Releases
 
-Each new pipeline [release](https://github.com/DFID/dfid-results-estimates/releases) corresponds to a specific release of the results estimates publication on GOV.UK.   
-Each pipeline release is also given a unique Document Object Identifier (DOI):
+Each new pipeline [release](https://github.com/DFID/dfid-results-estimates/releases) corresponds to a specific release of the results estimates publication.   
+Each pipeline release is also registered with a unique, and persistent, Digital Object Identifier (DOI).
 
-Publication Date | Publication Release | Pipeline DOI   
+Results Publication Date | Results Publication Release | Pipeline DOI   
 ----- | ----- | -----    
 27 August 2020 | [Results estimates: 2015 to 2020](https://www.gov.uk/government/publications/dfid-results-estimates-2015-to-2020) | [![DOI](https://zenodo.org/badge/254392963.svg)](https://zenodo.org/badge/latestdoi/254392963)  
 
