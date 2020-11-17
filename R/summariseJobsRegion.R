@@ -9,5 +9,6 @@ summariseJobsRegion <- function(data){
     filter(region!="Total") %>%
     select(region,results) %>%
     mutate(perc=(results/sum(results))*100) %>%
-    filter(results!=0)
+    filter(results!=0) %>%
+    mutate(region = fct_relevel(region, c("Africa", "Asia", "Policy")))
 }
